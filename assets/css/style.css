@@ -52,7 +52,8 @@ header img {
     gap: 10px;
 }
 
-.navegar a {
+.navegar a,
+.navegar-footer a {
     color: var(--color-white);
     text-decoration: none;
     font-size: 1.1rem;
@@ -85,10 +86,13 @@ header img {
 #rodape {
     background-color: var(--color-primary);
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #rodape img {
     width: 150px;
+    margin-top: 20px;
 }
 
 #rodape .logo-footer {
@@ -96,4 +100,15 @@ header img {
     flex-direction: column;
     align-items: center;
     font-size: 3rem;
+}
+
+.navegar-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-white);
 }
