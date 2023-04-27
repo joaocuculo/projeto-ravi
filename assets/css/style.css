@@ -60,7 +60,8 @@ header img {
     padding: 5px;
 }
 
-.navegar a:hover {
+.navegar a:hover,
+.navegar-footer a:hover {
     color: var(--color-secundary);
     transition: .3s;
 }
