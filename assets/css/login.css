@@ -21,3 +21,67 @@ body {
     height: 100vh;
     width: 100%;
 }
+
+header {
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+header img {
+    height: 50px;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header ul li {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+header ul li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+header ul li a:hover {
+    color: var(--color-secundary);
+    transition: 0.3s all;
+}
+
+header ul li.entrar-btn {
+    background-color: var(--color-secundary);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+header ul li.entrar-btn:hover {
+    background-color: #456854;
+}
+
+header ul li.entrar-btn a:hover {
+    color: var(--color-white);
+}
+
+header ul li.conta-btn {
+    background-color: var(--color-tertiary);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+header ul li.conta-btn:hover {
+    background-color: #0d6935;
+    transition: 0.3s all;
+}
+
+header ul li.conta-btn a:hover {
+    color: var(--color-white);
+}
