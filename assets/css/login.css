@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Jacques+Francoisdisplay=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&family=Jacques+Francoisdisplay=swap');
 
 * {
     margin: 0;
@@ -19,8 +19,11 @@
 body {
     background-color: var(--color-primary);
     height: 100vh;
-    width: 100%;
+    width: 1280px;
+    margin: auto;
 }
+
+/* CABEÇALHO */
 
 header {
     background-color: var(--color-primary);
@@ -65,6 +68,8 @@ header ul li.entrar-btn {
 
 header ul li.entrar-btn:hover {
     background-color: #456854;
+    transition: 0.3s all;
+    cursor: pointer;
 }
 
 header ul li.entrar-btn a:hover {
@@ -80,8 +85,116 @@ header ul li.conta-btn {
 header ul li.conta-btn:hover {
     background-color: #0d6935;
     transition: 0.3s all;
+    cursor: pointer;
 }
 
 header ul li.conta-btn a:hover {
     color: var(--color-white);
 }
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    color: var(--color-white);
+}
+
+main article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+main article img {
+    width: 400px;
+}
+
+main article h1{
+    font-size: 60px;
+    font-weight: 800;
+}
+
+main article h1 span {
+    color: var(--color-secundary);
+}
+
+main aside {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-box {
+    background-color: var(--color-secundary);
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+
+.login-box h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    font-weight: bold;
+}
+
+.input-box p {
+    font-size: 12px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+input:focus-visible {
+    outline: none;
+    background-color: #e6e6e6;
+}
+
+.login-box a {
+    color: var(--color-white);
+    display: block;
+    text-align: center;
+}
+
+.login-box a:hover {
+    color: var(--color-primary);
+    transition: 0.3s all;
+}
+
+.confirm-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.confirm-btn:hover {
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+/* RODAPÉ */
+

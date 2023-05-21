@@ -32,29 +32,32 @@
             </div>
             <div>
                 <h1><span>Estude</span> de um</h1>
-                <h1>jeito mais <span>fácil</span></h1>
+                <h1>jeito mais <span>fácil</span>!</h1>
             </div>
         </article>
 
         <aside>
-            <div>
-                <h1>Login</h1>
-            </div>
-            <div>
-                <form action="#" method="post">
-                    <div>
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div>
-                        <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha">
-                    </div>
-                    <div>
-                        <a href="#">não possui uma conta?</a>
-                    </div>
-                    <input type="submit" value="Entrar">
-                </form>
+            <div class="login-box">
+                <div>
+                    <h1>Login</h1>
+                </div>
+                <div>
+                    <form action="#" method="post">
+                        <div class="input-box">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="senha">Senha</label>
+                            <input type="password" name="senha" id="senha" required>
+                            <p>Sua senha deve conter no minimo 8 caracteres!</p>
+                        </div>
+                        <div>
+                            <a href="#">não possui uma conta?</a>
+                        </div>
+                        <input class="confirm-btn" type="submit" value="Entrar">
+                    </form>
+                </div>
             </div>
         </aside>
     </main>
