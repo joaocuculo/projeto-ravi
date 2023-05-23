@@ -242,3 +242,24 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 1080px) {
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main article {
+        margin-bottom: 50px;
+    }
+
+    main article img {
+        width: 200px;
+    }
+
+    main article h1 {
+        font-size: 30px;
+    }
+}
