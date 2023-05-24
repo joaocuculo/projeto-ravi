@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&family=Jacques+Francois&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --color-primary: #053c1c;
+    --color-secundary: #6ca484;
+    --color-tertiary: #14964C;
+    --color-black: #000;
+    --color-white: #f2f4f3;
+}
+
+/* CABEÇALHO */
+
+header {
+    background-color: var(--color-primary);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li a,
+.menu-responsivo ul li a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+.menu a:hover,
+.menu-responsivo a:hover {
+    color: var(--color-secundary);
+    transition: 0.3s all;
+}
+
+.entrar-btn {
+    background-color: var(--color-secundary);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.entrar-btn:hover {
+    background-color: #456854;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.entrar-btn a:hover,
+.conta-btn a:hover {
+    color: var(--color-white);
+}
+
+.conta-btn {
+    background-color: var(--color-tertiary);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.conta-btn:hover {
+    background-color: #0d6935;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.menu-responsivo-icon {
+    display: none;
+}
+
+.menu-responsivo {
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    /* CABEÇALHO */
+    header nav {
+        padding: 1.5rem 4rem;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-responsivo-icon {
+        display: flex;
+    }
+
+    .menu-responsivo-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu-responsivo ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .menu-responsivo ul li {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .open {
+        display: block;
+    }
+
+}
