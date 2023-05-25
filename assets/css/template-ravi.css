@@ -204,4 +204,30 @@ footer a {
         flex-direction: column;
         gap: 1rem;
     }
+
+    .footer-list {
+        font-size: 0.9rem;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    /* CABEÇALHO */
+    header nav {
+        padding: 1.5rem 2rem;
+    }
+
+    /* RODAPÉ */
+    .footer-logo img {
+        height: 60px;
+    }
+
+    .footer-list {
+        font-size: 0.7rem;
+        gap: 1.5rem;
+    }
+
+    .developers {
+        font-size: 0.7rem;
+    }
 }
