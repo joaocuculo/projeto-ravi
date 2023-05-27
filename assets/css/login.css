@@ -139,6 +139,7 @@ aside form {
     background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: bold;
+    font-size: 1.2rem;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 
 }
@@ -159,14 +160,15 @@ aside form {
 }
 
 @media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
     article {
         display: none;
     }
 
-    aside {
-        width: 100%;
-    }
-
+    aside,
     aside form {
         width: 100%;
     }

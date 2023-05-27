@@ -1,0 +1,126 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    background-color: var(--color-primary);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 80%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.cad-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cad-image img {
+    width: 70%;
+}
+
+.comece-estudos {
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.comece-estudos span {
+    color: var(--color-secundary);
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.cad {
+    background-color: var(--color-secundary);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    width: 70%;
+}
+
+.cad-title {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: var(--color-white);
+}
+
+.btns-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cad-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.2rem 1.6rem;
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.cad-btn:hover {
+    background-color: var(--color-tertiary);
+}
+
+.cad-btn a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.cad-btn a i {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .comece-estudos {
+        font-size: 1.5rem;
+    }
+
+    .cad {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    article {
+        display: none;
+    }
+
+    aside,
+    .cad {
+        width: 100%;
+    }
+}
