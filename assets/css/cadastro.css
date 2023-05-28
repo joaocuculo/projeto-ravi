@@ -83,20 +83,17 @@ aside {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: 0.3s all;
-}
-
-.cad-btn:hover {
-    background-color: var(--color-tertiary);
-}
-
-.cad-btn a {
     text-decoration: none;
     color: var(--color-white);
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-.cad-btn a i {
+.cad-btn:hover {
+    background-color: var(--color-tertiary);
+}
+
+.cad-btn i {
     margin-right: 1rem;
 }
 
