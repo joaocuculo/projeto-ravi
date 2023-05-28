@@ -141,7 +141,7 @@ aside form {
     font-weight: bold;
     font-size: 1.2rem;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-
+    transition: 0.3s all;
 }
 
 .entrar-form-btn button:hover {

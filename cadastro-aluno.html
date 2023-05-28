@@ -62,10 +62,12 @@
                     <div class="input-box">
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                        <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
                     </div>
                     <div class="input-box">
                         <label for="senha-conf">Confirme sua senha</label>
                         <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" required>
+                        <i class="fa-solid fa-eye" id="btn-senha-conf" onclick="mostrarSenhaConf()"></i>
                     </div>
                     <div class="input-box">
                         <label for="DN">Data de nascimento</label>
@@ -91,9 +93,10 @@
                         <label for="CEP">CEP</label>
                         <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" required>
                     </div>
+
                     <div class="inputs-sexo">
                         <div class="title-sexo">
-                            <h6>Sexo</h6>
+                            <label>Sexo</label>
                         </div>
 
                         <div class="sexo-group">
@@ -117,9 +120,9 @@
                     </div>
                 </div>
 
-                <div class="cad-btn">
-                    <button><a href="#">Cadastrar</a></button>
-                </div>
+                <button class="cad-btn">
+                    <a href="#">Cadastrar</a>
+                </button>
             </form>
         </div>
     </main>
@@ -146,5 +149,6 @@
     </footer>
 
     <script src="assets/js/template.js"></script>
+    <script src="assets/js/mostrar-senha.js"></script>
 </body>
 </html>

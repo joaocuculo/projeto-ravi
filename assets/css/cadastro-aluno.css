@@ -3,16 +3,16 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
-    background-color: blueviolet;
+    height: 100%;
+    padding: 3rem 0;
+    background-color: var(--color-primary);
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    width: 70%;
+    width: 800px;
     background-color: var(--color-secundary);
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -24,6 +24,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .form-title {
@@ -35,6 +36,7 @@ form {
 .input-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .input-box {
@@ -45,15 +47,103 @@ form {
     position: relative;
 }
 
+.input-box i {
+    color: var(--color-primary);
+    position: absolute;
+    right: 5%;
+    bottom: 23.5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .input-box label {
     font-size: 1.1rem;
 }
 
 .input-box input {
     font-size: 1rem;
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
-/* parei aqui paizao */
+
+.input-box input:focus-visible {
+    background-color: #e6e6e6;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.inputs-sexo {
+    color: var(--color-white);
+    margin-bottom: 3rem;
+}
+
+.title-sexo {
+    font-weight: normal;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
 .sexo-group {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+input[type="radio"]{
+    width: 18px;
+    height: 18px;
+}
+
+.sexo-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cad-btn {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s all;
+}
+
+.cad-btn a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.cad-btn:hover {
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .sexo-group {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container {
+        padding: 1.5rem;
+    }
 }
