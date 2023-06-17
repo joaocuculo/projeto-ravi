@@ -34,11 +34,11 @@
 
         <div class="menu-responsivo">
             <ul>
-                <li><a href="#">Início</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Matérias</a></li>
-                <li class="entrar-btn"><a href="#">Entrar</a></li>
-                <li class="conta-btn"><a href="#">Crie sua conta</a></li>
+                <li class="entrar-btn"><a href="login.html">Entrar</a></li>
+                <li class="conta-btn"><a href="cadastro.html">Crie sua conta</a></li>
             </ul>
         </div>
     </header>
@@ -47,7 +47,7 @@
         <div class="container">
             <form action="#" method="post">
                 <div class="form-title">
-                    <h1>Cadastro do Aluno</h1>
+                    <h1>Cadastro do Professor</h1>
                 </div>
 
                 <div class="input-group">

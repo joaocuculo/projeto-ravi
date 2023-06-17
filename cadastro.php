@@ -33,10 +33,10 @@
 
         <div class="menu-responsivo">
             <ul>
-                <li><a href="#">Início</a></li>
+                <li><a href="index.hmtl">Início</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Matérias</a></li>
-                <li class="entrar-btn"><a href="#">Entrar</a></li>
+                <li class="entrar-btn"><a href="login.html">Entrar</a></li>
             </ul>
         </div>
     </header>
