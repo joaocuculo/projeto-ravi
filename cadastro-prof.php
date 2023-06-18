@@ -63,7 +63,15 @@
                         <label for="CEP">CEP</label>
                         <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" required>
                     </div>
-
+                    <div class="input-box">
+                        <label for="area-forma">Área de Formação</label>
+                        <input type="text" name="area-forma" id="area-forma" placeholder="Digite sua(s) área(s) de formação" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="curriculo">Currículo</label>
+                        <input type="file" class="input-curriculo" name="curriculo" id="curriculo" required>
+                    </div>
+                    
                     <div class="inputs-sexo">
                         <div class="title-sexo">
                             <label>Sexo</label>
@@ -87,15 +95,6 @@
                                 <label for="none">Prefiro não dizer</label>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="area-forma">Área de Formação</label>
-                        <input type="text" name="area-forma" id="area-forma" placeholder="Digite sua(s) área(s) de formação" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="curriculo">Currículo</label>
-                        <input type="file" class="input-curriculo" name="curriculo" id="curriculo" required>
                     </div>
                 </div>
 
