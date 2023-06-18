@@ -106,6 +106,12 @@ input[type="radio"]{
     gap: 1rem;
 }
 
+/*Cadastro do Professor*/
+.input-curriculo {
+    color: var(--color-black);
+    background-color: blue;
+}
+
 .cad-btn {
     width: 100%;
     padding: 0.8rem 1.2rem;

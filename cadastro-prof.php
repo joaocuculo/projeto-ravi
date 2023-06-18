@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/header-footer.css">
-    <link rel="stylesheet" href="assets/css/cadastro-aluno.css">
+    <link rel="stylesheet" href="assets/css/cadastro-aluno-prof.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Cadastro</title>
 </head>
@@ -87,6 +87,15 @@
                                 <label for="none">Prefiro não dizer</label>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="area-forma">Área de Formação</label>
+                        <input type="text" name="area-forma" id="area-forma" placeholder="Digite sua(s) área(s) de formação" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="curriculo">Currículo</label>
+                        <input type="file" class="input-curriculo" name="curriculo" id="curriculo" required>
                     </div>
                 </div>
 
