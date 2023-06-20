@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/header-footer.css">
-    <link rel="stylesheet" href="assets/css/cadastro-aluno-prof.css">
+    <link rel="stylesheet" href="assets/css/cadastro-pessoas.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Cadastro</title>
 </head>
@@ -45,11 +45,11 @@
                     </div>
                     <div class="input-box">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" required>
+                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="14" maxlength="15" required>
                     </div>
                     <div class="input-box">
                         <label for="CPF">CPF</label>
-                        <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" required>
+                        <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" minlength="14" maxlength="14" required>
                     </div>
                     <div class="input-box">
                         <label for="RG">RG</label>
@@ -101,5 +101,6 @@
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
+    <script src="assets/js/validacao.js"></script>
 </body>
 </html>
