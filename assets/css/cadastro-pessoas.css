@@ -148,6 +148,66 @@ input[type="radio"]{
     cursor: pointer;
 }
 
+/* MODAL */
+.janela-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.466);
+}
+
+.janela-modal.abrir {
+    display: flex;
+}
+
+.modal {
+    width: 60%;
+    min-width: 320px;
+    min-height: 200px;
+    background-color: #ffffffa8;
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-btn-modal {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.btn-modal {
+    width: 30%;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(165, 165, 165);
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.btn-modal:hover {
+    background-color: var(--color-secundary);
+}
+
+.btn-modal a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
 @media screen and (max-width: 850px) {
     .container {
         width: 95%;

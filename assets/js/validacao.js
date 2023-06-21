@@ -18,6 +18,7 @@ function validate(item) {
     if (item == dn) {
         let hoje = new Date(); //obtem a data atual
         let dataNasc = new Date(dn.value);
+        let menor = '';
 
         let idade = hoje.getFullYear() - dataNasc.getFullYear();
         let mes = hoje.getMonth() - dataNasc.getMonth();
@@ -27,7 +28,14 @@ function validate(item) {
 
         if (idade > 130) item.setCustomValidity('Há algo de errado com sua idade!');
         else if (idade >= 18) item.setCustomValidity('');
-        else item.setCustomValidity('Você precisa de um responsável.') //AQUI É PRA ENTRAR O MODAL
+        else menor = 'menor'; //AQUI É PRA ENTRAR O MODAL
+
+        if (menor == 'menor') {
+          function abrirModal() {
+            const modal = document.getElementById('janela-modal');
+            modal.classList.add('abrir'); 
+          }
+        }
     }
 
     if (item == cpf) {
@@ -106,3 +114,8 @@ senhaConf.addEventListener('input', function(){validate(senhaConf)});
 dn.addEventListener('input', function(){validate(dn)});
 tel.addEventListener('input', function(){maskTel()})
 cpf.addEventListener('input', function(){maskCPF()})
+
+function abrirModal() {
+  const modal = document.getElementById('janela-modal');
+  modal.classList.add('abrir'); 
+}

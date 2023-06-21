@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <button class="cad-btn">
+                <button class="cad-btn" onclick="abrirModal()">
                     <a href="#">Cadastrar</a>
                 </button>
             </form>
@@ -98,6 +98,17 @@
     </main>
 
     <?php require_once("rodape.php") ?>
+
+    <!-- MODAL -->
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <h3>Verificamos que você é menor de idade, portanto será necessário realizar o cadastro do responsável! Deseja continuar o cadastro?</h3>
+            <div class="box-btn-modal">
+                <button class="btn-modal"><a href="cadastro-responsavel.php">Continuar</a></button>
+                <button class="btn-modal" id="cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
