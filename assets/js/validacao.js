@@ -30,12 +30,12 @@ function validate(item) {
         else if (idade >= 18) item.setCustomValidity('');
         else menor = 'menor'; //AQUI É PRA ENTRAR O MODAL
 
-        if (menor == 'menor') {
-          function abrirModal() {
-            const modal = document.getElementById('janela-modal');
-            modal.classList.add('abrir'); 
-          }
-        }
+        // if (menor == 'menor') {
+        //   function abrirModal() {
+        //     const modal = document.getElementById('janela-modal');
+        //     modal.classList.add('abrir'); 
+        //   }
+        // }
     }
 
     if (item == cpf) {
@@ -118,4 +118,10 @@ cpf.addEventListener('input', function(){maskCPF()})
 function abrirModal() {
   const modal = document.getElementById('janela-modal');
   modal.classList.add('abrir'); 
+
+  modal.addEventListener('click', (e) => {
+    if (e.target.id == 'cancelar' || e.target.id == 'janela-modal') {
+      modal.classList.remove('abrir');
+    }
+  })
 }
