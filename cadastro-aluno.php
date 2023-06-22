@@ -31,12 +31,12 @@
                     </div>
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha (mínimo 8 caracteres)" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
                     </div>
                     <div class="input-box">
                         <label for="senha-conf">Confirme sua senha</label>
-                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" required>
+                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha-conf" onclick="mostrarSenhaConf()"></i>
                     </div>
                     <div class="input-box">

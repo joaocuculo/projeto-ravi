@@ -31,12 +31,12 @@
                     </div>
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha (mínimo 8 caracteres)" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
                     </div>
                     <div class="input-box">
                         <label for="senha-conf">Confirme sua senha</label>
-                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" required>
+                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha-conf" onclick="mostrarSenhaConf()"></i>
                     </div>
                     <div class="input-box">
@@ -45,11 +45,11 @@
                     </div>
                     <div class="input-box">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" required>
+                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="14" maxlength="15" required>
                     </div>
                     <div class="input-box">
                         <label for="CPF">CPF</label>
-                        <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" required>
+                        <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" minlength="14" maxlength="14" required>
                     </div>
                     <div class="input-box">
                         <label for="RG">RG</label>
@@ -101,5 +101,6 @@
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
+    <script src="assets/js/validacao.js"></script>
 </body>
 </html>
