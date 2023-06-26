@@ -100,7 +100,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="cad-btn">Cadastrar</button>
+                <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
 
             </form>
         </div>

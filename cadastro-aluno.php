@@ -1,3 +1,23 @@
+<?php
+    if (isset($_POST['cadastrar'])) {
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $senhaConf = $_POST['senha-conf'];
+        $DN = $_POST['DN'];
+        $tel = $_POST['telefone'];
+        $CPF = $_POST['CPF'];
+        $RG = $_POST['RG'];
+        $CEP = $_POST['CEP'];
+        $endereco = $_POST['endereco'];
+        $sexo = $_POST['sexo'];
+
+        if ($senhaConf != $senha) {
+            $mensagem = "As senhas inseridas são diferentes!";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +35,7 @@
 
     <main>
         <div class="container">
-            <form action="#" method="post">
+            <form method="post">
                 <div class="form-title">
                     <h1>Cadastro do Aluno</h1>
                 </div>
@@ -92,7 +112,11 @@
                     </div>
                 </div>
 
-                <button type="submit" class="cad-btn">Cadastrar</button>
+                <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
+
+                <?php if (isset($_POST['cadastrar'])) { ?>
+                <?= $mensagem ?>
+                <?php } ?>
 
             </form>
         </div>
