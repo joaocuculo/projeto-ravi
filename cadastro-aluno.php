@@ -43,25 +43,27 @@
                         <label for="DN">Data de nascimento</label>
                         <input type="date" name="DN" id="DN" required>
                     </div>
-                    <div class="input-box">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="14" maxlength="15" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="CPF">CPF</label>
-                        <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" minlength="14" maxlength="14" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="RG">RG</label>
-                        <input type="text" name="RG" id="RG" placeholder="Digite seu RG" required>
+                    <div class="input-meio-group">
+                        <div class="input-box input-meio">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="14" maxlength="15" required>
+                        </div>
+                        <div class="input-box input-meio">
+                            <label for="CPF">CPF</label>
+                            <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" minlength="14" maxlength="14" required>
+                        </div>
+                        <div class="input-box input-meio">
+                            <label for="RG">RG</label>
+                            <input type="text" name="RG" id="RG" placeholder="Digite seu RG" required>
+                        </div>
+                        <div class="input-box input-meio">
+                            <label for="CEP">CEP</label>
+                            <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" required>
+                        </div>
                     </div>
                     <div class="input-box">
                         <label for="endereco">Endereço</label>
                         <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="CEP">CEP</label>
-                        <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" required>
                     </div>
 
                     <div class="inputs-sexo">
@@ -90,28 +92,15 @@
                     </div>
                 </div>
 
-                <button class="cad-btn" onclick="abrirModal()">
-                    <a href="#">Cadastrar</a>
-                </button>
+                <button type="submit" class="cad-btn">Cadastrar</button>
+
             </form>
         </div>
     </main>
 
     <?php require_once("rodape.php") ?>
 
-    <!-- MODAL -->
-    <div class="janela-modal" id="janela-modal">
-        <div class="modal">
-            <h3>Verificamos que você é menor de idade, portanto será necessário realizar o cadastro do responsável! Deseja continuar o cadastro?</h3>
-            <div class="box-btn-modal">
-                <button class="btn-modal"><a href="cadastro-responsavel.php">Continuar</a></button>
-                <button class="btn-modal" id="cancelar">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
-    <script src="assets/js/validacao.js"></script>
 </body>
 </html>
