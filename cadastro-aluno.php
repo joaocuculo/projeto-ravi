@@ -5,7 +5,7 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $senhaConf = $_POST['senha-conf'];
-        $DN = $_POST['DN'];
+        $DN = new DateTime($_POST['DN']);
         $tel = $_POST['telefone'];
         $CPF = $_POST['CPF'];
         $RG = $_POST['RG'];
@@ -14,8 +14,41 @@
         $sexo = $_POST['sexo'];
 
         if ($senhaConf != $senha) {
-            $mensagem = "As senhas inseridas são diferentes!";
+            $mensagem1 = "As senhas inseridas são diferentes!";
         }
+
+        function calcular_idade($DN){
+            $hoje = new DateTime();
+            
+            // verificando o ano de nascimento
+            if ($hoje->format('Y') == $DN->format('Y')) {
+                $anos = 1;
+            } else {
+                $anos = $hoje->format('Y') - $DN->format('Y');
+            }
+            
+            // verificando de forma mais precisa os meses e dias
+            if ($hoje->format('m') < $DN->format('m')) {
+                $anos--;
+            } elseif ($hoje->format('m') == $DN->format('m')) {
+                if ($hoje->format('d') < $DN->format('d')) {
+                    $anos--;
+                }
+            }
+
+            if ($anos > 130) {
+                $mensagem2 = "Há algo de errado com a sua idade!";
+            } elseif ($anos >= 18) {
+                $mensagem2 = "";
+            } else {
+                $mensagem2 = "Você é menor de idade!";
+            }
+
+            return $mensagem2;
+        }
+
+        echo calcular_idade($DN);
+        
     }
 ?>
 <!DOCTYPE html>
@@ -115,7 +148,7 @@
                 <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
 
                 <?php if (isset($_POST['cadastrar'])) { ?>
-                <?= $mensagem ?>
+                <!-- <?= $DN ?> -->
                 <?php } ?>
 
             </form>
