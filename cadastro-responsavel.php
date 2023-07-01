@@ -19,7 +19,7 @@
                 <div class="form-title">
                     <h1>Cadastro do Responsável</h1>
                 </div>
-
+                
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome</label>
@@ -65,12 +65,12 @@
                         <label for="endereco">Endereço</label>
                         <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" required>
                     </div>
-
+                    
                     <div class="inputs-sexo">
                         <div class="title-sexo">
                             <label>Sexo</label>
                         </div>
-
+                        
                         <div class="sexo-group">
                             <div class="sexo-input">
                                 <input type="radio" name="sexo" id="masc">
@@ -91,16 +91,41 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
             </form>
         </div>
     </main>
-
+    
     <?php require_once("rodape.php") ?>
+    
+    <!-- MODAL -->
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <h3>Verificamos que você é menor de idade, portanto será necessário realizar o cadastro do responsável! Deseja continuar o cadastro?</h3>
+            <div class="box-btn-modal">
+                <button class="btn-modal" id="continuar">Continuar</button>
+                <button class="btn-modal"><a href="login.php">Cancelar</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- FIM DO MODAL -->
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
-    
+    <script>
+        window.onload = abrirModal();
+        
+        function abrirModal() {
+            const modal = document.getElementById('janela-modal');
+            modal.classList.add('abrir'); 
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target.id == 'continuar' || e.target.id == 'janela-modal') {
+                    modal.classList.remove('abrir');
+                }
+            })
+        }
+    </script>
 </body>
 </html>

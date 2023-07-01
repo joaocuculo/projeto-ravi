@@ -46,7 +46,7 @@
         } elseif (calcularIdade($_POST['DN']) >= 18) {
             header("Location: fim-cadastro.php");
         } else {
-            $mensagem2 = "vocec é minor de idade zezao";
+            header("Location: cadastro-responsavel.php");
         }
         
     }
@@ -145,8 +145,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="cad-btn" name="cadastrar" disabled >Cadastrar</button>
-                <button type="submit" class="cad-btn" name="cadastrar">Continuar Cadastro</button>
+                <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
 
                 <?php if (isset($_POST['cadastrar'])) { ?>
                 <?= $mensagem2 ?>
