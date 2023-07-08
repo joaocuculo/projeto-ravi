@@ -103,15 +103,15 @@
                         </div>
                         <div class="input-box input-meio">
                             <label for="CPF">CPF</label>
-                            <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" minlength="14" maxlength="14" required>
+                            <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" autocomplete="off" minlength="14" maxlength="14" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="RG">RG</label>
-                            <input type="text" name="RG" id="RG" placeholder="Digite seu RG" required>
+                            <input type="text" name="RG" id="RG" placeholder="Digite seu RG" maxlength="14" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="CEP">CEP</label>
-                            <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" required>
+                            <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" minlength="9" maxlength="9" required>
                         </div>
                     </div>
                     <div class="input-box">
@@ -159,5 +159,6 @@
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
+    <script src="assets/js/mascaras.js"></script>
 </body>
 </html>
