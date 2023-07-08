@@ -99,7 +99,7 @@
                     <div class="input-meio-group">
                         <div class="input-box input-meio">
                             <label for="telefone">Telefone</label>
-                            <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="14" maxlength="15" required>
+                            <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="15" maxlength="16" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="CPF">CPF</label>
