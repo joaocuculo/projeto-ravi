@@ -60,7 +60,8 @@ form {
     font-size: 1.1rem;
 }
 
-.input-box input {
+.input-box input,
+.input-box select {
     font-size: 1rem;
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
@@ -69,7 +70,8 @@ form {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
 
-.input-box input:focus-visible {
+.input-box input:focus-visible,
+.input-box select:focus-visible {
     background-color: #e6e6e6;
     outline: none;
 }
