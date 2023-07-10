@@ -13,41 +13,44 @@
         $endereco = $_POST['endereco'];
         $sexo = $_POST['sexo'];
 
-        if ($senhaConf != $senha) {
-            $mensagem1 = "As senhas inseridas são diferentes!";
-        }
-
-        function calcularIdade($data){
-
-            $idade = 0;
-            
-            $data_nascimento = date('Y-m-d', strtotime($data));
-            $data = explode("-",$data_nascimento);
-            $anoNasc = $data[0];
-            $mesNasc = $data[1];
-            $diaNasc = $data[2];
-
-            $anoAtual = date("Y");
-            $mesAtual = date("m");
-            $diaAtual = date("d");
-
-            $idade = $anoAtual - $anoNasc;
-            if ($mesAtual < $mesNasc){
-                $idade -= 1;
-            } elseif ( ($mesAtual == $mesNasc) && ($diaAtual <= $diaNasc) ){
-                $idade -= 1;
+        // VERIFICANDO SENHA
+        if ($senhaConf == $senha) {
+            // VERIFICANDO IDADE
+            function calcularIdade($data){
+    
+                $idade = 0;
+                
+                $data_nascimento = date('Y-m-d', strtotime($data));
+                $data = explode("-",$data_nascimento);
+                $anoNasc = $data[0];
+                $mesNasc = $data[1];
+                $diaNasc = $data[2];
+    
+                $anoAtual = date("Y");
+                $mesAtual = date("m");
+                $diaAtual = date("d");
+    
+                $idade = $anoAtual - $anoNasc;
+                if ($mesAtual < $mesNasc){
+                    $idade -= 1;
+                } elseif ( ($mesAtual == $mesNasc) && ($diaAtual <= $diaNasc) ){
+                    $idade -= 1;
+                }
+    
+                return $idade;
             }
-
-            return $idade;
-        }
-
-        if (calcularIdade($_POST['DN']) > 130) {
-            $mensagem2 = "Há algo de errado com sua idade";
-        } elseif (calcularIdade($_POST['DN']) >= 18) {
-            header("Location: fim-cadastro.php");
+    
+            if (calcularIdade($_POST['DN']) > 130) {
+                $mensagem = "Há algo de errado com sua idade";
+            } elseif (calcularIdade($_POST['DN']) >= 18) {
+                header("Location: fim-cadastro.php");
+            } else {
+                header("Location: cadastro-responsavel.php");
+            }
         } else {
-            header("Location: cadastro-responsavel.php");
+            $mensagem = "As senhas inseridas são diferentes!";
         }
+        
         
     }
 ?>
@@ -72,6 +75,12 @@
                 <div class="form-title">
                     <h1>Cadastro do Aluno</h1>
                 </div>
+
+                <?php if (isset($mensagem)) { ?>
+                    <div class="mensagem">
+                        <?= $mensagem ?>
+                    </div>
+                <?php } ?>
 
                 <div class="input-group">
                     <div class="input-box">
@@ -115,7 +124,7 @@
                         </div>
                         <div class="input-box input-meio">
                             <label for="estado">Estado</label>
-                            <select name="estado" id="estado" onchange="buscaCidades(this.value)">
+                            <select name="estado" id="estado" required onchange="buscaCidades(this.value)">
                                 <option value="">Selecione o Estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -148,7 +157,7 @@
                         </div>
                         <div class="input-box input-meio">
                             <label for="cidade">Cidade</label>
-                            <select name="cidade" id="cidade">
+                            <select name="cidade" id="cidade" required>
                             </select>
                         </div>
                     </div>
@@ -184,10 +193,6 @@
                 </div>
 
                 <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
-
-                <?php if (isset($_POST['cadastrar'])) { ?>
-                <?= $mensagem2 ?>
-                <?php } ?>
 
             </form>
         </div>
