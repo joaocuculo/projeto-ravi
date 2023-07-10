@@ -50,8 +50,6 @@
         } else {
             $mensagem = "As senhas inseridas são diferentes!";
         }
-        
-        
     }
 ?>
 <!DOCTYPE html>
