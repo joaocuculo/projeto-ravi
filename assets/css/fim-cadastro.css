@@ -1,3 +1,7 @@
+body {
+    background-color: var(--color-primary);
+}
+
 main {
     display: flex;
     align-items: center;
