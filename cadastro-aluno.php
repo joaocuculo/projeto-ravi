@@ -10,6 +10,8 @@
         $CPF = $_POST['CPF'];
         $RG = $_POST['RG'];
         $CEP = $_POST['CEP'];
+        $estado = $_POST['estado'];
+        $cidade = $_POST['cidade'];
         $endereco = $_POST['endereco'];
         $sexo = $_POST['sexo'];
 

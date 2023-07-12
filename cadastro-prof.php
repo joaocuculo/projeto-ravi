@@ -10,7 +10,11 @@
         $CPF = $_POST['CPF'];
         $RG = $_POST['RG'];
         $CEP = $_POST['CEP'];
+        $estado = $_POST['estado'];
+        $cidade = $_POST['cidade'];
         $endereco = $_POST['endereco'];
+        $areaForma = $_POST['area-forma'];
+        $curriculo = $_POST['curriculo'];
         $sexo = $_POST['sexo'];
 
         // VERIFICANDO SENHA
