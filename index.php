@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/header-footer.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Cadastro</title>
 </head>
@@ -18,21 +19,23 @@
                 <img src="assets/img/undraw_mathematics_-4-otb.svg">
             </figure>
             <section>
-                <h1>Inicie seus estudos de um jeito novo!</h1>
-                <a href="cadastro.php"><button>Vem participar</button></a>
+                <h1>Inicie seus estudos de</h1>
+                <h1>um jeito novo!</h1>
+                <a href="cadastro.php"><button class="cad-btn">Vem participar</button></a>
             </section>
         </div>
         <div class="estude-casa">
             <section>
-                <h1><span>Estude</span> de casa com um professor de sua <span>preferência</span>!</h1>
+                <h1><span>Estude</span> de casa com um professor</h1>
+                <h1>de sua <span>preferência</span>!</h1>
             </section>
             <section>
                 <p>Escolha o professor que tem a personalidade, experiência profissional e área de foco que você precisa!</p>
-                <a href="cadastro.php"><button>Comece a aprender <i class="fa-solid fa-arrow-right"></i></button></a>
+                <a href="cadastro.php"><button class="cad-btn2">Comece a aprender</button></a>
             </section>
         </div>
         <div class="cursos">
-            <div>
+            <div class="escolha">
                 <figure>
                     <img src="assets/img/undraw_teacher_re_sico.svg">
                 </figure>
@@ -41,7 +44,7 @@
                 </div>
             </div>
             <section>
-                <div>
+                <div class="card-cursos">
                     <article class="card">
                         <img src="assets/img/pi-icon.png">
                         <strong>Matemática</strong>
@@ -93,6 +96,5 @@
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>
-    <script src="assets/js/mascaras.js"></script>
 </body>
 </html>
