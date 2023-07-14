@@ -8,7 +8,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     padding-top: 2rem;
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
 }
 
 .banner figure img {
@@ -49,7 +49,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
 }
 .estude-casa section {
     display: flex;
@@ -113,5 +113,24 @@ body {
 .card-cursos {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 8rem;
+}
+
+.card {
+    background-image: linear-gradient(to bottom, #0d6935 0, #0d6935 50%, #D9D7CA 50%);
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    padding: 2rem 1rem;
+    align-items: end;
+}
+
+.card img {
+    width: 50px;
+}
+
+.card strong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
