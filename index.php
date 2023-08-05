@@ -53,21 +53,21 @@
                         </a>
                     </article>
                     <article class="card">
-                        <a href="#">
+                        <a href="#" id="port">
                             <img src="assets/img/abc-icon.png">
                             <strong>Português</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
                         </a>
                     </article>
                     <article class="card">
-                        <a href="#">
+                        <a href="#" id="fis">
                             <img src="assets/img/atom-icon.png">
                             <strong>Física</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
                         </a>
                     </article>
                     <article class="card">
-                        <a href="#">
+                        <a href="#" id="hist">
                             <img src="assets/img/ruins-icon.png">
                             <strong>História</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>

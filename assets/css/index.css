@@ -137,12 +137,25 @@ body {
     transition: transform .3s;
 }
 
+#port {
+    background-image: linear-gradient(to bottom, #143896 0, #143896 50%, #D9D7CA 50%);
+}
+
+#fis {
+    background-image: linear-gradient(to bottom, #961414 0, #961414 50%, #D9D7CA 50%);
+}
+
+#hist {
+    background-image: linear-gradient(to bottom, #D18D08 0, #D18D08 50%, #D9D7CA 50%);
+}
+
 .card img {
     width: 50px;
 }
 
 .card strong {
     padding: 1rem;
+    font-size: 1.2rem;
 }
 
 .vire-prof {
