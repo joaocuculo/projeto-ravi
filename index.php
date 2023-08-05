@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/header-footer.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
-    <title>Ravi - Cadastro</title>
+    <title>Ravi</title>
 </head>
 <body>
     <?php require_once("menu1.php") ?>
@@ -46,30 +46,30 @@
             <section>
                 <div class="card-cursos">
                     <article class="card">
-                        <img src="assets/img/pi-icon.png">
-                        <strong>Matemática</strong>
                         <a href="#">
+                            <img src="assets/img/pi-icon.png">
+                            <strong>Matemática</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
                         </a>
                     </article>
                     <article class="card">
-                        <img src="assets/img/abc-icon.png">
-                        <strong>Português</strong>
                         <a href="#">
+                            <img src="assets/img/abc-icon.png">
+                            <strong>Português</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
                         </a>
                     </article>
                     <article class="card">
-                        <img src="assets/img/atom-icon.png">
-                        <strong>Física</strong>
                         <a href="#">
+                            <img src="assets/img/atom-icon.png">
+                            <strong>Física</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
                         </a>
                     </article>
                     <article class="card">
-                        <img src="assets/img/ruins-icon.png">
-                        <strong>História</strong>
                         <a href="#">
+                            <img src="assets/img/ruins-icon.png">
+                            <strong>História</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
                         </a>
                     </article>
@@ -82,12 +82,12 @@
             </figure>
             <section>
                 <div>
-                    <h1>Torne-se nosso professor</h1>
+                    <h1>Torne-se nosso <span>professor<span></h1>
                 </div>
                 <div>
                     <p>Entre para o nosso time de professores, nos informe sua formação e ganhe uma renda com o Ravi!</p>
                 </div>
-                <a href="cadastro-professor.php"><button>Comece agora</button></a>
+                <a href="cadastro-professor.php"><button class="cad-btn2 cad-btn3">Comece agora</button></a>
             </section>
         </div>
     </main>
