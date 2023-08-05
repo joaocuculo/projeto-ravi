@@ -11,7 +11,7 @@
     <title>Ravi</title>
 </head>
 <body>
-    <?php require_once("menu1.php") ?>
+    <?php require_once("template/menu-index.php") ?>
 
     <main>
         <div class="banner">
@@ -21,7 +21,7 @@
             <section>
                 <h1>Inicie seus estudos de</h1>
                 <h1>um jeito novo!</h1>
-                <a href="cadastro.php"><button class="cad-btn">Vem participar</button></a>
+                <a href="screens/cadastro.php"><button class="cad-btn">Vem participar</button></a>
             </section>
         </div>
         <div class="estude-casa">
@@ -31,7 +31,7 @@
             </section>
             <section>
                 <p>Escolha o professor que tem a personalidade, experiência profissional e área de foco que você precisa!</p>
-                <a href="cadastro.php"><button class="cad-btn2">Comece a aprender</button></a>
+                <a href="screens/cadastro.php"><button class="cad-btn2">Comece a aprender</button></a>
             </section>
         </div>
         <div class="cursos">
@@ -87,12 +87,12 @@
                 <div>
                     <p>Entre para o nosso time de professores, nos informe sua formação e ganhe uma renda com o Ravi!</p>
                 </div>
-                <a href="cadastro-professor.php"><button class="cad-btn2 cad-btn3">Comece agora</button></a>
+                <a href="screens/cadastro-prof.php"><button class="cad-btn2 cad-btn3">Comece agora</button></a>
             </section>
         </div>
     </main>
 
-    <?php require_once("rodape.php") ?>
+    <?php require_once("template/rodape-index.php") ?>
 
     <script src="assets/js/menu-show.js"></script>
     <script src="assets/js/mostrar-senha.js"></script>

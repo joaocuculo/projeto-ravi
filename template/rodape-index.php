@@ -6,10 +6,10 @@
 
         <ul class="footer-list">
             <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
+            <li><a href="screens/sobre.php">Sobre</a></li>
             <li><a href="#">Matérias</a></li>
             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-x-twitter"></i>
             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
         </ul>
     </div>

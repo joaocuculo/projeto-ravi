@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/header-footer.css">
-    <link rel="stylesheet" href="assets/css/cadastro.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/header-footer.css">
+    <link rel="stylesheet" href="../assets/css/cadastro.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Cadastro</title>
 </head>
 <body>
-    <?php require_once("menu3.php") ?>
+    <?php require_once("../template/menu3.php") ?>
 
     <main>
         <div class="container">
             <article>
                 <div class="cad-image">
-                    <img src="assets/img/undraw_education_f8ru.svg">
+                    <img src="../assets/img/undraw_education_f8ru.svg">
                 </div>
                 <div class="comece-estudos">
                     <h1><span>Comece</span> os estudos</h1>
@@ -46,8 +46,8 @@
         </div>
     </main>
 
-    <?php require_once("rodape.php") ?>
+    <?php require_once("../template/rodape.php") ?>
 
-    <script src="assets/js/menu-show.js"></script>
+    <script src="../assets/js/menu-show.js"></script>
 </body>
 </html>
