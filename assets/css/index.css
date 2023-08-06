@@ -196,3 +196,32 @@ body {
 .cad-btn3 {
     width: 18rem;
 }
+
+@media screen and (max-width: 1225px) {
+    .card-cursos {
+        gap: 4rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .card-cursos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card a {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .card-cursos {
+        gap: 2rem;
+    }
+
+    .card a {
+        width: 23rem;
+    }
+}
