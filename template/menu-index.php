@@ -15,7 +15,7 @@
         </div>
 
         <div class="menu-responsivo-icon">
-            <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg"></button>
+            <button onclick="menuShowIndex()"><img class="icon" src="assets/img/menu_white_36dp.svg"></button>
         </div>
     </nav>
 

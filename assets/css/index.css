@@ -27,7 +27,7 @@ body {
 }
 
 .cad-btn {
-    width: 250px;
+    width: 19.5rem;
     padding: 0.8rem 1.2rem;
     margin-top: 2rem;
     border: none;
@@ -64,7 +64,7 @@ body {
 .estude-casa section p {
     font-weight: bold;
     font-size: 1.2rem;
-    margin: 2rem 0;
+    margin: 2rem 2rem;
 }
 
 .estude-casa section span {
@@ -201,22 +201,100 @@ body {
     .card-cursos {
         gap: 4rem;
     }
+
+    .vire-prof h1 {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 1024px) {
+    .banner figure img {
+        width: 300px;
+    }
+    
     .card-cursos {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .estude-casa section p {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .banner, .estude-casa, .cursos {
+        margin-bottom: 8rem;
+    }
+
+    .banner figure img,
+    .escolha figure img,
+    .vire-prof figure img {
+        width: 200px;
+    }
+
+    .banner section h1 {
+        font-size: 2rem;
+    }
+
+    .cad-btn {
+        margin-top: 1rem;
+    }
+
     .card a {
         width: 18rem;
+    }
+
+    .estude-casa section h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0 2rem;
+    }
+
+    .escolha h1 {
+        font-size: 1.8rem;
+        margin: 0 2rem;
+        text-align: center;
+    }
+
+    .vire-prof {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .vire-prof section {
+        width: 100%;
+    }
+
+    .vire-prof section p {
+        margin: 0 2rem 1.2rem;
     }
 }
 
 @media screen and (max-width: 515px) {
+    .banner {
+        background-image: linear-gradient(to bottom, var(--color-primary) 0, var(--color-primary) 85%, var(--color-white) 15%);
+        padding-bottom: 3rem;
+        flex-direction: column-reverse;
+    }
+
+    .banner figure {
+        margin-top: 2rem;
+    }
+
+    .banner section h1 {
+        font-size: 2rem;
+    }
+    
+    .cad-btn {
+        width: 14rem;
+    }
+
+    .cad-btn2 {
+        width: 22rem;
+    }
+
     .card-cursos {
         gap: 2rem;
     }
