@@ -16,11 +16,7 @@
         $estado = $_POST['estado'];
         $cidade = $_POST['cidade'];
         $endereco = $_POST['endereco'];
-        $areaForma = $_POST['area-forma'];
-        $curriculo = $_POST['curriculo'];
         $sexo = $_POST['sexo'];
-        $conteudo = $_POST['conteudo'];
-        $valorHora = $_POST['valor-hora'];
 
         // VERIFICANDO SENHA
         if ($senhaConf == $senha) {
@@ -69,7 +65,7 @@
             if (calcularIdade($_POST['DN']) > 130) {
                 $mensagem = "Há algo de errado com sua idade.";
             } else {
-                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$curriculo', '$conteudo', '$valorHora')";
+                $sql = "insert into aluno (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo')";
 
                 mysqli_query($conexao, $sql);
 
@@ -190,22 +186,6 @@
                     <div class="input-box">
                         <label for="endereco">Endereço</label>
                         <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="area-forma">Área de Formação</label>
-                        <input type="text" name="area-forma" id="area-forma" placeholder="Digite sua(s) área(s) de formação" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="conteudo">Conteúdo</label>
-                        <textarea name="conteudo" id="conteudo" placeholder="Digite conteúdos que tem conhecimento" rows="4" required></textarea>
-                    </div>
-                    <div class="input-box">
-                        <label for="valor-hora">Valor Hora/Aula</label>
-                        <input type="textarea" name="valor-hora" id="valor-hora" placeholder="Digite o valor de suas aulas por horas ministradas" required>
-                    </div>
-                    <div class="input-box">
-                        <label for="curriculo">Currículo</label>
-                        <input type="file" class="input-curriculo" name="curriculo" id="curriculo" required>
                     </div>
                     
                     <div class="inputs-sexo">
