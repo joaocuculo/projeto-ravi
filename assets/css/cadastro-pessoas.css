@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body {
+    background-color: var(--color-primary);
+}
+
 main {
     display: flex;
     align-items: center;
@@ -92,7 +96,11 @@ form {
 
 .input-box input::placeholder,
 .input-box textarea::placeholder {
-color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+}
+
+textarea {
+    resize: vertical;
 }
 
 .input-meio-group {
@@ -156,7 +164,7 @@ input[type="radio"]{
 .cad-btn {
     width: 100%;
     padding: 0.8rem 1.2rem;
-    margin-bottom: 0.6rem;
+    margin: 2rem 0 0.6rem;
     border: none;
     border-radius: 15px;
     background-color: var(--color-primary);

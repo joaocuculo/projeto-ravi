@@ -24,6 +24,23 @@
 
         // VERIFICANDO SENHA
         if ($senhaConf == $senha) {
+            
+            // VERIFICANDO SEXO
+            switch ($sexo) {
+                case 1:
+                    $sexo = "masculino";
+                    break;
+                case 2:    
+                    $sexo = "feminino";
+                    break;
+                case 3:
+                    $sexo = "outro";
+                    break;
+                case 4:
+                    $sexo = "none";        
+                    break;
+            }
+
             // VERIFICANDO IDADE
             function calcularIdade($data){
     
@@ -199,20 +216,20 @@
                         </div>
 
                         <div class="sexo-group">
-                            <div class="sexo-input">
-                                <input type="radio" name="sexo" id="masc">
+                        <div class="sexo-input">
+                                <input type="radio" name="sexo" id="masc" value="1">
                                 <label for="masc">Masculino</label>
                             </div>
                             <div class="sexo-input">
-                                <input type="radio" name="sexo" id="fem">
+                                <input type="radio" name="sexo" id="fem" value="2">
                                 <label for="fem">Feminino</label>
                             </div>
                             <div class="sexo-input">
-                                <input type="radio" name="sexo" id="outro">
+                                <input type="radio" name="sexo" id="outro" value="3">
                                 <label for="outro">Outro</label>
                             </div>
                             <div class="sexo-input">
-                                <input type="radio" name="sexo" id="none">
+                                <input type="radio" name="sexo" id="none" value="4" checked>
                                 <label for="none">Prefiro não dizer</label>
                             </div>
                         </div>
