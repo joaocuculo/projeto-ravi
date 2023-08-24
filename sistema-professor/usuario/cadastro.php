@@ -1,6 +1,8 @@
 <?php
 
-require_once('../../conexao.php');
+    require_once('../../verifica-autenticacao.php');
+
+    require_once('../../conexao.php');
 
     if (isset($_POST['cadastrar'])) {
 

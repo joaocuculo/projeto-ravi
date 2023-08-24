@@ -9,8 +9,8 @@
                 <li><a href="../principal.php">Início</a></li>
                 <li><a href="../screens/sobre.php">Sobre</a></li>
                 <li><a href="#">Matérias</a></li>
-                <li class="entrar-btn"><a href="../screens/login.php">Entrar</a></li>
                 <li class="conta-btn"><a href="../screens/cadastro.php">Crie sua conta</a></li>
+                <li class="entrar-btn"><a href="../../sair.php">Sair</a></li>
             </ul>
         </div>
 
