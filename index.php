@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/header-footer.css">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Login</title>
 </head>
@@ -30,6 +30,12 @@
                     <div class="form-title">
                         <h2>Login</h2>
                     </div>
+
+                    <?php if (isset($_GET['mensagem'])) { ?>
+                        <div class="mensagem">
+                            <?= $_GET['mensagem'] ?>
+                        </div>
+                    <?php } ?>
 
                     <div class="input-group">
                         <div class="input-box">

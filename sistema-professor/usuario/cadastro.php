@@ -52,20 +52,20 @@ require_once('../../conexao.php');
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o nome de usuário" required>
                     </div>
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                        <input type="email" name="email" id="email" placeholder="Digite o email" required>
                     </div>
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha (mínimo 8 caracteres)" minlength="8" required>
+                        <input type="password" name="senha" id="senha" placeholder="Digite a senha (mínimo 8 caracteres)" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
                     </div>
                     <div class="input-box">
                         <label for="senha-conf">Confirme sua senha</label>
-                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" minlength="8" required>
+                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme a senha" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha-conf" onclick="mostrarSenhaConf()"></i>
                     </div>
                 </div>

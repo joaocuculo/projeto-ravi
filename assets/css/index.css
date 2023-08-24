@@ -1,307 +1,187 @@
 @charset "UTF-8";
 
-body {
-    background-color: var(--color-white);
-}
-
-.banner {
-    background-image: linear-gradient(to bottom, var(--color-primary) 0, var(--color-primary) 85%, var(--color-white) 15%);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 2rem;
-    margin-bottom: 15rem;
-}
-
-.banner figure img {
-    width: 500px;
-}
-
-.banner section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.banner section h1 {
-    font-size: 2.5rem;
-    color: var(--color-white);
-}
-
-.cad-btn {
-    width: 19.5rem;
-    padding: 0.8rem 1.2rem;
-    margin-top: 2rem;
-    border: none;
-    border-radius: 15px;
-    background-color: var(--color-secundary);
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.3s all;
-    cursor: pointer;
-}
-
-.cad-btn:hover {
-    background-color: #456854;
-}
-
-.estude-casa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15rem;
-}
-.estude-casa section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.estude-casa section h1 {
-    font-size: 2.5rem;
-}
-
-.estude-casa section p {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 2rem 2rem;
-}
-
-.estude-casa section span {
-    color: var(--color-tertiary);
-}
-
-.cad-btn2 {
-    width: 27.3rem;
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 15px;
-    background-color: var(--color-tertiary);
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.3s all;
-    cursor: pointer;
-}
-
-.cad-btn2:hover {
-    background-color: #0d6935;
-}
-
-.cursos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15rem;
-}
-
-.escolha {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.escolha span {
-    color: var(--color-tertiary);
-}
-
-.escolha figure img{
-    width: 400px;
-}
-
-.card-cursos {
+main {
     display: flex;
     align-items: center;
-    gap: 8rem;
-}
-
-.card a {
-    background-image: linear-gradient(to bottom, #0d6935 0, #0d6935 50%, #D9D7CA 50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 16rem;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    color: var(--color-black);
-    cursor: pointer;
-}
-
-.card a:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.507);
-    transition: transform .3s;
-}
-
-#port {
-    background-image: linear-gradient(to bottom, #143896 0, #143896 50%, #D9D7CA 50%);
-}
-
-#fis {
-    background-image: linear-gradient(to bottom, #961414 0, #961414 50%, #D9D7CA 50%);
-}
-
-#hist {
-    background-image: linear-gradient(to bottom, #D18D08 0, #D18D08 50%, #D9D7CA 50%);
-}
-
-.card img {
-    width: 50px;
-}
-
-.card strong {
-    padding: 1rem;
-    font-size: 1.2rem;
-}
-
-.vire-prof {
-    display: flex;
     justify-content: center;
-    gap: 4rem;
-    margin-bottom: 15rem;
+    width: 100%;
+    height: 80vh;
+    background-color: var(--color-primary);
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 80%;
 }
 
-.vire-prof figure img {
-    width: 400px;
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
-.vire-prof section {
+.form-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-image img {
+    width: 70%;
+}
+
+.estude-facil {
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.estude-facil span {
+    color: var(--color-secundary);
+}
+
+aside {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    width: 40%;
+    justify-content: center;
 }
 
-.vire-prof section h1 {
-    font-size: 2.5rem;
-    margin: 3rem 0 1.2rem;
+aside form {
+    background-color: var(--color-secundary);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    width: 70%;
 }
 
-.vire-prof section h1 span {
-    color: var(--color-tertiary);
+.form-title {
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: var(--color-white);
 }
 
-.vire-prof section p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1.2rem;
+.mensagem {
+    width: 100%;
+    background-color: #ffbec3;
+    border: 1px solid #e4848e;
+    border-radius: 10px;
     text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
 }
 
-.cad-btn3 {
-    width: 18rem;
+.input-group {
+    display: flex;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 1225px) {
-    .card-cursos {
-        gap: 4rem;
-    }
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    position: relative;
+}
 
-    .vire-prof h1 {
-        text-align: center;
-    }
+.input-box i {
+    color: var(--color-primary);
+    position: absolute;
+    right: 5%;
+    bottom: 23.5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.input-box label {
+    font-size: 1.1rem;
+}
+
+.input-box input {
+    font-size: 1rem;
+    width: 100%;
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-box input:focus-visible {
+    background-color: #e6e6e6;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.nao-possui-conta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nao-possui-conta a {
+    text-decoration: none;
+    color: var(--color-white);
+    transition: 0.3s all;
+}
+
+.nao-possui-conta a:hover {
+    color: var(--color-primary);
+}
+
+.entrar-form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.entrar-form-btn button {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s all;
+}
+
+.entrar-form-btn button:hover {
+    background-color: var(--color-tertiary);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {
-    .banner figure img {
-        width: 300px;
-    }
-    
-    .card-cursos {
-        flex-wrap: wrap;
-        justify-content: center;
+    .estude-facil {
+        font-size: 1.5rem;
     }
 
-    .estude-casa section p {
-        text-align: center;
+    aside form {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .banner, .estude-casa, .cursos {
-        margin-bottom: 8rem;
+    .container {
+        width: 90%;
     }
 
-    .banner figure img,
-    .escolha figure img,
-    .vire-prof figure img {
-        width: 200px;
+    article {
+        display: none;
     }
 
-    .banner section h1 {
-        font-size: 2rem;
-    }
-
-    .cad-btn {
-        margin-top: 1rem;
-    }
-
-    .card a {
-        width: 18rem;
-    }
-
-    .estude-casa section h1 {
-        font-size: 2rem;
-        text-align: center;
-        margin: 0 2rem;
-    }
-
-    .escolha h1 {
-        font-size: 1.8rem;
-        margin: 0 2rem;
-        text-align: center;
-    }
-
-    .vire-prof {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-    }
-
-    .vire-prof section {
+    aside,
+    aside form {
         width: 100%;
-    }
-
-    .vire-prof section p {
-        margin: 0 2rem 1.2rem;
-    }
-}
-
-@media screen and (max-width: 515px) {
-    .banner {
-        background-image: linear-gradient(to bottom, var(--color-primary) 0, var(--color-primary) 85%, var(--color-white) 15%);
-        padding-bottom: 3rem;
-        flex-direction: column-reverse;
-    }
-
-    .banner figure {
-        margin-top: 2rem;
-    }
-
-    .banner section h1 {
-        font-size: 2rem;
-    }
-    
-    .cad-btn {
-        width: 14rem;
-    }
-
-    .cad-btn2 {
-        width: 22rem;
-    }
-
-    .card-cursos {
-        gap: 2rem;
-    }
-
-    .card a {
-        width: 23rem;
     }
 }
