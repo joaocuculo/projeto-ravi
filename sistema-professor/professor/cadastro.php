@@ -19,7 +19,8 @@
         $cidade = $_POST['cidade'];
         $endereco = $_POST['endereco'];
         $areaForma = $_POST['area-forma'];
-        $curriculo = $_POST['curriculo'];
+        $diretorio = "uploads/";
+        $curriculoDestino = $diretorio . $_FILES['curriculo']['name'];
         $sexo = $_POST['sexo'];
         $conteudo = $_POST['conteudo'];
         $valorHora = $_POST['valor-hora'];
@@ -67,11 +68,16 @@
     
                 return $idade;
             }
+
+            $nomeCurriculo = "";
+            if (move_uploaded_file($_FILES['curriculo']['tmp_name'], $curriculoDestino)) {
+                $nomeCurriculo = $_FILES['curriculo']['name'];
+            }
     
             if (calcularIdade($_POST['DN']) > 130) {
                 $mensagem = "Há algo de errado com sua idade.";
             } elseif (calcularIdade($_POST['DN']) >= 18) {
-                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$curriculo', '$conteudo', '$valorHora')";
+                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora')";
 
                 mysqli_query($conexao, $sql);
 
@@ -101,7 +107,7 @@
 
     <main>
         <div class="container">
-            <form method="post">
+            <form method="post" name="form" enctype="multipart/form-data">
                 <div class="form-title">
                     <h1>Cadastro do Professor</h1>
                 </div>
