@@ -71,7 +71,7 @@
                             <img src="assets/img/ruins-icon.png">
                             <strong>História</strong>
                             <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
-                        </a>
+                        </a>    
                     </article>
                 </div>
             </section>

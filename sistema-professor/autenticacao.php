@@ -21,7 +21,7 @@
             $_SESSION['nome'] = $professor['nome'];
             $_SESSION['email'] = $professor['email'];
 
-            header("location: professor/cadastro.php");
+            header("location: principal.php");
         } else {
             $sql = "select *
                         from usuario
@@ -39,7 +39,7 @@
                 $_SESSION['nome'] = $usuario['nome'];
                 $_SESSION['email'] = $usuario['email'];
 
-                header("location: usuario/cadastro.php");
+                header("location: principal.php");
             } else {
                 $mensagem = "Usuário/Senha inválidos";
                 header("location: index.php?mensagem=$mensagem");

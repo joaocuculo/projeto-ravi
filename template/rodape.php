@@ -5,8 +5,8 @@
         </div>
 
         <ul class="footer-list">
-            <li><a href="../index.php">Início</a></li>
-            <li><a href="../screens/sobre.php">Sobre</a></li>
+            <li><a href="principal.php">Início</a></li>
+            <li><a href="sobre.php">Sobre</a></li>
             <li><a href="#">Matérias</a></li>
             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-x-twitter"></i>

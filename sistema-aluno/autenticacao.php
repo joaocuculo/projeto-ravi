@@ -21,7 +21,7 @@
             $_SESSION['nome'] = $aluno['nome'];
             $_SESSION['email'] = $aluno['email'];
 
-            header("location: aluno/cadastro.php");
+            header("location: principal.php");
         } else {
             $mensagem = "Usuário/Senha inválidos";
             header("location: index.php?mensagem=$mensagem");

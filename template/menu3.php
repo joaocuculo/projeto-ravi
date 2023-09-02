@@ -6,10 +6,10 @@
 
         <div class="menu">
             <ul>
-                <li><a href="../index.php">Início</a></li>
-                <li><a href="../screens/sobre.php">Sobre</a></li>
+                <li><a href="../principal.php">Início</a></li>
+                <li><a href="../sobre.php">Sobre</a></li>
                 <li><a href="#">Matérias</a></li>
-                <li class="entrar-btn"><a href="../screens/login.php">Entrar</a></li>
+                <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
             </ul>
         </div>
 
@@ -20,10 +20,10 @@
 
     <div class="menu-responsivo">
         <ul>
-            <li><a href="../index.php">Início</a></li>
-            <li><a href="../screens/sobre.php">Sobre</a></li>
+            <li><a href="../principal.php">Início</a></li>
+            <li><a href="../sobre.php">Sobre</a></li>
             <li><a href="#">Matérias</a></li>
-            <li class="entrar-btn"><a href="../screens/login.php">Entrar</a></li>
+            <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
         </ul>
     </div>
 </header>
