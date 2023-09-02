@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/header-footer.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/header-footer.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Login</title>
 </head>
 <body>
-    <?php require_once("template/menu-index.php"); ?>
+    <?php require_once("../template/menu-index.php"); ?>
 
     <main>
         <div class="container">
             <article>
                 <div class="form-image">
-                    <img src="assets/img/undraw_online_learning_re_qw08.svg">
+                    <img src="../assets/img/undraw_online_learning_re_qw08.svg">
                 </div>
                 <div class="estude-facil">
                     <h1><span>Estude</span> de um</h1>
@@ -61,9 +61,9 @@
         </div>
     </main>
 
-    <?php require_once("template/rodape-index.php"); ?>
+    <?php require_once("../template/rodape-index.php"); ?>
 
-    <script src="assets/js/menu-show.js"></script>
-    <script src="assets/js/mostrar-senha.js"></script>
+    <script src="../assets/js/menu-show.js"></script>
+    <script src="../assets/js/mostrar-senha.js"></script>
 </body>
 </html>

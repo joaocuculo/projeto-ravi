@@ -1,6 +1,6 @@
 <?php
 
-    require_once('../../verifica-autenticacao.php');
+    require_once('../verifica-autenticacao.php');
 
     require_once('../../conexao.php');
 

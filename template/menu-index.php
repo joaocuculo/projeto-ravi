@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="assets/img/logo-ravi-complete.svg" alt="Ravi">
+            <img src="../assets/img/logo-ravi-complete.svg" alt="Ravi">
         </div>
 
         <div class="menu">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="menu-responsivo-icon">
-            <button onclick="menuShowIndex()"><img class="icon" src="assets/img/menu_white_36dp.svg"></button>
+            <button onclick="menuShowIndex()"><img class="icon" src="../assets/img/menu_white_36dp.svg"></button>
         </div>
     </nav>
 

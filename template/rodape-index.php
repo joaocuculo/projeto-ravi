@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-conteudo">
         <div class="footer-logo">
-            <img src="assets/img/logo-ravi-complete.svg" alt="Ravi">
+            <img src="../assets/img/logo-ravi-complete.svg" alt="Ravi">
         </div>
 
         <ul class="footer-list">
