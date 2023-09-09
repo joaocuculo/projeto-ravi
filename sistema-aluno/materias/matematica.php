@@ -1,3 +1,14 @@
+<?php
+    require_once('../verifica-autenticacao.php');
+
+    require_once('../../conexao.php');
+
+    $sql = "select * from professor
+               where 1 = 1 ";
+
+    $resultado = mysqli_query($conexao, $sql);
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/header-footer.css">
+    <link rel="stylesheet" href="../../assets/css/materias.css">
     <link rel="stylesheet" href="../../assets/css/principal.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi - Matemática</title>
@@ -14,22 +26,47 @@
     <?php require_once("../../template/menu3.php") ?>
 
     <main>
-        <section>
+        <section class="materia">
             <div>
                 <img src="../../assets/img/pi-icon-big.png">
             </div>
             <div>
                 <h1>Matemática</h1>
             </div>
+            <div class="invisible"><h1>matema</h1></div>
         </section>        
-        <section>
-            <div>
-                <div class="prof">
-                    a
+        <section class="prof">
+            <div class="conheca">
+                <h1>Conheça nossos <span>professores</span></h1>
+            </div>
+            <div class="card-group">
+                <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
+                <div class="cards">
+                    <h2><?= $linha['nome'] ?></h2>
+                    <img src="../../assets/img/user-image.png">
+                    <a href="#">Agendar aula</a>
                 </div>
+                <?php } ?>
             </div>
         </section>
-    </main>
+
+        <section>
+            <div class="vire-prof">
+                <figure>
+                    <img src="../../assets/img/undraw_professor_re_mj1s.svg">
+                </figure>
+                <section>
+                    <div>
+                        <h1>Torne-se nosso <span>professor<span></h1>
+                    </div>
+                    <div>
+                        <p>Entre para o nosso time de professores, nos informe sua formação e ganhe uma renda com o Ravi!</p>
+                    </div>
+                    <a href="screens/cadastro-prof.php"><button class="cad-btn2 cad-btn3">Comece agora</button></a>
+                </section>
+            </div>
+                </main>
+        </section>
 
     <?php require_once("../../template/rodape.php") ?>
 

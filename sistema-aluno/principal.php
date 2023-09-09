@@ -14,7 +14,10 @@
     <?php require_once("../template/menu2.php") ?>
 
     <main>
-        
+        <a href="materias/matematica.php">matematica</a>
+        <a href="materias/portugues.php">portugues</a>
+        <a href="materias/fisica.php">fisica</a>
+        <a href="materias/historia.php">historia</a>
     </main>
 
     <?php require_once("../template/rodape-index.php") ?>
