@@ -6,8 +6,8 @@
 
         <div class="menu" id="menu-materias">
             <ul>
-                <li><a href="../principal.php">Início</a></li>
-                <li><a href="../sobre.php">Sobre</a></li>
+                <li><a href="../aluno/principal.php">Início</a></li>
+                <li><a href="../aluno/sobre.php">Sobre</a></li>
                 <li><a href="#">Matérias</a></li>
                 <li class="entrar-btn" id="btn-materias"><a href="../sair.php">Sair</a></li>
             </ul>
@@ -20,8 +20,8 @@
 
     <div class="menu-responsivo" id="menu-materias">
         <ul>
-            <li><a href="../principal.php">Início</a></li>
-            <li><a href="../sobre.php">Sobre</a></li>
+            <li><a href="../aluno/principal.php">Início</a></li>
+            <li><a href="../aluno/sobre.php">Sobre</a></li>
             <li><a href="#">Matérias</a></li>
             <li class="entrar-btn" id="btn-materias"><a href="../sair.php">Sair</a></li>
         </ul>

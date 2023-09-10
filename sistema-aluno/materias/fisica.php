@@ -62,7 +62,7 @@
                     <div>
                         <p>Entre para o nosso time de professores, nos informe sua formação e ganhe uma renda com o Ravi!</p>
                     </div>
-                    <a href="screens/cadastro-prof.php"><button class="cad-btn2 cad-btn3">Comece agora</button></a>
+                    <a href="../../sistema-professor/professor/cadastro.php"><button class="cad-btn2 cad-btn3">Comece agora</button></a>
                 </section>
             </div>
                 </main>

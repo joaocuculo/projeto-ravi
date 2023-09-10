@@ -1,31 +1,29 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="../assets/img/logo-ravi-complete.svg" alt="Ravi">
+            <img src="assets/img/logo-ravi-complete.svg" alt="Ravi">
         </div>
 
         <div class="menu">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="screens/sobre.php">Sobre</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li class="entrar-btn"><a href="screens/login.php">Entrar</a></li>
-                <li class="conta-btn"><a href="screens/cadastro.php">Crie sua conta</a></li>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                <li class="entrar-btn"><a href="logar.php">Entrar</a></li>
+                <li class="conta-btn"><a href="cadastrar.php">Crie sua conta</a></li>
             </ul>
         </div>
 
         <div class="menu-responsivo-icon">
-            <button onclick="menuShowIndex()"><img class="icon" src="../assets/img/menu_white_36dp.svg"></button>
+            <button onclick="menuShowIndex()"><img class="icon" src="assets/img/menu_white_36dp.svg"></button>
         </div>
     </nav>
 
     <div class="menu-responsivo">
         <ul>
             <li><a href="index.php">Início</a></li>
-            <li><a href="screens/sobre.php">Sobre</a></li>
-            <li><a href="#">Matérias</a></li>
-            <li class="entrar-btn"><a href="screens/login.php">Entrar</a></li>
-            <li class="conta-btn"><a href="screens/cadastro.php">Crie sua conta</a></li>
+            <li><a href="sobre.php">Sobre</a></li>
+            <li class="entrar-btn"><a href="logar.php">Entrar</a></li>
+            <li class="conta-btn"><a href="cadastrar.php">Crie sua conta</a></li>
         </ul>
     </div>
 </header>

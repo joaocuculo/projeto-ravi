@@ -1,7 +1,5 @@
 <?php
 
-    require_once('../verifica-autenticacao.php');
-
     require_once('../../conexao.php');
 
     if (isset($_POST['cadastrar'])) {
@@ -250,7 +248,7 @@
         </div>
     </main>
 
-    <?php require_once("../../template/rodape.php") ?>
+    <?php require_once("../../template/rodape2.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
     <script src="../../assets/js/mostrar-senha.js"></script>

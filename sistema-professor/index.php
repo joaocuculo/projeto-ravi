@@ -11,7 +11,7 @@
     <title>Ravi - Login</title>
 </head>
 <body>
-    <?php require_once("../template/menu-index.php"); ?>
+    <?php require_once("../template/menu-index-login.php"); ?>
 
     <main>
         <div class="container">
@@ -61,7 +61,7 @@
         </div>
     </main>
 
-    <?php require_once("../template/rodape-index.php"); ?>
+    <?php require_once("../template/rodape-index-login.php"); ?>
 
     <script src="../assets/js/menu-show.js"></script>
     <script src="../assets/js/mostrar-senha.js"></script>
