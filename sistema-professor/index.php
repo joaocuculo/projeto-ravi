@@ -20,7 +20,7 @@
                     <img src="../assets/img/undraw_online_learning_re_qw08.svg">
                 </div>
                 <div class="estude-facil">
-                    <h1><span>Estude</span> de um</h1>
+                    <h1><span>Ensine</span> de um</h1>
                     <h1>jeito mais <span>fácil</span>!</h1>
                 </div>
             </article>
