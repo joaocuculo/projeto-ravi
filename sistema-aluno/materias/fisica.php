@@ -20,20 +20,20 @@
     <link rel="stylesheet" href="../../assets/css/materias.css">
     <link rel="stylesheet" href="../../assets/css/principal.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
-    <title>Ravi - Matemática</title>
+    <title>Ravi - Física</title>
 </head>
 <body>
-    <?php require_once("../../template/menu3.php") ?>
+    <?php require_once("../../template/menu-fis.php") ?>
 
     <main>
-        <section class="materia" id="matematica">
+        <section class="materia" id="fisica">
             <div>
-                <img src="../../assets/img/pi-icon-big.png">
+                <img src="../../assets/img/atom-icon-big.png">
             </div>
             <div>
-                <h1>Matemática</h1>
+                <h1>Física</h1>
             </div>
-            <div class="invisible"><img src="../../assets/img/pi-icon-big.png"></div>
+            <div class="invisible"><img src="../../assets/img/atom-icon-big.png"></div>
         </section>        
         <section class="prof">
             <div class="conheca">

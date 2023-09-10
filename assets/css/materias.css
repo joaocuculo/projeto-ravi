@@ -5,13 +5,29 @@ body {
 }
 
 .materia{
-    background-color: var(--color-primary);
     display: flex;
     color: var(--color-white);
     justify-content: space-around;
     /* depois mudar para space between */
     align-items: center;
+    padding-bottom: 1rem;
     margin-bottom: 7rem;
+}
+
+#matematica {
+    background-color: var(--color-primary);
+}
+
+#portugues {
+    background-color: #143896;
+}
+
+#fisica {
+    background-color: #961414;
+}
+
+#historia {
+    background-color: #D18D08;
 }
 
 .materia img {
@@ -31,7 +47,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
 }
 
 .conheca {
@@ -51,7 +67,9 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 5rem 8rem;
+    margin: 0 3rem;
+    max-width: 1800px;
 }
 
 .cards {
@@ -59,7 +77,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 15rem;
+    width: 25rem;
     background-color: #D9D7CA;
     padding: 1rem;
     border-radius: 10px;
@@ -68,7 +86,7 @@ body {
 
 .cards img {
     width: 100px;
-    margin-bottom: 4rem;
+    margin: 1rem 0 4rem;
 }
 
 .cards a {
