@@ -9,11 +9,12 @@
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        $senhaConf = $_POST['senha-conf'];  
+        $senhaConf = $_POST['senha-conf'];
+        $status = 1;
 
         // VERIFICANDO SENHA
         if ($senhaConf == $senha) {
-            $sql = "insert into usuario (nome, email, senha) value ('$nome', '$email', '$senha')";
+            $sql = "insert into usuario (nome, email, senha, status) value ('$nome', '$email', '$senha', '$status')";
 
             mysqli_query($conexao, $sql);
 

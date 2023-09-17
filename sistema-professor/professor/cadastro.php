@@ -22,6 +22,7 @@
         $sexo = $_POST['sexo'];
         $conteudo = $_POST['conteudo'];
         $valorHora = $_POST['valor-hora'];
+        $status = 1;
 
         // VERIFICANDO SENHA
         if ($senhaConf == $senha) {
@@ -75,7 +76,7 @@
             if (calcularIdade($_POST['DN']) > 130) {
                 $mensagem = "Há algo de errado com sua idade.";
             } elseif (calcularIdade($_POST['DN']) >= 18) {
-                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora')";
+                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora', '$status')";
 
                 mysqli_query($conexao, $sql);
 

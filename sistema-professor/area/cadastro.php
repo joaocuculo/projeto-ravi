@@ -4,9 +4,10 @@
 
     if (isset($_POST['cadastrar'])) {
 
-        $nome = $_POST['nome']; 
+        $nome = $_POST['nome'];
+        $status = 1;
 
-        $sql = "insert into area (nome) value ('$nome')";
+        $sql = "insert into area (nome, status) value ('$nome', '$status')";
 
         mysqli_query($conexao, $sql);
 
@@ -55,7 +56,7 @@
         </div>
     </main>
 
-    <?php require_once("../../template/rodape.php") ?>
+    <?php require_once("../../template/rodape-index-login.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
     <script src="../../assets/js/mostrar-senha.js"></script>
