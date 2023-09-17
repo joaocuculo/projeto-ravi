@@ -19,10 +19,39 @@
     <?php require_once("../../template/menu2.php") ?>
 
     <main>
-        <a href="../materias/matematica.php">matematica</a>
-        <a href="../materias/portugues.php">portugues</a>
-        <a href="../materias/fisica.php">fisica</a>
-        <a href="../materias/historia.php">historia</a>
+
+        <section class="cursos">
+            <div class="card-cursos">
+                <article class="card">
+                    <a href="../materias/matematica.php">
+                        <img src="../../assets/img/pi-icon.png">
+                        <strong>Matemática</strong>
+                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="../materias/portugues.php" id="port">
+                        <img src="../../assets/img/abc-icon.png">
+                        <strong>Português</strong>
+                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="../materias/fisica.php" id="fis">
+                        <img src="../../assets/img/atom-icon.png">
+                        <strong>Física</strong>
+                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
+                    </a>
+                </article>
+                <article class="card">
+                    <a href="../materias/historia.php" id="hist">
+                        <img src="../../assets/img/ruins-icon.png">
+                        <strong>História</strong>
+                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
+                    </a>    
+                </article>
+            </div>
+        </section>
     </main>
 
     <?php require_once("../../template/rodape1.php") ?>
