@@ -22,6 +22,7 @@
         $sexo = $_POST['sexo'];
         $conteudo = $_POST['conteudo'];
         $valorHora = $_POST['valor-hora'];
+        $area_id = $_POST['area_id'];
         $status = 1;
 
         // VERIFICANDO SENHA
@@ -76,7 +77,7 @@
             if (calcularIdade($_POST['DN']) > 130) {
                 $mensagem = "Há algo de errado com sua idade.";
             } elseif (calcularIdade($_POST['DN']) >= 18) {
-                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora', '$status')";
+                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
 
                 mysqli_query($conexao, $sql);
 
@@ -207,6 +208,22 @@
                     <div class="input-box">
                         <label for="conteudo">Conteúdo</label>
                         <textarea name="conteudo" id="conteudo" placeholder="Digite conteúdos que tem conhecimento" rows="4" required></textarea>
+                    </div>
+                    <div class="input-box">
+                        <label for="area_id">Área</label>
+                        <select name="area_id" id="area_id" required>
+                            <option value="">Selecione a área em que o conteúdo se enquadra</option>
+                            <?php
+                                $sql = "select * from area order by nome";
+                                $resultado = mysqli_query($conexao, $sql);
+                                while ($linha = mysqli_fetch_array($resultado)):
+                                    $id = $linha['id'];
+                                    $nome = $linha['nome'];
+
+                                    echo "<option value='{$id}'>{$nome}</option>";
+                                endwhile;    
+                            ?>
+                        </select>
                     </div>
                     <div class="input-box">
                         <label for="valor-hora">Valor Hora/Aula</label>
