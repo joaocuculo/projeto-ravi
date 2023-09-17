@@ -103,3 +103,7 @@ body {
     transition: 0.3s all;
     cursor: pointer;
 }
+
+.cards a:hover {
+    background-color: #0d6935;
+}

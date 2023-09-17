@@ -4,7 +4,8 @@
     require_once('../../conexao.php');
 
     $sql = "select * from professor
-               where 1 = 1 ";
+               where       1 = 1
+                 and area_id = 3";
 
     $resultado = mysqli_query($conexao, $sql);
 
@@ -68,7 +69,7 @@
                 </main>
         </section>
 
-    <?php require_once("../../template/rodape.php") ?>
+    <?php require_once("../../template/rodape3.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
 </body>

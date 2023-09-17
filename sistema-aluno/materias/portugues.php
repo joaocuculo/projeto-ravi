@@ -4,7 +4,8 @@
     require_once('../../conexao.php');
 
     $sql = "select * from professor
-               where 1 = 1 ";
+               where       1 = 1
+                 and area_id = 2";
 
     $resultado = mysqli_query($conexao, $sql);
 
