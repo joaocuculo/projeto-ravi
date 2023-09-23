@@ -19,6 +19,9 @@
     <?php require_once("../../template/menu2.php") ?>
 
     <main>
+        <div>
+            <h2>Seja bem vindo, <?= $_SESSION['nome']; ?></h2>
+        </div>
 
         <section class="cursos">
             <div class="card-cursos">
