@@ -103,7 +103,7 @@
     <title>Ravi - Cadastro</title>
 </head>
 <body>
-    <?php require_once("../../template/menu1.php") ?>
+    <?php require_once("../template-prof/menu1.php") ?>
 
     <main>
         <div class="container">
@@ -266,7 +266,7 @@
         </div>
     </main>
 
-    <?php require_once("../../template/rodape2.php") ?>
+    <?php require_once("../template-prof/rodape2.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
     <script src="../../assets/js/mostrar-senha.js"></script>

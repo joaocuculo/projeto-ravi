@@ -24,7 +24,7 @@
     <title>Ravi - Matemática</title>
 </head>
 <body>
-    <?php require_once("../../template/menu3.php") ?>
+    <?php require_once("../template-aluno/menu3.php") ?>
 
     <main>
         <section class="materia" id="matematica">
@@ -69,7 +69,7 @@
                 </main>
         </section>
 
-    <?php require_once("../../template/rodape3.php") ?>
+    <?php require_once("../template-aluno/rodape3.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
 </body>

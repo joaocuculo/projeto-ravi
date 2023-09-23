@@ -16,7 +16,7 @@
     <title>Ravi</title>
 </head>
 <body>
-    <?php require_once("../../template/menu2.php") ?>
+    <?php require_once("../template-aluno/menu2.php") ?>
 
     <main>
         <div>
@@ -57,7 +57,7 @@
         </section>
     </main>
 
-    <?php require_once("../../template/rodape1.php") ?>
+    <?php require_once("../template-aluno/rodape1.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
 </body>

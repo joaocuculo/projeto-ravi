@@ -24,7 +24,7 @@
     <title>Ravi - Português</title>
 </head>
 <body>
-    <?php require_once("../../template/menu-port.php") ?>
+    <?php require_once("../template-aluno/menu-port.php") ?>
 
     <main>
         <section class="materia" id="portugues">
@@ -69,7 +69,7 @@
                 </main>
         </section>
 
-    <?php require_once("../../template/rodape3.php") ?>
+    <?php require_once("../template-aluno/rodape3.php") ?>
 
     <script src="../../assets/js/menu-show.js"></script>
 </body>
