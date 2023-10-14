@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body {
+    background-color: var(--color-white);
+}
+
+.prof-box {
+    background-color: var(--color-primary);
+    padding-bottom: 3rem;
+}
+
+.perfil {
+    background-color: var(--color-primary);
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.perfil-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil-foto img {
+    width: 200px;
+    margin-bottom: 1rem;
+}
+
+.formacao {
+    width: 600px;
+}
+
+.formacao p {
+    text-align: justify;
+    margin: 1rem 0 2rem;
+}
+
+.formacao a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: var(--color-tertiary);
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 15px;
+    font-weight: bold;
+}
