@@ -45,7 +45,7 @@
                 <div class="cards">
                     <h2><?= $linha['nome'] ?></h2>
                     <img src="../../assets/img/user-image.png">
-                    <a href="#">Agendar aula</a>
+                    <a href="../aluno/agendamento.php?id=<?= $linha['id'] ?>">Agendar aula</a>
                 </div>
                 <?php } ?>
             </div>

@@ -199,6 +199,22 @@ body {
     width: 18rem;
 }
 
+/* TELA PRINCIPAL LOGADO */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bem-vindo {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.377);
+    margin: 3rem auto;
+    padding: 1.5rem 1rem;
+    background-color: #D9D7CA;
+}
+
 @media screen and (max-width: 1225px) {
     .card-cursos {
         gap: 4rem;

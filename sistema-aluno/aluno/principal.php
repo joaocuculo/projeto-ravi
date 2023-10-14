@@ -18,8 +18,8 @@
 <body>
     <?php require_once("../template-aluno/menu2.php") ?>
 
-    <main>
-        <div>
+    <main class="container">
+        <div class="bem-vindo">
             <h2>Seja bem vindo, <?= $_SESSION['nome']; ?></h2>
         </div>
 
