@@ -30,16 +30,16 @@ body {
     margin-bottom: 1rem;
 }
 
-.formacao {
+.formacao-box {
     width: 600px;
 }
 
-.formacao p {
+.formacao-box p {
     text-align: justify;
     margin: 1rem 0 2rem;
 }
 
-.formacao a {
+.formacao-box a {
     display: block;
     text-align: center;
     width: 100%;
@@ -48,5 +48,27 @@ body {
     color: var(--color-white);
     padding: 0.8rem 1.2rem;
     border-radius: 15px;
+    font-weight: bold;
+}
+
+.formacao-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.formacao-item div:first-child {
+    width: 70%;
+}
+
+.formacao-item div:last-child {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formacao-item div:last-child p {
+    font-size: 1.8rem;
     font-weight: bold;
 }

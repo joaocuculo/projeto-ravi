@@ -31,10 +31,18 @@
                     <img src="../../assets/img/user-image.png">
                     <h2><?= $linha['nome'] ?></h2>
                 </div>
-                <div class="formacao">
-                    <h2>Formação</h2>
-                    <p><?= $linha['conteudo'] ?></p>
-                    <a href="../../assets/img/user-image.png" download>Ver currículo</a>
+                <div class="formacao-box">
+                    <div class="formacao-item">
+                        <div>
+                            <h2>Formação</h2>
+                            <p><?= $linha['conteudo'] ?></p>
+                        </div>
+                        <div>
+                            <h2>Valor/Hora</h2>
+                            <p>R$<?= $linha['valorHora'] ?></p>
+                        </div>
+                    </div>
+                    <a href="<?= $linha['curriculo'] ?>" download>Ver currículo</a> <!-- dar uma olhada aqui -->
                 </div>
             </div>
         </section>
