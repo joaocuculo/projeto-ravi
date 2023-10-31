@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../assets/css/header-footer.css">
     <link rel="stylesheet" href="../../assets/css/agendamento.css">
+    <link rel="stylesheet" href="../../assets/css/calendario.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <title>Ravi</title>
 </head>
@@ -46,13 +47,16 @@
                 </div>
             </div>
         </section>
-        <section>
-            <!-- plugin do calendario -->
+        <section class="calendario">
+            <div id='calendar'></div>
         </section>
     </main>
 
     <?php require_once("../template-aluno/rodape1.php") ?>
 
+    <script src='../../assets/js/index.global.min.js'></script>
+    <script src='../../assets/js/core/locales-all.global.min.js'></script>
     <script src="../../assets/js/menu-show.js"></script>
+    <script src="../../assets/js/calendario.js"></script>
 </body>
 </html>
