@@ -23,30 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
       selectable: true,
       //Indicar visualmente a area que será selecionada antes que o usuario solte o botao do mouse para confirmar a seleção
       selectMirror: true,
-      select: function(arg) {
-        var title = prompt('Event Title:');
-        if (title) {
-          calendar.addEvent({
-            title: title,
-            start: arg.start,
-            end: arg.end,
-            allDay: arg.allDay
-          })
-        }
-        calendar.unselect()
-      },
-      eventClick: function(arg) {
-        if (confirm('Are you sure you want to delete this event?')) {
-          arg.event.remove()
-        }
-      },
 
       //Permitir arrastar e redimensionar os eventos diretamente no calendario
       editable: false,
 
       //Número máximo de eventos em um determinado dia, se for true, o número de eventos será limitado à altura da célula do dia
       dayMaxEvents: true, // allow "more" link when too many events
-      events: 'listar-evento.php'
+
+      //Chamar o arquivo PHP para recuperar os eventos
+      events: 'listar-evento.php',
+
+      //Identificar o clique do usuário sobre o evento
+      eventClick: function(info) {
+        
+        //Receber o SELETOR da janela modal
+        const visualizarModal = new bootstrap.Modal(document.getElementById("visualizarModal"));
+
+        //Enviar para a janela modal os dados do evento
+        document.getElementById("visualizar-id").innerText = info.event.id;
+        document.getElementById("visualizar-title").innerText = info.event.title;
+        document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
+        document.getElementById("visualizar-end").innerText = info.event.end.toLocaleString();
+
+        //Abrir janela modal
+        visualizarModal.show();
+      }
     });
 
     calendar.render();
