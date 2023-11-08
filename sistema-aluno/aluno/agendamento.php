@@ -54,30 +54,82 @@
 
         <!-- Modal Visualizar -->
         <div class="modal fade" id="visualizarModal" tabindex="-1" aria-labelledby="visualizarModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar Evento</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <dl class="row">
-                    <dt class="col-sm-3">ID: </dt>
-                    <dd class="col-sm-9" id="visualizar-id"></dd>
-                    <dt class="col-sm-3">Título: </dt>
-                    <dd class="col-sm-9" id="visualizar-title"></dd>
-                    <dt class="col-sm-3">Início: </dt>
-                    <dd class="col-sm-9" id="visualizar-start"></dd>
-                    <dt class="col-sm-3">Fim: </dt>
-                    <dd class="col-sm-9" id="visualizar-end"></dd>
-                </dl>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar Evento</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">ID: </dt>
+                        <dd class="col-sm-9" id="visualizar-id"></dd>
+                        <dt class="col-sm-3">Título: </dt>
+                        <dd class="col-sm-9" id="visualizar-title"></dd>
+                        <dt class="col-sm-3">Início: </dt>
+                        <dd class="col-sm-9" id="visualizar-start"></dd>
+                        <dt class="col-sm-3">Fim: </dt>
+                        <dd class="col-sm-9" id="visualizar-end"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
             </div>
         </div>
+
+        <!-- Modal Cadastrar -->
+        <div class="modal fade" id="cadastrarModal" tabindex="-1" aria-labelledby="cadastrarModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="cadastrarModalLabel">cadastrar Evento</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <label for="cad-title" class="col-sm-2 col-form-label">Título</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cad-title" name="cad-title" placeholder="Título do Evento">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cad-start" class="col-sm-2 col-form-label">Início</label>
+                            <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="cad-start" name="cad-start">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cad-end" class="col-sm-2 col-form-label">Fim</label>
+                            <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="cad-end" name="cad-end">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cad-color" class="col-sm-2 col-form-label">Cor</label>
+                            <div class="col-sm-10">
+                                <select name="cad-color" class="form-control" id="cad-color">
+                                    <option value="">Selecione</option>
+                                    <option style="color:#40bf00;" value="#40bf00">Verde</option>
+                                    <option style="color:#bf0000;" value="#bf0000">Vermelho</option>
+                                    <option style="color:#0003bf;" value="#0003bf">Azul</option>
+                                    <option style="color:#fad902;" value="#fad902">Amarelo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
         </div>
     </main>
 

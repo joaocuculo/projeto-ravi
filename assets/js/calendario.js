@@ -47,8 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         //Abrir janela modal
         visualizarModal.show();
+      },
+
+      //Abrir janela modal cadastrar quando clicar sobre o dia no calendário
+      select: function(info) {
+
+        //Receber o SELETOR da janela modal
+        const cadastrarModal = new bootstrap.Modal(document.getElementById("cadastrarModal"));
+
+        //Abrir janela modal cadastrar
+        cadastrarModal.show();
       }
     });
 
+    //Renderizar o calendario
     calendar.render();
   });
