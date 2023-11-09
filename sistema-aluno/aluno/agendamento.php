@@ -85,11 +85,11 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="cadastrarModalLabel">cadastrar Evento</h1>
+                    <h1 class="modal-title fs-5" id="cadastrarModalLabel">Cadastrar Evento</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form method="POST" id="formCadEvento">
                         <div class="row mb-3">
                             <label for="cad-title" class="col-sm-2 col-form-label">Título</label>
                             <div class="col-sm-10">
@@ -125,8 +125,7 @@
                         </div>
                     </form>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" name="btnCadEvento" id="btnCadEvento" class="btn btn-success">Cadastrar</button>
                 </div>
                 </div>
             </div>
