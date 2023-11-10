@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     //Receber o SELETOR calendar do atributo id
     var calendarEl = document.getElementById('calendar');
 
+    //Receber o SELETOR da janela modal
+    const cadastrarModal = new bootstrap.Modal(document.getElementById("cadastrarModal"));
+
     //Instanciar FullCalendar.Calenedar e atribuir a variavel calendar
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
@@ -52,9 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
       //Abrir janela modal cadastrar quando clicar sobre o dia no calendário
       select: function(info) {
 
-        //Receber o SELETOR da janela modal
-        const cadastrarModal = new bootstrap.Modal(document.getElementById("cadastrarModal"));
-
         document.getElementById("cad_start").value = converterData(info.start);
         document.getElementById("cad_end").value = converterData(info.start);
 
@@ -93,14 +93,21 @@ document.addEventListener('DOMContentLoaded', function() {
     //Receber SELETOR do formulario cadastrar evento
     const formCadEvento = document.getElementById("formCadEvento");
 
+    const msg = document.getElementById("msg");
+
+    const btnCadEvento = document.getElementById("btnCadEvento");
+
     //Somente acessa o IF quando existir o seletor formcadevento
     if (formCadEvento) {
         
         //Aguarda o usuario clicar no botao cadastrar
         formCadEvento.addEventListener("submit", async (e) => {
 
-            //Nao permitir a atualização da pagina
+          //Nao permitir a atualização da pagina
             e.preventDefault();
+
+            //Apresentar no botão o texto salvando
+            btnCadEvento.value = "Salvando...";
 
             //Receber os dados do formulario
             const dadosForm = new FormData(formCadEvento);
@@ -118,8 +125,34 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!resposta['status']) {
 
                 //Enviar mensagem para o html
-                document.getElementById("msgCadEvento").innerHTML = resposta['msg'];
+                document.getElementById("msgCadEvento").innerHTML = `<div class="alert alert-danger" role="alert">${resposta['msg']}</div>`;
+            } else {
+
+                //Enviar mensagem para o html
+                msg.innerHTML = `<div class="alert alert-success" role="alert">${resposta['msg']}</div>`;
+
+                //Limpar o formulario
+                formCadEvento.reset();
+
+                //Criar objeto com os dados do evento
+                const novoEvento = {
+                    id: resposta['id'],
+                    title: resposta['title'],
+                    color: resposta['color'],
+                    start: resposta['start'],
+                    end: resposta['end']
+                }
+
+                //Adicionar o evento ao calendario
+                calendar.addEvent(novoEvento);
+
+                //Fechar a janela modal
+                cadastrarModal.hide();
+
             }
+
+            btnCadEvento.value = "Cadastrar";
+
         });
     }
 

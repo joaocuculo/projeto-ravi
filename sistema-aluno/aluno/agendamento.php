@@ -48,6 +48,9 @@
                 </div>
             </div>
         </section>
+
+        <span id="msg"></span>
+
         <section class="calendario">
             <div id='calendar'></div>
         </section>
