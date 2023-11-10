@@ -106,10 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const dadosForm = new FormData(formCadEvento);
 
             //Chamar o arquivo PHP responsavel em salvar o evento
-            await fetch("cadastrar-evento.php", {
+            const dados = await fetch("cadastrar-evento.php", {
                 method: "POST",
                 body: dadosForm
-            })
+            });
+
+            //Realizar a leitura dos dados retornados pelo PHP
+            const resposta = await dados.json();
+            console.log(resposta);
         });
     }
 
