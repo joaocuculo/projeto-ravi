@@ -72,10 +72,6 @@
                         <dd class="col-sm-9" id="visualizar-end"></dd>
                     </dl>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
                 </div>
             </div>
         </div>
@@ -89,6 +85,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
+                    <span id="msgCadEvento"></span>
+
                     <form method="POST" id="formCadEvento">
                         <div class="row mb-3">
                             <label for="cad_title" class="col-sm-2 col-form-label">Título</label>

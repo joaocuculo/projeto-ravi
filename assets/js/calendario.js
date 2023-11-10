@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-id").innerText = info.event.id;
         document.getElementById("visualizar-title").innerText = info.event.title;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
-        document.getElementById("visualizar-end").innerText = info.event.end.toLocaleString();
+        document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
 
         //Abrir janela modal
         visualizarModal.show();
@@ -113,7 +113,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             //Realizar a leitura dos dados retornados pelo PHP
             const resposta = await dados.json();
-            console.log(resposta);
+            
+            //Acessa o if quando não cadastrar com sucesso
+            if (!resposta['status']) {
+
+                //Enviar mensagem para o html
+                document.getElementById("msgCadEvento").innerHTML = resposta['msg'];
+            }
         });
     }
 

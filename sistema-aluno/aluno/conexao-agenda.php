@@ -1,7 +1,7 @@
 <?php
 
 //inicio da conexao com o banco de dados utilizando PDO
-$host = "localhost";
+$host = "127.0.0.1";
 $user = "root";
 $pass = "";
 $dbname = "ravi";
