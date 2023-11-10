@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         //Receber o SELETOR da janela modal
         const cadastrarModal = new bootstrap.Modal(document.getElementById("cadastrarModal"));
 
-        document.getElementById("cad-start").value = converterData(info.start);
-        document.getElementById("cad-end").value = converterData(info.start);
+        document.getElementById("cad_start").value = converterData(info.start);
+        document.getElementById("cad_end").value = converterData(info.start);
 
         //Abrir janela modal cadastrar
         cadastrarModal.show();
