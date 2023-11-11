@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     //Receber o SELETOR da janela modal
     const visualizarModal = new bootstrap.Modal(document.getElementById("visualizarModal"));
 
+    //Receber o seletor "msgViewEvento"
+    const msgViewEvento = document.getElementById("msgViewEvento");
+
     //Instanciar FullCalendar.Calenedar e atribuir a variavel calendar
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
@@ -291,5 +294,53 @@ document.addEventListener('DOMContentLoaded', function() {
             btnEditEvento.value = "Salvar";
 
         })
+
+        //Receber o seletor do botao
+        const btnApagarEvento = document.getElementById("btnApagarEvento");
+
+        if (btnApagarEvento) {
+            
+            btnApagarEvento.addEventListener("click", async () => {
+                
+                //Exibir uma caixa de dialogo de confirmação
+                const confirmacao = window.confirm("Tem certeza que deseja apagar este evento");
+
+                if (confirmacao) {
+                    
+                    //Receber o id do evento
+                    var idEvento = document.getElementById("visualizar-id").textContent;
+
+                    //Chamar o arquivo PHP responsavel por apagar o evento
+                    const dados = await fetch("apagar-evento.php?id=" + idEvento);
+
+                    const resposta = await dados.json();
+
+                    if (!resposta['status']) {
+                        
+                        //Enviar mensagem para o HTML
+                        msgViewEvento.innerHTML = `<div class="alert alert-danger" role="alert">${resposta['msg']}</div>`;
+
+                    } else {
+
+                        //Enviar mensagem para o HTML
+                        msg.innerHTML = `<div class="alert alert-success" role="alert">${resposta['msg']}</div>`;
+
+                        //Enviar mensagem para o HTML
+                        msgViewEvento.innerHTML = "";
+
+                        const eventoExisteRemover = calendar.getEventById(idEvento);
+
+                        if (eventoExisteRemover) {
+                            eventoExisteRemover.remove();
+                        }
+
+                        removerMsg();
+
+                        visualizarModal.hide();
+                        
+                    }
+                }
+            });
+        }
     }
   });

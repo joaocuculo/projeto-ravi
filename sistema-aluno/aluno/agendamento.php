@@ -65,6 +65,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
+                    <span id="msgViewEvento"></span>
+
                     <div id="visualizarEvento">
                         <dl class="row">
                             <dt class="col-sm-3">ID: </dt>
@@ -78,7 +81,8 @@
                         </dl>
                         
                         <div class="modal-footer">
-                            <button id="btnViewEditEvento" class="btn btn-warning">Editar</button>
+                            <button type="button" id="btnViewEditEvento" class="btn btn-warning">Editar</button>
+                            <button type="button" id="btnApagarEvento" class="btn btn-danger">Excluir</button>
                         </div>
                     </div>
 
