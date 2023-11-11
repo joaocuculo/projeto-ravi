@@ -48,6 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
 
+        //Enviar os dados do evento para o formulario ediar
+        document.getElementById("edit_id").value = info.event.id;
+        document.getElementById("edit_title").value = info.event.title;
+        document.getElementById("edit_start").value = converterData(info.event.start);
+        document.getElementById("edit_end").value = info.event.end !== null ? converterData(info.event.end) : converterData(info.event.start);
+        document.getElementById("edit_color").value = info.event.backgroundColor;
+
         //Abrir janela modal
         visualizarModal.show();
       },
@@ -170,6 +177,44 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             document.getElementById('msg').innerHTML = "";
         }, 3000);
+    }
+
+    //Receber o seletor ocultar detalhes do evento e apresentar o formulario editar o evento  
+    const btnViewEditEvento = document.getElementById("btnViewEditEvento");
+
+    //Só entra se btnViewEditEvento existir
+    if (btnViewEditEvento) {
+        
+        //Aguardar o usuario clicar no botao editar
+        btnViewEditEvento.addEventListener("click", () => {
+
+            //Ocultar detalhes do visualizar
+            document.getElementById("visualizarEvento").style.display = "none";
+            document.getElementById("visualizarModalLabel").style.display = "none";
+
+            //Apresentar formulario para editar
+            document.getElementById("editarEvento").style.display = "block";
+            document.getElementById("editarModalLabel").style.display = "block";
+        })
+    }
+
+    //Receber o seletor ocultar formulario editar o evento e apresentar os detalhes do evento
+    const btnViewEvento = document.getElementById("btnViewEvento");
+
+    //Só entra se btnViewEvento existir
+    if (btnViewEvento) {
+        
+        //Aguardar o usuario clicar no botao editar
+        btnViewEvento.addEventListener("click", () => {
+
+            //Apresentar detalhes do visualizar
+            document.getElementById("visualizarEvento").style.display = "block";
+            document.getElementById("visualizarModalLabel").style.display = "block";
+
+            //Ocultar formulario para editar
+            document.getElementById("editarEvento").style.display = "none";
+            document.getElementById("editarModalLabel").style.display = "none";
+        })
     }
 
   });

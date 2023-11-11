@@ -61,19 +61,74 @@
                 <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar Evento</h1>
+                    <h1 class="modal-title fs-5" id="editarModalLabel" style="display: none;">Editar Evento</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <dl class="row">
-                        <dt class="col-sm-3">ID: </dt>
-                        <dd class="col-sm-9" id="visualizar-id"></dd>
-                        <dt class="col-sm-3">Título: </dt>
-                        <dd class="col-sm-9" id="visualizar-title"></dd>
-                        <dt class="col-sm-3">Início: </dt>
-                        <dd class="col-sm-9" id="visualizar-start"></dd>
-                        <dt class="col-sm-3">Fim: </dt>
-                        <dd class="col-sm-9" id="visualizar-end"></dd>
-                    </dl>
+                    <div id="visualizarEvento">
+                        <dl class="row">
+                            <dt class="col-sm-3">ID: </dt>
+                            <dd class="col-sm-9" id="visualizar-id"></dd>
+                            <dt class="col-sm-3">Título: </dt>
+                            <dd class="col-sm-9" id="visualizar-title"></dd>
+                            <dt class="col-sm-3">Início: </dt>
+                            <dd class="col-sm-9" id="visualizar-start"></dd>
+                            <dt class="col-sm-3">Fim: </dt>
+                            <dd class="col-sm-9" id="visualizar-end"></dd>
+                        </dl>
+                        
+                        <div class="modal-footer">
+                            <button id="btnViewEditEvento" class="btn btn-warning">Editar</button>
+                        </div>
+                    </div>
+
+                    <!-- Tela de Editar -->
+                    <div id="editarEvento" style="display: none;">
+                        <span id="msgEditEvento"></span>
+
+                        <form method="POST" id="formEditEvento">
+
+                            <input type="hidden" name="edit_id" id="edit_id">
+
+                            <div class="row mb-3">
+                                <label for="edit_title" class="col-sm-2 col-form-label">Título</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="edit_title" name="edit_title" placeholder="Título do Evento">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="edit_start" class="col-sm-2 col-form-label">Início</label>
+                                <div class="col-sm-10">
+                                <input type="datetime-local" class="form-control" id="edit_start" name="edit_start">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="edit_end" class="col-sm-2 col-form-label">Fim</label>
+                                <div class="col-sm-10">
+                                <input type="datetime-local" class="form-control" id="edit_end" name="edit_end">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="edit_color" class="col-sm-2 col-form-label">Cor</label>
+                                <div class="col-sm-10">
+                                    <select name="edit_color" class="form-control" id="edit_color">
+                                        <option value="">Selecione</option>
+                                        <option style="color:#40bf00;" value="#40bf00">Verde</option>
+                                        <option style="color:#bf0000;" value="#bf0000">Vermelho</option>
+                                        <option style="color:#0003bf;" value="#0003bf">Azul</option>
+                                        <option style="color:#fad902;" value="#fad902">Amarelo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" name="btnViewEvento" id="btnViewEvento" class="btn btn-secondary">Cancelar</button>
+                                <button type="submit" name="btnEditEvento" id="btnEditEvento" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 </div>
             </div>
