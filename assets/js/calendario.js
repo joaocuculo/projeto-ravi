@@ -93,7 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
     //Receber SELETOR do formulario cadastrar evento
     const formCadEvento = document.getElementById("formCadEvento");
 
+    //Receber SELETOR de mensagem generica
     const msg = document.getElementById("msg");
+
+    //Receber SELETOR da mensagem cadastrar
+    const msgCadEvento = document.getElementById("msgCadEvento");
 
     const btnCadEvento = document.getElementById("btnCadEvento");
 
@@ -125,11 +129,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!resposta['status']) {
 
                 //Enviar mensagem para o html
-                document.getElementById("msgCadEvento").innerHTML = `<div class="alert alert-danger" role="alert">${resposta['msg']}</div>`;
+                msgCadEvento.innerHTML = `<div class="alert alert-danger" role="alert">${resposta['msg']}</div>`;
             } else {
 
                 //Enviar mensagem para o html
                 msg.innerHTML = `<div class="alert alert-success" role="alert">${resposta['msg']}</div>`;
+
+                msgCadEvento.innerHTML = "";
 
                 //Limpar o formulario
                 formCadEvento.reset();
@@ -146,6 +152,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 //Adicionar o evento ao calendario
                 calendar.addEvent(novoEvento);
 
+                //Remover a mensaagem apos tres segundos
+                removerMsg();
+
                 //Fechar a janela modal
                 cadastrarModal.hide();
 
@@ -154,6 +163,13 @@ document.addEventListener('DOMContentLoaded', function() {
             btnCadEvento.value = "Cadastrar";
 
         });
+    }
+
+    //Função para remover mensagem apos tres segundos
+    function removerMsg() {
+        setTimeout(() => {
+            document.getElementById('msg').innerHTML = "";
+        }, 3000);
     }
 
   });

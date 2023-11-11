@@ -125,10 +125,10 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" name="btnCadEvento" id="btnCadEvento" class="btn btn-success">Cadastrar</button>
+                        </div>
                     </form>
-                <div class="modal-footer">
-                    <button type="submit" name="btnCadEvento" id="btnCadEvento" class="btn btn-success">Cadastrar</button>
-                </div>
                 </div>
             </div>
         </div>
