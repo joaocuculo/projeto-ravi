@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-id").innerText = info.event.id;
         document.getElementById("visualizar-title").innerText = info.event.title;
         document.getElementById("visualizar-obs").innerText = info.event.extendedProps.obs;
+        document.getElementById("visualizar-formaPag").innerText = info.event.extendedProps.formaPag;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
 
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("edit_id").value = info.event.id;
         document.getElementById("edit_title").value = info.event.title;
         document.getElementById("edit_obs").value = info.event.extendedProps.obs;
+        document.getElementById("edit_formaPag").value = info.event.extendedProps.formaPag;
         document.getElementById("edit_start").value = converterData(info.event.start);
         document.getElementById("edit_end").value = info.event.end !== null ? converterData(info.event.end) : converterData(info.event.start);
         document.getElementById("edit_color").value = info.event.backgroundColor;
@@ -167,7 +169,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     color: resposta['color'],
                     start: resposta['start'],
                     end: resposta['end'],
-                    obs: resposta['obs']
+                    obs: resposta['obs'],
+                    formaPag: resposta['formaPag']
                 }
 
                 //Adicionar o evento ao calendario
@@ -284,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     eventoExiste.setProp('title', resposta['title']);
                     eventoExiste.setProp('color', resposta['color']);
                     eventoExiste.setExtendedProp('obs', resposta['obs']);
+                    eventoExiste.setExtendedProp('formaPag', resposta['formaPag']);
                     eventoExiste.setStart(resposta['start']);
                     eventoExiste.setEnd(resposta['end']);
                 }

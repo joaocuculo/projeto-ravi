@@ -3,7 +3,7 @@
     include_once './conexao-agenda.php';
 
     //query para recuperar os eventos
-    $query_events = "SELECT id, title, color, start, end, obs FROM events";
+    $query_events = "SELECT id, title, color, start, end, obs, formaPag FROM events";
 
     //prepara a query
     $result_events = $conn->prepare($query_events);
@@ -25,7 +25,8 @@
             'color' => $color,
             'start' => $start,
             'end' => $end,
-            'obs' => $obs
+            'obs' => $obs,
+            'formaPag' => $formaPag
         ];
     }
 
