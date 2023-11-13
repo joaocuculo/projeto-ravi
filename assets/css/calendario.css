@@ -18,7 +18,10 @@ body {
 
 .calendario h1 {
     text-align: center;
-    margin: 3rem 0;
+    margin: 3rem 4rem;
+    background-color: #e6e6e1;
+    border-radius: 10px;
+    padding: 1rem 0;
 }
 
 .calendario a {
