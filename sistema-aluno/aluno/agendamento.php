@@ -74,6 +74,8 @@
                             <dd class="col-sm-9" id="visualizar-id"></dd>
                             <dt class="col-sm-3">Título: </dt>
                             <dd class="col-sm-9" id="visualizar-title"></dd>
+                            <dt class="col-sm-3">Observação: </dt>
+                            <dd class="col-sm-9" id="visualizar-obs"></dd>
                             <dt class="col-sm-3">Início: </dt>
                             <dd class="col-sm-9" id="visualizar-start"></dd>
                             <dt class="col-sm-3">Fim: </dt>
@@ -98,6 +100,13 @@
                                 <label for="edit_title" class="col-sm-2 col-form-label">Título</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" id="edit_title" name="edit_title" placeholder="Título do Evento">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="edit_obs" class="col-sm-2 col-form-label">Obs</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="edit_obs" name="edit_obs" placeholder="Observação do Evento">
                                 </div>
                             </div>
 
@@ -155,6 +164,13 @@
                             <label for="cad_title" class="col-sm-2 col-form-label">Título</label>
                             <div class="col-sm-10">
                             <input type="text" class="form-control" id="cad_title" name="cad_title" placeholder="Título do Evento">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cad_obs" class="col-sm-2 col-form-label">Obs</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cad_obs" name="cad_obs" placeholder="Observação do Evento">
                             </div>
                         </div>
 

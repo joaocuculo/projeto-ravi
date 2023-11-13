@@ -56,12 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
         //Enviar para a janela modal os dados do evento
         document.getElementById("visualizar-id").innerText = info.event.id;
         document.getElementById("visualizar-title").innerText = info.event.title;
+        document.getElementById("visualizar-obs").innerText = info.event.extendedProps.obs;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
 
         //Enviar os dados do evento para o formulario ediar
         document.getElementById("edit_id").value = info.event.id;
         document.getElementById("edit_title").value = info.event.title;
+        document.getElementById("edit_obs").value = info.event.extendedProps.obs;
         document.getElementById("edit_start").value = converterData(info.event.start);
         document.getElementById("edit_end").value = info.event.end !== null ? converterData(info.event.end) : converterData(info.event.start);
         document.getElementById("edit_color").value = info.event.backgroundColor;
@@ -164,7 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: resposta['title'],
                     color: resposta['color'],
                     start: resposta['start'],
-                    end: resposta['end']
+                    end: resposta['end'],
+                    obs: resposta['obs']
                 }
 
                 //Adicionar o evento ao calendario
@@ -280,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     //Atualizar os atributos do evento com os novos valores do banco de dados
                     eventoExiste.setProp('title', resposta['title']);
                     eventoExiste.setProp('color', resposta['color']);
+                    eventoExiste.setExtendedProp('obs', resposta['obs']);
                     eventoExiste.setStart(resposta['start']);
                     eventoExiste.setEnd(resposta['end']);
                 }
