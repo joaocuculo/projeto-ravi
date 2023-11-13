@@ -49,9 +49,9 @@
             </div>
         </section>
 
-        <span id="msg"></span>
-
         <section class="calendario">
+            <h1>Agendamento das Aulas</h1>
+            <span id="msg"></span>
             <div id='calendar'></div>
         </section>
 
