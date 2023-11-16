@@ -80,6 +80,8 @@
                             <dd class="col-sm-9" id="visualizar-start"></dd>
                             <dt class="col-sm-3">Fim: </dt>
                             <dd class="col-sm-9" id="visualizar-end"></dd>
+                            <dt class="col-sm-3">Pagamento: </dt>
+                            <dd class="col-sm-9" id="visualizar-formaPag"></dd>
                         </dl>
                         
                         <div class="modal-footer">
@@ -133,6 +135,17 @@
                                         <option style="color:#bf0000;" value="#bf0000">Vermelho</option>
                                         <option style="color:#0003bf;" value="#0003bf">Azul</option>
                                         <option style="color:#fad902;" value="#fad902">Amarelo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="edit_formaPag" class="col-sm-2 col-form-label">Pagamento</label>
+                                <div class="col-sm-10">
+                                    <select name="edit_formaPag" class="form-control" id="edit_formaPag">
+                                        <option value="">Selecione</option>
+                                        <option value="Cartao">Cartão</option>
+                                        <option value="Pix">Pix</option>
                                     </select>
                                 </div>
                             </div>
@@ -197,6 +210,17 @@
                                     <option style="color:#bf0000;" value="#bf0000">Vermelho</option>
                                     <option style="color:#0003bf;" value="#0003bf">Azul</option>
                                     <option style="color:#fad902;" value="#fad902">Amarelo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cad_formaPag" class="col-sm-2 col-form-label">Pagamento</label>
+                            <div class="col-sm-10">
+                                <select name="cad_formaPag" class="form-control" id="cad_formaPag">
+                                    <option value="">Selecione</option>
+                                    <option value="cartao">Cartão</option>
+                                    <option value="pix">Pix</option>
                                 </select>
                             </div>
                         </div>

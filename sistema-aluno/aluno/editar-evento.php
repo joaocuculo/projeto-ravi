@@ -19,7 +19,7 @@ $edit_event->bindParam(':formaPag', $dados['edit_formaPag']);
 $edit_event->bindParam(':id', $dados['edit_id']);
 
 if ($edit_event->execute()) {
-    $retorna = ['status' => true, 'msg' => 'Evento editado com sucesso!', 'id' => $dados['edit_id'], 'title' => $dados['edit_title'], 'color' => $dados['edit_color'], 'start' => $dados['edit_start'], 'end' => $dados['edit_end'], 'obs' => $dados['edit_obs'], 'formaPag' => $dados['formaPag']];
+    $retorna = ['status' => true, 'msg' => 'Evento editado com sucesso!', 'id' => $dados['edit_id'], 'title' => $dados['edit_title'], 'color' => $dados['edit_color'], 'start' => $dados['edit_start'], 'end' => $dados['edit_end'], 'obs' => $dados['edit_obs'], 'formaPag' => $dados['edit_formaPag']];
 } else {
     $retorna = ['status' => false, 'msg' => 'Erro: Evento não editado!'];
 }

@@ -18,7 +18,7 @@ $cad_event->bindParam(':obs', $dados['cad_obs']);
 $cad_event->bindParam(':formaPag', $dados['cad_formaPag']);
 
 if ($cad_event->execute()) {
-    $retorna = ['status' => true, 'msg' => 'Evento cadastrado com sucesso!', 'id' => $conn->lastInsertId(), 'title' => $dados['cad_title'], 'color' => $dados['cad_color'], 'start' => $dados['cad_start'], 'end' => $dados['cad_end'], 'obs' => $dados['cad_obs'], 'formaPag' => $dados['formaPag']];
+    $retorna = ['status' => true, 'msg' => 'Evento cadastrado com sucesso!', 'id' => $conn->lastInsertId(), 'title' => $dados['cad_title'], 'color' => $dados['cad_color'], 'start' => $dados['cad_start'], 'end' => $dados['cad_end'], 'obs' => $dados['cad_obs'], 'formaPag' => $dados['cad_formaPag']];
 } else {
     $retorna = ['status' => false, 'msg' => 'Erro: Evento não cadastrado!'];
 }
