@@ -60,8 +60,8 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar Aula</h1>
-                    <h1 class="modal-title fs-5" id="editarModalLabel" style="display: none;">Editar Aula</h1>
+                    <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar Evento</h1>
+                    <h1 class="modal-title fs-5" id="editarModalLabel" style="display: none;">Editar Evento</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -74,8 +74,8 @@
                             <dd class="col-sm-9" id="visualizar-id"></dd>
                             <dt class="col-sm-3">Título: </dt>
                             <dd class="col-sm-9" id="visualizar-title"></dd>
-                            <dt class="col-sm-3">Conteúdo: </dt>
-                            <dd class="col-sm-9" id="visualizar-conteudo"></dd>
+                            <dt class="col-sm-3">Observação: </dt>
+                            <dd class="col-sm-9" id="visualizar-obs"></dd>
                             <dt class="col-sm-3">Início: </dt>
                             <dd class="col-sm-9" id="visualizar-start"></dd>
                             <dt class="col-sm-3">Fim: </dt>
@@ -101,14 +101,14 @@
                             <div class="row mb-3">
                                 <label for="edit_title" class="col-sm-2 col-form-label">Título</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_title" name="edit_title" placeholder="Título da Aula">
+                                <input type="text" class="form-control" id="edit_title" name="edit_title" placeholder="Título do Evento">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="edit_conteudo" class="col-sm-2 col-form-label">Conteúdo</label>
+                                <label for="edit_obs" class="col-sm-2 col-form-label">Obs</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_conteudo" name="edit_conteudo" placeholder="Conteúdo da Aula">
+                                <input type="text" class="form-control" id="edit_obs" name="edit_obs" placeholder="Observação do Evento">
                                 </div>
                             </div>
 
@@ -165,7 +165,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="cadastrarModalLabel">Cadastrar Aula</h1>
+                    <h1 class="modal-title fs-5" id="cadastrarModalLabel">Cadastrar Evento</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -176,14 +176,14 @@
                         <div class="row mb-3">
                             <label for="cad_title" class="col-sm-2 col-form-label">Título</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="cad_title" name="cad_title" placeholder="Título da Aula">
+                            <input type="text" class="form-control" id="cad_title" name="cad_title" placeholder="Título do Evento">
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            <label for="cad_conteudo" class="col-sm-2 col-form-label">Conteúdo</label>
+                            <label for="cad_obs" class="col-sm-2 col-form-label">Obs</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="cad_conteudo" name="cad_conteudo" placeholder="Conteúdo da Aula">
+                            <input type="text" class="form-control" id="cad_obs" name="cad_obs" placeholder="Observação do Evento">
                             </div>
                         </div>
 
