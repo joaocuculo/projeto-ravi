@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Nov-2023 às 05:02
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 17/11/2023 às 16:23
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `ravi`;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `aluno`
+-- Estrutura para tabela `aluno`
 --
 
 CREATE TABLE `aluno` (
@@ -48,7 +48,7 @@ CREATE TABLE `aluno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `aluno`
+-- Despejando dados para a tabela `aluno`
 --
 
 INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `dataCad`, `status`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `e
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `area`
+-- Estrutura para tabela `area`
 --
 
 CREATE TABLE `area` (
@@ -68,7 +68,7 @@ CREATE TABLE `area` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `area`
+-- Despejando dados para a tabela `area`
 --
 
 INSERT INTO `area` (`id`, `nome`, `status`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `area` (`id`, `nome`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `evento`
+-- Estrutura para tabela `evento`
 --
 
 CREATE TABLE `evento` (
@@ -94,7 +94,7 @@ CREATE TABLE `evento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `evento`
+-- Despejando dados para a tabela `evento`
 --
 
 INSERT INTO `evento` (`id`, `dia`, `horaInicio`, `horaTermino`, `conteudo`, `valorTotal`, `formaPagamento`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `evento` (`id`, `dia`, `horaInicio`, `horaTermino`, `conteudo`, `val
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `events`
+-- Estrutura para tabela `events`
 --
 
 CREATE TABLE `events` (
@@ -112,32 +112,35 @@ CREATE TABLE `events` (
   `color` varchar(45) NOT NULL,
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
-  `obs` text DEFAULT NULL,
-  `formaPag` varchar(20) NOT NULL
+  `conteudo` text NOT NULL,
+  `formaPag` varchar(20) NOT NULL,
+  `aluno_id` int(11) DEFAULT NULL,
+  `professor_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `events`
+-- Despejando dados para a tabela `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `obs`, `formaPag`) VALUES
-(1, 'Tutorial 1a', '#0003bf', '2023-11-12 10:25:00', '2023-11-12 13:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'cartao'),
-(2, 'Tutorial 2b', '#bf0000', '2023-11-14 18:25:00', '2023-11-14 20:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'pix'),
-(3, 'Tutorial 3c', '#fad902', '2023-11-16 12:25:00', '2023-11-16 19:43:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'pix'),
-(4, 'Tutorial 4', '#67cac4', '2023-11-20 11:11:18', '2023-11-20 17:11:18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'cartao'),
-(5, 'Tutorial 5', '#40bf00', '2023-11-22 03:00:00', '2023-11-22 22:00:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'pix'),
-(9, 'Tutorial 6', '#bf0000', '2023-11-24 12:59:00', '2023-11-24 18:01:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'cartao'),
-(11, 'Tutorial 7', '#0003bf', '2023-11-26 11:00:00', '2023-11-26 14:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'pix'),
-(12, 'Tutorial 8', '#bf0000', '2023-11-28 02:00:00', '2023-11-28 05:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'pix'),
-(13, 'Tutorial 9', '#40bf00', '2023-11-30 03:00:00', '2023-11-30 22:00:00', 'Vamos la neymar uuuuuuuuuuu im blinded by the lights', 'cartao'),
-(14, 'Tutorial 10', '#0003bf', '2023-12-02 04:00:00', '2023-12-02 11:00:00', 'Testtando o pagamento nao tem jeito', 'pix'),
-(15, 'Tutorial 11', '#40bf00', '2023-12-04 04:00:00', '2023-12-04 12:00:00', 'testando a caixa alta que eu lancei no cartao e no pix', 'Pix'),
-(16, 'Tutorial 12', '#40bf00', '2023-12-06 03:00:00', '2023-12-06 17:00:00', 'testando agr se o required que eu lancei no select vai funcionar vambora', 'Cartao');
+INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`) VALUES
+(1, 'Tutorial 1a', '#0003bf', '2023-11-12 10:25:00', '2023-11-12 13:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Cartao', 0, 0),
+(2, 'Tutorial 2b', '#bf0000', '2023-11-14 18:25:00', '2023-11-14 20:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Pix', 0, 0),
+(3, 'Tutorial 3c', '#fad902', '2023-11-16 12:25:00', '2023-11-16 19:43:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Pix', 0, 0),
+(4, 'Tutorial 4', '#67cac4', '2023-11-20 11:11:18', '2023-11-20 17:11:18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Cartao', 0, 0),
+(5, 'Tutorial 5', '#40bf00', '2023-11-22 03:00:00', '2023-11-22 22:00:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Pix', 0, 0),
+(9, 'Tutorial 6', '#bf0000', '2023-11-24 12:59:00', '2023-11-24 18:01:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Cartao', 0, 0),
+(11, 'Tutorial 7', '#0003bf', '2023-11-26 11:00:00', '2023-11-26 14:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'Pix', 0, 0),
+(12, 'Tutorial 8', '#bf0000', '2023-11-28 02:00:00', '2023-11-28 05:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'Pix', 0, 0),
+(13, 'Tutorial 9', '#40bf00', '2023-11-30 03:00:00', '2023-11-30 22:00:00', 'Vamos la neymar uuuuuuuuuuu im blinded by the lights', 'Cartao', 0, 0),
+(14, 'Tutorial 10', '#0003bf', '2023-12-02 04:00:00', '2023-12-02 11:00:00', 'Testtando o pagamento nao tem jeito', 'Pix', 0, 0),
+(15, 'Tutorial 11', '#40bf00', '2023-12-04 04:00:00', '2023-12-04 12:00:00', 'testando a caixa alta que eu lancei no cartao e no pix', 'Pix', 0, 0),
+(16, 'Tutorial 12', '#40bf00', '2023-12-06 03:00:00', '2023-12-06 17:00:00', 'testando agr se o required que eu lancei no select vai funcionar vambora', 'Cartao', 0, 0),
+(21, 'Tutorial 13', '#0003bf', '2023-12-08 02:00:00', '2023-12-08 20:00:00', 'Aula de capoeira e futsal', 'Pix', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `professor`
+-- Estrutura para tabela `professor`
 --
 
 CREATE TABLE `professor` (
@@ -164,7 +167,7 @@ CREATE TABLE `professor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `professor`
+-- Despejando dados para a tabela `professor`
 --
 
 INSERT INTO `professor` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `areaFormacao`, `curriculo`, `conteudo`, `valorHora`, `area_id`, `dataCad`, `status`) VALUES
@@ -180,7 +183,7 @@ INSERT INTO `professor` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -192,7 +195,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `status`) VALUES
@@ -205,44 +208,44 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `status`) VALUES
 --
 
 --
--- Índices para tabela `aluno`
+-- Índices de tabela `aluno`
 --
 ALTER TABLE `aluno`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `area`
+-- Índices de tabela `area`
 --
 ALTER TABLE `area`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `evento`
+-- Índices de tabela `evento`
 --
 ALTER TABLE `evento`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `events`
+-- Índices de tabela `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `professor`
+-- Índices de tabela `professor`
 --
 ALTER TABLE `professor`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_area_professor` (`area_id`);
 
 --
--- Índices para tabela `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -267,7 +270,7 @@ ALTER TABLE `evento`
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
@@ -282,11 +285,11 @@ ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `professor`
+-- Restrições para tabelas `professor`
 --
 ALTER TABLE `professor`
   ADD CONSTRAINT `fk_area_professor` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`);
