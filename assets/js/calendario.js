@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Aguarda o usuario clicar no botao cadastrar
         formCadEvento.addEventListener("submit", async (e) => {
 
-          //Nao permitir a atualização da pagina
+            //Nao permitir a atualização da pagina
             e.preventDefault();
 
             //Apresentar no botão o texto salvando
