@@ -219,8 +219,8 @@
                             <div class="col-sm-10">
                                 <select name="cad_formaPag" class="form-control" id="cad_formaPag" required>
                                     <option value="">Selecione</option>
-                                    <option value="cartao">Cartão</option>
-                                    <option value="pix">Pix</option>
+                                    <option value="Cartao">Cartão</option>
+                                    <option value="Pix">Pix</option>
                                 </select>
                             </div>
                         </div>
