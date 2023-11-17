@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Nov-2023 às 04:25
+-- Tempo de geração: 17-Nov-2023 às 05:02
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -111,17 +111,28 @@ CREATE TABLE `events` (
   `title` varchar(220) NOT NULL,
   `color` varchar(45) NOT NULL,
   `start` datetime NOT NULL,
-  `end` datetime NOT NULL
+  `end` datetime NOT NULL,
+  `obs` text DEFAULT NULL,
+  `formaPag` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`) VALUES
-(1, 'Tutorial 1', '#2311c4', '2023-11-12 17:25:05', '2023-11-12 17:25:05'),
-(2, 'Tutorial 2', '#ff88ac', '2023-11-14 17:25:05', '2023-11-14 17:25:05'),
-(3, 'Tutorial 3', '#c8c433', '2023-11-16 17:25:05', '2023-11-16 17:25:05');
+INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `obs`, `formaPag`) VALUES
+(1, 'Tutorial 1a', '#0003bf', '2023-11-12 10:25:00', '2023-11-12 13:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'cartao'),
+(2, 'Tutorial 2b', '#bf0000', '2023-11-14 18:25:00', '2023-11-14 20:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'pix'),
+(3, 'Tutorial 3c', '#fad902', '2023-11-16 12:25:00', '2023-11-16 19:43:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'pix'),
+(4, 'Tutorial 4', '#67cac4', '2023-11-20 11:11:18', '2023-11-20 17:11:18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'cartao'),
+(5, 'Tutorial 5', '#40bf00', '2023-11-22 03:00:00', '2023-11-22 22:00:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'pix'),
+(9, 'Tutorial 6', '#bf0000', '2023-11-24 12:59:00', '2023-11-24 18:01:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'cartao'),
+(11, 'Tutorial 7', '#0003bf', '2023-11-26 11:00:00', '2023-11-26 14:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'pix'),
+(12, 'Tutorial 8', '#bf0000', '2023-11-28 02:00:00', '2023-11-28 05:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'pix'),
+(13, 'Tutorial 9', '#40bf00', '2023-11-30 03:00:00', '2023-11-30 22:00:00', 'Vamos la neymar uuuuuuuuuuu im blinded by the lights', 'cartao'),
+(14, 'Tutorial 10', '#0003bf', '2023-12-02 04:00:00', '2023-12-02 11:00:00', 'Testtando o pagamento nao tem jeito', 'pix'),
+(15, 'Tutorial 11', '#40bf00', '2023-12-04 04:00:00', '2023-12-04 12:00:00', 'testando a caixa alta que eu lancei no cartao e no pix', 'Pix'),
+(16, 'Tutorial 12', '#40bf00', '2023-12-06 03:00:00', '2023-12-06 17:00:00', 'testando agr se o required que eu lancei no select vai funcionar vambora', 'Cartao');
 
 -- --------------------------------------------------------
 
@@ -256,7 +267,7 @@ ALTER TABLE `evento`
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
