@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("edit_title").value = info.event.title;
         document.getElementById("edit_conteudo").value = info.event.extendedProps.conteudo;
         document.getElementById("edit_formaPag").value = info.event.extendedProps.formaPag;
+        document.getElementById("edit_aluno_id").value = info.event.extendedProps.aluno_id;
+        document.getElementById("edit_professor_id").value = info.event.extendedProps.professor_id;
         document.getElementById("edit_start").value = converterData(info.event.start);
         document.getElementById("edit_end").value = info.event.end !== null ? converterData(info.event.end) : converterData(info.event.start);
         document.getElementById("edit_color").value = info.event.backgroundColor;
@@ -290,6 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     eventoExiste.setProp('color', resposta['color']);
                     eventoExiste.setExtendedProp('conteudo', resposta['conteudo']);
                     eventoExiste.setExtendedProp('formaPag', resposta['formaPag']);
+                    eventoExiste.setExtendedProp('aluno_id', resposta['aluno_id']);
+                    eventoExiste.setExtendedProp('professor_id', resposta['professor_id']);
                     eventoExiste.setStart(resposta['start']);
                     eventoExiste.setEnd(resposta['end']);
                 }

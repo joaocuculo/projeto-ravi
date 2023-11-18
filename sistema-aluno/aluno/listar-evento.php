@@ -3,7 +3,7 @@
     include_once './conexao-agenda.php';
 
     //query para recuperar os eventos
-    $query_events = "SELECT id, title, color, start, end, conteudo, formaPag FROM events";
+    $query_events = "SELECT id, title, color, start, end, conteudo, formaPag, aluno_id, professor_id FROM events";
 
     //prepara a query
     $result_events = $conn->prepare($query_events);
@@ -26,7 +26,9 @@
             'start' => $start,
             'end' => $end,
             'conteudo' => $conteudo,
-            'formaPag' => $formaPag
+            'formaPag' => $formaPag,
+            'aluno_id' => $aluno_id,
+            'professor_id' => $professor_id
         ];
     }
 

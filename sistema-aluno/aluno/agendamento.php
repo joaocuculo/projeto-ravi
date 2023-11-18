@@ -101,6 +101,22 @@
                         <form method="POST" id="formEditEvento">
 
                             <input type="hidden" name="edit_id" id="edit_id">
+                            <input type="hidden" name="edit_aluno_id" id="edit_aluno_id" value="<?= $linha_aluno['id'] ?>">
+                            <input type="hidden" name="edit_professor_id" id="edit_professor_id" value="<?= $linha_prof['id'] ?>">
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Aluno</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" value="<?= $linha_aluno['nome'] ?>" disabled>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Professor</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" value="<?= $linha_prof['nome'] ?>" disabled>
+                                </div>
+                            </div>
 
                             <div class="row mb-3">
                                 <label for="edit_title" class="col-sm-2 col-form-label">Título</label>
