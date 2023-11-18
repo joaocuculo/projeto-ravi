@@ -4,9 +4,13 @@
 
     require_once('../../conexao.php');
 
-    $sql = "select * from professor where id = " . $_GET['id'];    
-    $resultado = mysqli_query($conexao, $sql);
-    $linha = mysqli_fetch_array($resultado);
+    $sql_prof = "select * from professor where id = " . $_GET['id'];    
+    $resultado_prof = mysqli_query($conexao, $sql_prof);
+    $linha_prof = mysqli_fetch_array($resultado_prof);
+
+    $sql_aluno = "select * from aluno where id = " . $_SESSION['id'];
+    $resultado_aluno = mysqli_query($conexao, $sql_aluno);
+    $linha_aluno = mysqli_fetch_array($resultado_aluno);
     
 ?>
 <!DOCTYPE html>
@@ -31,20 +35,20 @@
             <div class="perfil">
                 <div class="perfil-foto">
                     <img src="../../assets/img/user-image.png">
-                    <h2><?= $linha['nome'] ?></h2>
+                    <h2><?= $linha_prof['nome'] ?></h2>
                 </div>
                 <div class="formacao-box">
                     <div class="formacao-item">
                         <div>
                             <h2>Formação</h2>
-                            <p><?= $linha['conteudo'] ?></p>
+                            <p><?= $linha_prof['conteudo'] ?></p>
                         </div>
                         <div>
                             <h2>Valor/Hora</h2>
-                            <p>R$<?= $linha['valorHora'] ?></p>
+                            <p>R$<?= $linha_prof['valorHora'] ?></p>
                         </div>
                     </div>
-                    <a href="<?= $linha['curriculo'] ?>" download>Ver currículo</a> <!-- dar uma olhada aqui -->
+                    <a href="<?= $linha_prof['curriculo'] ?>" download>Ver currículo</a> <!-- dar uma olhada aqui -->
                 </div>
             </div>
         </section>
@@ -173,6 +177,24 @@
                     <span id="msgCadEvento"></span>
 
                     <form method="POST" id="formCadEvento">
+
+                        <input type="hidden" name="cad_aluno_id" id="cad_aluno_id" value="<?= $linha_aluno['id'] ?>">
+                        <input type="hidden" name="cad_professor_id" id="cad_professor_id" value="<?= $linha_prof['id'] ?>">
+
+                        <div class="row mb-3">
+                            <label for="cad_aluno_nome" class="col-sm-2 col-form-label">Aluno</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cad_aluno_nome" name="cad_aluno_nome" value="<?= $linha_aluno['nome'] ?>" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cad_professor_nome" class="col-sm-2 col-form-label">Professor</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cad_professor_nome" name="cad_professor_nome" value="<?= $linha_prof['nome'] ?>" disabled>
+                            </div>
+                        </div>
+
                         <div class="row mb-3">
                             <label for="cad_title" class="col-sm-2 col-form-label">Título</label>
                             <div class="col-sm-10">
