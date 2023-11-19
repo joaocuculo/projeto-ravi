@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-title").innerText = info.event.title;
         document.getElementById("visualizar-conteudo").innerText = info.event.extendedProps.conteudo;
         document.getElementById("visualizar-formaPag").innerText = info.event.extendedProps.formaPag;
+        document.getElementById("visualizar-aluno").innerText = info.event.extendedProps.aluno_id;
+        document.getElementById("visualizar-professor").innerText = info.event.extendedProps.professor_id;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
 

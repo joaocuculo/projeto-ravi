@@ -4,13 +4,21 @@
 
     require_once('../../conexao.php');
 
-    $sql_prof = "select * from professor where id = " . $_GET['id'];    
+    $sql_prof = "SELECT * FROM professor WHERE id = " . $_GET['id'];    
     $resultado_prof = mysqli_query($conexao, $sql_prof);
     $linha_prof = mysqli_fetch_array($resultado_prof);
 
-    $sql_aluno = "select * from aluno where id = " . $_SESSION['id'];
+    $sql_aluno = "SELECT * FROM aluno WHERE id = " . $_SESSION['id'];
     $resultado_aluno = mysqli_query($conexao, $sql_aluno);
     $linha_aluno = mysqli_fetch_array($resultado_aluno);
+
+    // $consulta_prof = "SELECT nome FROM events INNER JOIN professor ON events.professor_id = professor.id";
+    // $resultado_prof_nome = mysqli_query($conexao, $consulta_prof);
+    // $linha_prof_nome = mysqli_fetch_array($resultado_prof_nome);
+
+    // $consulta_aluno = "SELECT nome FROM events INNER JOIN aluno ON events.aluno_id = aluno.id";
+    // $resultado_aluno_nome = mysqli_query($conexao, $consulta_aluno);
+    // $linha_aluno_nome = mysqli_fetch_array($resultado_aluno_nome);
     
 ?>
 <!DOCTYPE html>
@@ -74,8 +82,11 @@
 
                     <div id="visualizarEvento">
                         <dl class="row">
-                            <dt class="col-sm-3">ID: </dt>
-                            <dd class="col-sm-9" id="visualizar-id"></dd>
+                            <input type="hidden" id="visualizar-id">
+                            <dt class="col-sm-3">Aluno: </dt>
+                            <dd class="col-sm-9" id="visualizar-aluno"></dd>
+                            <dt class="col-sm-3">Professor: </dt>
+                            <dd class="col-sm-9" id="visualizar-professor"></dd>
                             <dt class="col-sm-3">Título: </dt>
                             <dd class="col-sm-9" id="visualizar-title"></dd>
                             <dt class="col-sm-3">Conteúdo: </dt>
@@ -105,16 +116,16 @@
                             <input type="hidden" name="edit_professor_id" id="edit_professor_id" value="<?= $linha_prof['id'] ?>">
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Aluno</label>
+                                <label for="edit_aluno_nome" class="col-sm-2 col-form-label">Aluno</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" value="<?= $linha_aluno['nome'] ?>" disabled>
+                                <input type="text" class="form-control" name="edit_aluno_nome" id="edit_aluno_nome" value="<?= $linha_aluno['nome'] ?>" disabled>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Professor</label>
+                                <label for="edit_professor_nome" class="col-sm-2 col-form-label">Professor</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" value="<?= $linha_prof['nome'] ?>" disabled>
+                                <input type="text" class="form-control" name="edit_professor_nome" id="edit_professor_nome" value="<?= $linha_prof['nome'] ?>" disabled>
                                 </div>
                             </div>
 
