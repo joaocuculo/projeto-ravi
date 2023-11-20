@@ -264,6 +264,18 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="cad_valorHora" class="col-sm-2 col-form-label">Valor/Hora</label>
+                            <div class="col-sm-4">
+                                <input type="number" name="cad_valorHora" class="form-control" id="cad_valorHora" value="<?= $linha_prof['valorHora'] ?>" disabled>
+                            </div>
+
+                            <label for="cad_valorTotal" class="col-sm-2 col-form-label">Valor/Total</label>
+                            <div class="col-sm-4">
+                                <input type="number" name="cad_valorTotal" class="form-control" id="cad_valorTotal" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="cad_formaPag" class="col-sm-2 col-form-label">Pagamento</label>
                             <div class="col-sm-10">
                                 <select name="cad_formaPag" class="form-control" id="cad_formaPag" required>
