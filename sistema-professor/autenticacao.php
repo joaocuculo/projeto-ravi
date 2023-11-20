@@ -21,7 +21,7 @@
             $_SESSION['nome'] = $professor['nome'];
             $_SESSION['email'] = $professor['email'];
 
-            header("location: principal.php");
+            header("location: professor/principal.php");
         } else {
             $sql = "select *
                         from usuario

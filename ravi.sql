@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/11/2023 às 16:23
+-- Tempo de geração: 20/11/2023 às 12:10
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -123,19 +123,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`) VALUES
-(1, 'Tutorial 1a', '#0003bf', '2023-11-12 10:25:00', '2023-11-12 13:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Cartao', 0, 0),
-(2, 'Tutorial 2b', '#bf0000', '2023-11-14 18:25:00', '2023-11-14 20:25:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Pix', 0, 0),
-(3, 'Tutorial 3c', '#fad902', '2023-11-16 12:25:00', '2023-11-16 19:43:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Pix', 0, 0),
-(4, 'Tutorial 4', '#67cac4', '2023-11-20 11:11:18', '2023-11-20 17:11:18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Cartao', 0, 0),
-(5, 'Tutorial 5', '#40bf00', '2023-11-22 03:00:00', '2023-11-22 22:00:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Pix', 0, 0),
-(9, 'Tutorial 6', '#bf0000', '2023-11-24 12:59:00', '2023-11-24 18:01:00', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.', 'Cartao', 0, 0),
-(11, 'Tutorial 7', '#0003bf', '2023-11-26 11:00:00', '2023-11-26 14:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'Pix', 0, 0),
-(12, 'Tutorial 8', '#bf0000', '2023-11-28 02:00:00', '2023-11-28 05:00:00', 'Olha Ã© o seguinte estamos juntos estamos juntos estamos juntos estamos junots estamos juntos', 'Pix', 0, 0),
-(13, 'Tutorial 9', '#40bf00', '2023-11-30 03:00:00', '2023-11-30 22:00:00', 'Vamos la neymar uuuuuuuuuuu im blinded by the lights', 'Cartao', 0, 0),
-(14, 'Tutorial 10', '#0003bf', '2023-12-02 04:00:00', '2023-12-02 11:00:00', 'Testtando o pagamento nao tem jeito', 'Pix', 0, 0),
-(15, 'Tutorial 11', '#40bf00', '2023-12-04 04:00:00', '2023-12-04 12:00:00', 'testando a caixa alta que eu lancei no cartao e no pix', 'Pix', 0, 0),
-(16, 'Tutorial 12', '#40bf00', '2023-12-06 03:00:00', '2023-12-06 17:00:00', 'testando agr se o required que eu lancei no select vai funcionar vambora', 'Cartao', 0, 0),
-(21, 'Tutorial 13', '#0003bf', '2023-12-08 02:00:00', '2023-12-08 20:00:00', 'Aula de capoeira e futsal', 'Pix', 0, 0);
+(22, 'Aula de Função', '#40bf00', '2023-11-01 04:00:00', '2023-11-01 06:00:00', 'Função de primeiro, segundo e terceiro grau', 'Cartao', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -229,7 +217,9 @@ ALTER TABLE `evento`
 -- Índices de tabela `events`
 --
 ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_professor_events` (`professor_id`),
+  ADD KEY `fk_aluno_events` (`aluno_id`);
 
 --
 -- Índices de tabela `professor`
@@ -270,7 +260,7 @@ ALTER TABLE `evento`
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
@@ -287,6 +277,13 @@ ALTER TABLE `usuario`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `events`
+--
+ALTER TABLE `events`
+  ADD CONSTRAINT `fk_aluno_events` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`),
+  ADD CONSTRAINT `fk_professor_events` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`);
 
 --
 -- Restrições para tabelas `professor`
