@@ -3,35 +3,7 @@
     require_once('../../conexao.php');
 
     if (isset($_POST['cadastrar'])) {
-        // Função - Validar CPF
-        function validaCPF($cpf) {
-            if (strlen($cpf) != 11) {
-                return "O CPF deve conter 11 Dígitos!";
-            }
-            else if ($cpf == '00000000000' || 
-                $cpf == '11111111111' || 
-                $cpf == '22222222222' || 
-                $cpf == '33333333333' || 
-                $cpf == '44444444444' || 
-                $cpf == '55555555555' || 
-                $cpf == '66666666666' || 
-                $cpf == '77777777777' || 
-                $cpf == '88888888888' || 
-                $cpf == '99999999999') {
-                return false;
-            } else {   
-                for ($t = 9; $t < 11; $t++) {
-                    for ($d = 0, $c = 0; $c < $t; $c++) {
-                        $d += $cpf[$c] * (($t + 1) - $c);
-                    }
-                    $d = ((10 * $d) % 11) % 10;
-                    if ($cpf[$c] != $d) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        } 
+
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -107,6 +79,46 @@
             $mensagem = "As senhas inseridas são diferentes.";
         }  
     }
+
+    function validarCPF($cpf)
+{
+  // Remove caracteres não numéricos
+  $cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+  // Verifica se o CPF possui 11 dígitos
+  if (strlen($cpf) != 11) {
+    return false;
+  }
+
+  // Verifica se todos os dígitos são iguais
+  if (preg_match('/(\d)\1{10}/', $cpf)) {
+    return false;
+  }
+
+  // Calcula o primeiro dígito verificador
+  $soma = 0;
+  for ($i = 0; $i < 9; $i++) {
+    $soma += $cpf[$i] * (10 - $i);
+  }
+  $resto = $soma % 11;
+  $digito1 = ($resto < 2) ? 0 : 11 - $resto;
+
+  // Calcula o segundo dígito verificador
+  $soma = 0;
+  for ($i = 0; $i < 10; $i++) {
+    $soma += $cpf[$i] * (11 - $i);
+  }
+  $resto = $soma % 11;
+  $digito2 = ($resto < 2) ? 0 : 11 - $resto;
+
+  // Verifica se os dígitos verificadores estão corretos
+  if ($cpf[9] == $digito1 && $cpf[10] == $digito2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
