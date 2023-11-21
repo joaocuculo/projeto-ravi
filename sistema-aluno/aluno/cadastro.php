@@ -80,7 +80,7 @@
         }  
     }
 
-    function validarCPF($cpf)
+function validaCPF($cpf)
 {
   // Remove caracteres não numéricos
   $cpf = preg_replace('/[^0-9]/', '', $cpf);
