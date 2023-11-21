@@ -175,8 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     end: resposta['end'],
                     conteudo: resposta['conteudo'],
                     formaPag: resposta['formaPag'],
-                    formaPag: resposta['aluno_id'],
-                    formaPag: resposta['professor_id']
+                    aluno_id: resposta['aluno_id'],
+                    professor_id: resposta['professor_id']
                 }
 
                 //Adicionar o evento ao calendario

@@ -3,7 +3,35 @@
     require_once('../../conexao.php');
 
     if (isset($_POST['cadastrar'])) {
-
+        // Função - Validar CPF
+        function validaCPF($cpf) {
+            if (strlen($cpf) != 11) {
+                return "O CPF deve conter 11 Dígitos!";
+            }
+            else if ($cpf == '00000000000' || 
+                $cpf == '11111111111' || 
+                $cpf == '22222222222' || 
+                $cpf == '33333333333' || 
+                $cpf == '44444444444' || 
+                $cpf == '55555555555' || 
+                $cpf == '66666666666' || 
+                $cpf == '77777777777' || 
+                $cpf == '88888888888' || 
+                $cpf == '99999999999') {
+                return false;
+            } else {   
+                for ($t = 9; $t < 11; $t++) {
+                    for ($d = 0, $c = 0; $c < $t; $c++) {
+                        $d += $cpf[$c] * (($t + 1) - $c);
+                    }
+                    $d = ((10 * $d) % 11) % 10;
+                    if ($cpf[$c] != $d) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } 
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -62,15 +90,18 @@
     
                 return $idade;
             }
-    
-            if (calcularIdade($_POST['DN']) > 130) {
-                $mensagem = "Há algo de errado com sua idade.";
-            } else {
-                $sql = "insert into aluno (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$status')";
 
-                mysqli_query($conexao, $sql);
+            if(validaCPF($CPF)) {
 
-                $mensagem = "Cadastrado com sucesso!";
+                if (calcularIdade($_POST['DN']) > 130) {
+                    $mensagem = "Há algo de errado com sua idade.";
+                } else {
+                    $sql = "insert into aluno (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$status')";
+                    
+                    mysqli_query($conexao, $sql);
+                    
+                    $mensagem = "Cadastrado com sucesso!";
+                }
             }
         } else {
             $mensagem = "As senhas inseridas são diferentes.";
