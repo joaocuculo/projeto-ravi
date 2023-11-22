@@ -320,12 +320,12 @@
             var valorHora = document.getElementById("cad_valorHora").value;
             var valorTotal = document.getElementById("cad_valorTotal");
 
-            if (dias > 0) {
+            if (minutos != 0) {
+                
+                valorTotal.value = (horas + 1 + dias * 24) * valorHora;
+            } else {
                 
                 valorTotal.value = (horas + dias * 24) * valorHora;
-            } else {
-
-                valorTotal.value = horas * valorHora;
             }
             
         }
