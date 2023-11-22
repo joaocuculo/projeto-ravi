@@ -81,6 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
       //Abrir janela modal cadastrar quando clicar sobre o dia no calendário
       select: function(info) {
 
+        var today = new Date();
+        if (info.start < today) {
+            calendar.unselect();
+            alert('Você não pode adicionar eventos para datas passadas. Se o dia selecionado for o atual, você deve agendar para um horário futuro. Esse processo pode ser feito na aba "dia".');
+            return false;
+        }
+
         document.getElementById("cad_start").value = converterData(info.start);
         document.getElementById("cad_end").value = converterData(info.start);
 
