@@ -101,6 +101,8 @@
                             <dd class="col-sm-9" id="visualizar-start"></dd>
                             <dt class="col-sm-3">Fim: </dt>
                             <dd class="col-sm-9" id="visualizar-end"></dd>
+                            <dt class="col-sm-3">Valor Total (R$): </dt>
+                            <dd class="col-sm-9" id="visualizar-valorTotal"></dd>
                             <dt class="col-sm-3">Pagamento: </dt>
                             <dd class="col-sm-9" id="visualizar-formaPag"></dd>
                         </dl>
@@ -173,6 +175,18 @@
                                         <option style="color:#0003bf;" value="#0003bf">Azul</option>
                                         <option style="color:#fad902;" value="#fad902">Amarelo</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="edit_valorHora" class="col-sm-2 col-form-label">Valor/Hora</label>
+                                <div class="col-sm-4">
+                                    <input type="number" name="edit_valorHora" class="form-control" id="edit_valorHora" value="<?= $linha_prof['valorHora'] ?>" disabled>
+                                </div>
+
+                                <label for="edit_valorTotal" class="col-sm-2 col-form-label">Valor/Total</label>
+                                <div class="col-sm-4">
+                                    <input type="number" name="edit_valorTotal" class="form-control" id="edit_valorTotal" disabled>
                                 </div>
                             </div>
 
@@ -252,7 +266,7 @@
                         <div class="row mb-3">
                             <label for="cad_end" class="col-sm-2 col-form-label">Fim</label>
                             <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="cad_end" name="cad_end" oninput="mostrarValorTotal()">
+                            <input type="datetime-local" class="form-control" id="cad_end" name="cad_end" oninput="calcularValorTotal()">
                             </div>
                         </div>
 
@@ -277,7 +291,8 @@
 
                             <label for="cad_valorTotal" class="col-sm-2 col-form-label">Valor/Total</label>
                             <div class="col-sm-4">
-                                <input type="number" name="cad_valorTotal" class="form-control" id="cad_valorTotal" disabled>
+                                <input type="number" name="cad_valorTotal" class="form-control" id="cad_valorTotal" value="" disabled>
+                                <input type="hidden" name="cad_valorTotalHidden" id="cad_valorTotalHidden" value="">
                             </div>
                         </div>
 
@@ -303,7 +318,7 @@
     <?php require_once("../template-aluno/rodape1.php") ?>
 
     <script>
-        function mostrarValorTotal() {
+        function calcularValorTotal() {
             
             var start = document.getElementById("cad_start").value;
             var end = document.getElementById("cad_end").value;
@@ -317,16 +332,19 @@
             var horas = diferenca.hours();
             var minutos = diferenca.minutes();
 
-            var valorHora = document.getElementById("cad_valorHora").value;
+            var valorHora = parseFloat(document.getElementById("cad_valorHora").value);
             var valorTotal = document.getElementById("cad_valorTotal");
 
             if (minutos != 0) {
                 
-                valorTotal.value = (horas + 1 + dias * 24) * valorHora;
+                valorTotal = ((horas + 1) + dias * 24) * valorHora;
             } else {
                 
-                valorTotal.value = (horas + dias * 24) * valorHora;
+                valorTotal = (horas + dias * 24) * valorHora;
             }
+
+            document.getElementById("cad_valorTotal").value = valorTotal;
+            document.getElementById("cad_valorTotalHidden").value = valorTotal;
             
         }
     </script>

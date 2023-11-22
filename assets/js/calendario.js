@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-formaPag").innerText = info.event.extendedProps.formaPag;
         document.getElementById("visualizar-aluno").innerText = info.event.extendedProps.aluno_id;
         document.getElementById("visualizar-professor").innerText = info.event.extendedProps.professor_id;
+        document.getElementById("visualizar-valorTotal").innerText = info.event.extendedProps.valorTotal;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
 
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("edit_formaPag").value = info.event.extendedProps.formaPag;
         document.getElementById("edit_aluno_id").value = info.event.extendedProps.aluno_id;
         document.getElementById("edit_professor_id").value = info.event.extendedProps.professor_id;
+        document.getElementById("edit_valorTotal").value = info.event.extendedProps.valorTotal;
         document.getElementById("edit_start").value = converterData(info.event.start);
         document.getElementById("edit_end").value = info.event.end !== null ? converterData(info.event.end) : converterData(info.event.start);
         document.getElementById("edit_color").value = info.event.backgroundColor;
@@ -183,7 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     conteudo: resposta['conteudo'],
                     formaPag: resposta['formaPag'],
                     aluno_id: resposta['aluno_id'],
-                    professor_id: resposta['professor_id']
+                    professor_id: resposta['professor_id'],
+                    valorTotal: resposta['valorTotal']
                 }
 
                 //Adicionar o evento ao calendario
@@ -303,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     eventoExiste.setExtendedProp('formaPag', resposta['formaPag']);
                     eventoExiste.setExtendedProp('aluno_id', resposta['aluno_id']);
                     eventoExiste.setExtendedProp('professor_id', resposta['professor_id']);
+                    eventoExiste.setExtendedProp('valorTotal', resposta['valorTotal']);
                     eventoExiste.setStart(resposta['start']);
                     eventoExiste.setEnd(resposta['end']);
                 }

@@ -6,7 +6,7 @@ include_once './conexao-agenda.php';
 //Receber os dados enviados pelo javascript
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-$query_cad_event = "INSERT INTO events (title, color, start, end, conteudo, formaPag, aluno_id, professor_id) VALUES (:title, :color, :start, :end, :conteudo, :formaPag, :aluno_id, :professor_id)";
+$query_cad_event = "INSERT INTO events (title, color, start, end, conteudo, formaPag, aluno_id, professor_id, valorTotal) VALUES (:title, :color, :start, :end, :conteudo, :formaPag, :aluno_id, :professor_id, :valorTotal)";
 
 $cad_event = $conn->prepare($query_cad_event);
 
@@ -18,9 +18,10 @@ $cad_event->bindParam(':conteudo', $dados['cad_conteudo']);
 $cad_event->bindParam(':formaPag', $dados['cad_formaPag']);
 $cad_event->bindParam(':aluno_id', $dados['cad_aluno_id']);
 $cad_event->bindParam(':professor_id', $dados['cad_professor_id']);
+$cad_event->bindParam(':valorTotal', $dados['cad_valorTotalHidden']);
 
 if ($cad_event->execute()) {
-    $retorna = ['status' => true, 'msg' => 'Evento cadastrado com sucesso!', 'id' => $conn->lastInsertId(), 'title' => $dados['cad_title'], 'color' => $dados['cad_color'], 'start' => $dados['cad_start'], 'end' => $dados['cad_end'], 'conteudo' => $dados['cad_conteudo'], 'formaPag' => $dados['cad_formaPag'], 'aluno_id' => $dados['cad_aluno_id'], 'professor_id' => $dados['cad_professor_id']];
+    $retorna = ['status' => true, 'msg' => 'Evento cadastrado com sucesso!', 'id' => $conn->lastInsertId(), 'title' => $dados['cad_title'], 'color' => $dados['cad_color'], 'start' => $dados['cad_start'], 'end' => $dados['cad_end'], 'conteudo' => $dados['cad_conteudo'], 'formaPag' => $dados['cad_formaPag'], 'aluno_id' => $dados['cad_aluno_id'], 'professor_id' => $dados['cad_professor_id'], 'valorTotal' => $dados['cad_valorTotalHidden']];
 } else {
     $retorna = ['status' => false, 'msg' => 'Erro: Evento não cadastrado!'];
 }
