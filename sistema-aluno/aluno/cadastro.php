@@ -74,50 +74,52 @@
                     
                     $mensagem = "Cadastrado com sucesso!";
                 }
+            } else {
+                $mensagem = "O CPF informado não é válido";
             }
         } else {
             $mensagem = "As senhas inseridas são diferentes.";
         }  
     }
 
-function validaCPF($cpf)
-{
-  // Remove caracteres não numéricos
-  $cpf = preg_replace('/[^0-9]/', '', $cpf);
+    function validaCPF($cpf)
+    {
+    // Remove caracteres não numéricos
+    $cpf = preg_replace('/[^0-9]/', '', $cpf);
 
-  // Verifica se o CPF possui 11 dígitos
-  if (strlen($cpf) != 11) {
-    return false;
-  }
+    // Verifica se o CPF possui 11 dígitos
+    if (strlen($cpf) != 11) {
+        return false;
+    }
 
-  // Verifica se todos os dígitos são iguais
-  if (preg_match('/(\d)\1{10}/', $cpf)) {
-    return false;
-  }
+    // Verifica se todos os dígitos são iguais
+    if (preg_match('/(\d)\1{10}/', $cpf)) {
+        return false;
+    }
 
-  // Calcula o primeiro dígito verificador
-  $soma = 0;
-  for ($i = 0; $i < 9; $i++) {
-    $soma += $cpf[$i] * (10 - $i);
-  }
-  $resto = $soma % 11;
-  $digito1 = ($resto < 2) ? 0 : 11 - $resto;
+    // Calcula o primeiro dígito verificador
+    $soma = 0;
+    for ($i = 0; $i < 9; $i++) {
+        $soma += $cpf[$i] * (10 - $i);
+    }
+    $resto = $soma % 11;
+    $digito1 = ($resto < 2) ? 0 : 11 - $resto;
 
-  // Calcula o segundo dígito verificador
-  $soma = 0;
-  for ($i = 0; $i < 10; $i++) {
-    $soma += $cpf[$i] * (11 - $i);
-  }
-  $resto = $soma % 11;
-  $digito2 = ($resto < 2) ? 0 : 11 - $resto;
+    // Calcula o segundo dígito verificador
+    $soma = 0;
+    for ($i = 0; $i < 10; $i++) {
+        $soma += $cpf[$i] * (11 - $i);
+    }
+    $resto = $soma % 11;
+    $digito2 = ($resto < 2) ? 0 : 11 - $resto;
 
-  // Verifica se os dígitos verificadores estão corretos
-  if ($cpf[9] == $digito1 && $cpf[10] == $digito2) {
-    return true;
-  } else {
-    return false;
-  }
-}
+    // Verifica se os dígitos verificadores estão corretos
+    if ($cpf[9] == $digito1 && $cpf[10] == $digito2) {
+        return true;
+    } else {
+        return false;
+    }
+    }
 
 ?>
 <!DOCTYPE html>

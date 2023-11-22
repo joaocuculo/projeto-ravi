@@ -69,26 +69,70 @@
                 return $idade;
             }
 
-            $nomeCurriculo = "";
-            if (move_uploaded_file($_FILES['curriculo']['tmp_name'], $curriculoDestino)) {
-                $nomeCurriculo = $_FILES['curriculo']['name'];
-            }
-    
-            if (calcularIdade($_POST['DN']) > 130) {
-                $mensagem = "Há algo de errado com sua idade.";
-            } elseif (calcularIdade($_POST['DN']) >= 18) {
-                $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
-
-                mysqli_query($conexao, $sql);
-
-                $mensagem = "Cadastrado com sucesso!";
+            if (validaCPF($CPF)) {
+                
+                $nomeCurriculo = "";
+                if (move_uploaded_file($_FILES['curriculo']['tmp_name'], $curriculoDestino)) {
+                    $nomeCurriculo = $_FILES['curriculo']['name'];
+                }
+                
+                if (calcularIdade($_POST['DN']) > 130) {
+                    $mensagem = "Há algo de errado com sua idade.";
+                } elseif (calcularIdade($_POST['DN']) >= 18) {
+                    $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
+                    
+                    mysqli_query($conexao, $sql);
+                    
+                    $mensagem = "Cadastrado com sucesso!";
+                } else {
+                    $mensagem = "É necessário ser maior de idade para se tornar nosso professor.";
+                }
             } else {
-                $mensagem = "É necessário ser maior de idade para se tornar nosso professor.";
+                $mensagem = "O CPF informado não é válido";
             }
         } else {
             $mensagem = "As senhas inseridas são diferentes.";
         }  
     }
+
+    function validaCPF($cpf)
+    {
+      // Remove caracteres não numéricos
+      $cpf = preg_replace('/[^0-9]/', '', $cpf);
+    
+      // Verifica se o CPF possui 11 dígitos
+      if (strlen($cpf) != 11) {
+        return false;
+      }
+    
+      // Verifica se todos os dígitos são iguais
+      if (preg_match('/(\d)\1{10}/', $cpf)) {
+        return false;
+      }
+    
+      // Calcula o primeiro dígito verificador
+      $soma = 0;
+      for ($i = 0; $i < 9; $i++) {
+        $soma += $cpf[$i] * (10 - $i);
+      }
+      $resto = $soma % 11;
+      $digito1 = ($resto < 2) ? 0 : 11 - $resto;
+    
+      // Calcula o segundo dígito verificador
+      $soma = 0;
+      for ($i = 0; $i < 10; $i++) {
+        $soma += $cpf[$i] * (11 - $i);
+      }
+      $resto = $soma % 11;
+      $digito2 = ($resto < 2) ? 0 : 11 - $resto;
+    
+      // Verifica se os dígitos verificadores estão corretos
+      if ($cpf[9] == $digito1 && $cpf[10] == $digito2) {
+        return true;
+      } else {
+        return false;
+      }
+    }    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
