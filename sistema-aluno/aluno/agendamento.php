@@ -12,6 +12,11 @@
     $resultado_aluno = mysqli_query($conexao, $sql_aluno);
     $linha_aluno = mysqli_fetch_array($resultado_aluno);
 
+    // $database = new DateTime("2023-11-20 22:20:00");
+    // $datadehoje = new DateTime();
+    // $diferenca = date_diff($database, $datadehoje);
+    // echo "Diferença: " . $diferenca->format('%R%a dias, %h horas e %i minutos');
+
     // $consulta_prof = "SELECT nome FROM events INNER JOIN professor ON events.professor_id = professor.id";
     // $resultado_prof_nome = mysqli_query($conexao, $consulta_prof);
     // $linha_prof_nome = mysqli_fetch_array($resultado_prof_nome);
@@ -33,6 +38,7 @@
     <link rel="stylesheet" href="../../assets/css/agendamento.css">
     <link rel="stylesheet" href="../../assets/css/calendario.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <title>Ravi</title>
 </head>
 <body>
@@ -246,7 +252,7 @@
                         <div class="row mb-3">
                             <label for="cad_end" class="col-sm-2 col-form-label">Fim</label>
                             <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="cad_end" name="cad_end">
+                            <input type="datetime-local" class="form-control" id="cad_end" name="cad_end" oninput="mostrarValorTotal()">
                             </div>
                         </div>
 
@@ -295,6 +301,35 @@
     </main>
 
     <?php require_once("../template-aluno/rodape1.php") ?>
+
+    <script>
+        function mostrarValorTotal() {
+            
+            var start = document.getElementById("cad_start").value;
+            var end = document.getElementById("cad_end").value;
+
+            var dataStart = moment(start);
+            var dataEnd = moment(end);
+
+            var diferenca = moment.duration(dataEnd.diff(dataStart));
+
+            var dias = diferenca.days();
+            var horas = diferenca.hours();
+            var minutos = diferenca.minutes();
+
+            var valorHora = document.getElementById("cad_valorHora").value;
+            var valorTotal = document.getElementById("cad_valorTotal");
+
+            if (dias > 0) {
+                
+                valorTotal.value = (horas + dias * 24) * valorHora;
+            } else {
+
+                valorTotal.value = horas * valorHora;
+            }
+            
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="../../assets/js/index.global.min.js"></script>
