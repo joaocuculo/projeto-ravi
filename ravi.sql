@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/11/2023 às 12:10
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 24-Nov-2023 às 02:13
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `ravi`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aluno`
+-- Estrutura da tabela `aluno`
 --
 
 CREATE TABLE `aluno` (
@@ -48,7 +48,7 @@ CREATE TABLE `aluno` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `aluno`
+-- Extraindo dados da tabela `aluno`
 --
 
 INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `dataCad`, `status`) VALUES
@@ -58,7 +58,7 @@ INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `e
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `area`
+-- Estrutura da tabela `area`
 --
 
 CREATE TABLE `area` (
@@ -68,7 +68,7 @@ CREATE TABLE `area` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `area`
+-- Extraindo dados da tabela `area`
 --
 
 INSERT INTO `area` (`id`, `nome`, `status`) VALUES
@@ -80,30 +80,7 @@ INSERT INTO `area` (`id`, `nome`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `evento`
---
-
-CREATE TABLE `evento` (
-  `id` int(11) NOT NULL,
-  `dia` date NOT NULL,
-  `horaInicio` time NOT NULL,
-  `horaTermino` time NOT NULL,
-  `conteudo` mediumtext NOT NULL,
-  `valorTotal` double NOT NULL,
-  `formaPagamento` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Despejando dados para a tabela `evento`
---
-
-INSERT INTO `evento` (`id`, `dia`, `horaInicio`, `horaTermino`, `conteudo`, `valorTotal`, `formaPagamento`) VALUES
-(1, '2023-11-02', '17:00:00', '18:00:00', 'história do brasil, mundo antigo, grécia, império romano, egito antigo', 50, 'cartão');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `events`
+-- Estrutura da tabela `events`
 --
 
 CREATE TABLE `events` (
@@ -115,20 +92,25 @@ CREATE TABLE `events` (
   `conteudo` text NOT NULL,
   `formaPag` varchar(20) NOT NULL,
   `aluno_id` int(11) DEFAULT NULL,
-  `professor_id` int(11) DEFAULT NULL
+  `professor_id` int(11) DEFAULT NULL,
+  `valorTotal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `events`
+-- Extraindo dados da tabela `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`) VALUES
-(22, 'Aula de Função', '#40bf00', '2023-11-01 04:00:00', '2023-11-01 06:00:00', 'Função de primeiro, segundo e terceiro grau', 'Cartao', 1, 10);
+INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`, `valorTotal`) VALUES
+(22, 'Aula de FunÃ§Ã£o', '#40bf00', '2023-11-01 10:00:00', '2023-11-01 16:00:00', 'FunÃ§Ã£o de primeiro, segundo e terceiro grau', 'Pix', 1, 10, 900),
+(23, 'Aula de Guerras', '#bf0000', '2023-11-03 04:00:00', '2023-11-03 06:00:00', 'Primeira e segunda guerra mundial, embarcaÃ§Ãµes', 'Cartao', 1, 12, 140),
+(24, 'Aula de Logaritmo', '#0003bf', '2023-11-23 02:00:00', '2023-11-23 05:00:00', 'Soma, subtraÃ§Ã£o, adiÃ§Ã£o e divisÃ£o de logaritmos.', 'Cartao', 1, 10, 450),
+(25, 'Aula de FraÃ§Ã£o', '#fad902', '2023-11-25 10:00:00', '2023-11-25 20:00:00', 'MultiplicaÃ§Ã£o e divisÃ£o de fraÃ§Ã£o', 'Pix', 1, 10, 0),
+(26, 'Aula de Trigonometria', '#40bf00', '2023-11-26 11:00:00', '2023-11-26 15:00:00', 'CÃ­rculos, quadrilÃ¡teros, pirÃ¢mides e mais.', 'Pix', 1, 10, 600);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor`
+-- Estrutura da tabela `professor`
 --
 
 CREATE TABLE `professor` (
@@ -155,7 +137,7 @@ CREATE TABLE `professor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `professor`
+-- Extraindo dados da tabela `professor`
 --
 
 INSERT INTO `professor` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `areaFormacao`, `curriculo`, `conteudo`, `valorHora`, `area_id`, `dataCad`, `status`) VALUES
@@ -171,7 +153,7 @@ INSERT INTO `professor` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -183,7 +165,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `status`) VALUES
@@ -196,25 +178,19 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `status`) VALUES
 --
 
 --
--- Índices de tabela `aluno`
+-- Índices para tabela `aluno`
 --
 ALTER TABLE `aluno`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `area`
+-- Índices para tabela `area`
 --
 ALTER TABLE `area`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `evento`
---
-ALTER TABLE `evento`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `events`
+-- Índices para tabela `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`),
@@ -222,20 +198,20 @@ ALTER TABLE `events`
   ADD KEY `fk_aluno_events` (`aluno_id`);
 
 --
--- Índices de tabela `professor`
+-- Índices para tabela `professor`
 --
 ALTER TABLE `professor`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_area_professor` (`area_id`);
 
 --
--- Índices de tabela `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -251,16 +227,10 @@ ALTER TABLE `area`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `evento`
---
-ALTER TABLE `evento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
@@ -275,18 +245,18 @@ ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `events`
+-- Limitadores para a tabela `events`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `fk_aluno_events` FOREIGN KEY (`aluno_id`) REFERENCES `aluno` (`id`),
   ADD CONSTRAINT `fk_professor_events` FOREIGN KEY (`professor_id`) REFERENCES `professor` (`id`);
 
 --
--- Restrições para tabelas `professor`
+-- Limitadores para a tabela `professor`
 --
 ALTER TABLE `professor`
   ADD CONSTRAINT `fk_area_professor` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`);
