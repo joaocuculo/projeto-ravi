@@ -18,11 +18,11 @@ $edit_event->bindParam(':conteudo', $dados['edit_conteudo']);
 $edit_event->bindParam(':formaPag', $dados['edit_formaPag']);
 $edit_event->bindParam(':aluno_id', $dados['edit_aluno_id']);
 $edit_event->bindParam(':professor_id', $dados['edit_professor_id']);
-$edit_event->bindParam(':valorTotal', $dados['edit_valorTotal']);
+$edit_event->bindParam(':valorTotal', $dados['edit_valorTotalHidden']);
 $edit_event->bindParam(':id', $dados['edit_id']);
 
 if ($edit_event->execute()) {
-    $retorna = ['status' => true, 'msg' => 'Evento editado com sucesso!', 'id' => $dados['edit_id'], 'title' => $dados['edit_title'], 'color' => $dados['edit_color'], 'start' => $dados['edit_start'], 'end' => $dados['edit_end'], 'conteudo' => $dados['edit_conteudo'], 'formaPag' => $dados['edit_formaPag'], 'aluno_id' => $dados['edit_aluno_id'], 'professor_id' => $dados['edit_professor_id'], 'valorTotal' => $dados['edit_valorTotal']];
+    $retorna = ['status' => true, 'msg' => 'Evento editado com sucesso!', 'id' => $dados['edit_id'], 'title' => $dados['edit_title'], 'color' => $dados['edit_color'], 'start' => $dados['edit_start'], 'end' => $dados['edit_end'], 'conteudo' => $dados['edit_conteudo'], 'formaPag' => $dados['edit_formaPag'], 'aluno_id' => $dados['edit_aluno_id'], 'professor_id' => $dados['edit_professor_id'], 'valorTotal' => $dados['edit_valorTotalHidden']];
 } else {
     $retorna = ['status' => false, 'msg' => 'Erro: Evento não editado!'];
 }

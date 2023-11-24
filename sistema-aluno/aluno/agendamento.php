@@ -159,7 +159,7 @@
                             <div class="row mb-3">
                                 <label for="edit_end" class="col-sm-2 col-form-label">Fim</label>
                                 <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="edit_end" name="edit_end">
+                                <input type="datetime-local" class="form-control" id="edit_end" name="edit_end" oninput="calcularValorTotalEdit()">
                                 </div>
                             </div>
 
@@ -185,6 +185,7 @@
                                 <label for="edit_valorTotal" class="col-sm-2 col-form-label">Valor/Total</label>
                                 <div class="col-sm-4">
                                     <input type="number" name="edit_valorTotal" class="form-control" id="edit_valorTotal" disabled>
+                                <input type="hidden" name="edit_valorTotalHidden" id="edit_valorTotalHidden" value="">
                                 </div>
                             </div>
 
@@ -343,6 +344,36 @@
 
             document.getElementById("cad_valorTotal").value = valorTotal;
             document.getElementById("cad_valorTotalHidden").value = valorTotal;
+            
+        }
+
+        function calcularValorTotalEdit() {
+            
+            var start = document.getElementById("edit_start").value;
+            var end = document.getElementById("edit_end").value;
+
+            var dataStart = moment(start);
+            var dataEnd = moment(end);
+
+            var diferenca = moment.duration(dataEnd.diff(dataStart));
+
+            var dias = diferenca.days();
+            var horas = diferenca.hours();
+            var minutos = diferenca.minutes();
+
+            var valorHora = parseFloat(document.getElementById("edit_valorHora").value);
+            var valorTotal = document.getElementById("edit_valorTotal");
+
+            if (minutos != 0) {
+                
+                valorTotal = ((horas + 1) + dias * 24) * valorHora;
+            } else {
+                
+                valorTotal = (horas + dias * 24) * valorHora;
+            }
+
+            document.getElementById("edit_valorTotal").value = valorTotal;
+            document.getElementById("edit_valorTotalHidden").value = valorTotal;
             
         }
     </script>
