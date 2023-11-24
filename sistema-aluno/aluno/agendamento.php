@@ -91,8 +91,6 @@
                             <input type="hidden" id="visualizar-id">
                             <dt class="col-sm-3">Aluno: </dt>
                             <dd class="col-sm-9" id="visualizar-aluno"></dd>
-                            <dt class="col-sm-3">Professor: </dt>
-                            <dd class="col-sm-9" id="visualizar-professor"></dd>
                             <dt class="col-sm-3">Título: </dt>
                             <dd class="col-sm-9" id="visualizar-title"></dd>
                             <dt class="col-sm-3">Conteúdo: </dt>

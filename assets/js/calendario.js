@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
     //Receber o seletor "msgViewEvento"
     const msgViewEvento = document.getElementById("msgViewEvento");
 
+    function obterValorParametroUrl(nomeParametro) {
+        var urlSearchParams = new URLSearchParams(window.location.search);
+        return urlSearchParams.get(nomeParametro);
+    }
+    
+    // Obtém o ID do professor da URL
+    var professorId = obterValorParametroUrl('id');
+
     //Instanciar FullCalendar.Calenedar e atribuir a variavel calendar
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
@@ -40,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
       dayMaxEvents: true, // allow "more" link when too many events
 
       //Chamar o arquivo PHP para recuperar os eventos
-      events: 'listar-evento.php',
+      events: 'listar-evento.php?id=' + professorId,
 
       //Identificar o clique do usuário sobre o evento
       eventClick: function(info) {
@@ -58,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-title").innerText = info.event.title;
         document.getElementById("visualizar-conteudo").innerText = info.event.extendedProps.conteudo;
         document.getElementById("visualizar-formaPag").innerText = info.event.extendedProps.formaPag;
-        document.getElementById("visualizar-aluno").innerText = info.event.extendedProps.aluno_id;
-        document.getElementById("visualizar-professor").innerText = info.event.extendedProps.professor_id;
+        document.getElementById("visualizar-aluno").innerText = info.event.extendedProps.nome;
+        //document.getElementById("visualizar-professor").innerText = info.event.extendedProps.professor_id;
         document.getElementById("visualizar-valorTotal").innerText = info.event.extendedProps.valorTotal;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
