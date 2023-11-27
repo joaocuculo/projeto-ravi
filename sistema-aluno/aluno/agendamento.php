@@ -152,14 +152,14 @@
                             <div class="row mb-3">
                                 <label for="edit_start" class="col-sm-2 col-form-label">Início</label>
                                 <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="edit_start" name="edit_start">
+                                <input type="datetime-local" class="form-control" id="edit_start" name="edit_start" disabled>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="edit_end" class="col-sm-2 col-form-label">Fim</label>
                                 <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="edit_end" name="edit_end" oninput="calcularValorTotalEdit()">
+                                <input type="datetime-local" class="form-control" id="edit_end" name="edit_end" disabled>
                                 </div>
                             </div>
 
@@ -192,7 +192,7 @@
                             <div class="row mb-3">
                                 <label for="edit_formaPag" class="col-sm-2 col-form-label">Pagamento</label>
                                 <div class="col-sm-10">
-                                    <select name="edit_formaPag" class="form-control" id="edit_formaPag" required>
+                                    <select name="edit_formaPag" class="form-control" id="edit_formaPag" disabled>
                                         <option value="">Selecione</option>
                                         <option value="Cartao">Cartão</option>
                                         <option value="Pix">Pix</option>
@@ -344,37 +344,7 @@
 
             document.getElementById("cad_valorTotal").value = valorTotal;
             document.getElementById("cad_valorTotalHidden").value = valorTotal;
-            
-        }
-
-        function calcularValorTotalEdit() {
-            
-            var start = document.getElementById("edit_start").value;
-            var end = document.getElementById("edit_end").value;
-
-            var dataStart = moment(start);
-            var dataEnd = moment(end);
-
-            var diferenca = moment.duration(dataEnd.diff(dataStart));
-
-            var dias = diferenca.days();
-            var horas = diferenca.hours();
-            var minutos = diferenca.minutes();
-
-            var valorHora = parseFloat(document.getElementById("edit_valorHora").value);
-            var valorTotal = document.getElementById("edit_valorTotal");
-
-            if (minutos != 0) {
-                
-                valorTotal = ((horas + 1) + dias * 24) * valorHora;
-            } else {
-                
-                valorTotal = (horas + dias * 24) * valorHora;
-            }
-
-            document.getElementById("edit_valorTotal").value = valorTotal;
-            document.getElementById("edit_valorTotalHidden").value = valorTotal;
-            
+                        
         }
     </script>
 

@@ -311,12 +311,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     eventoExiste.setProp('title', resposta['title']);
                     eventoExiste.setProp('color', resposta['color']);
                     eventoExiste.setExtendedProp('conteudo', resposta['conteudo']);
-                    eventoExiste.setExtendedProp('formaPag', resposta['formaPag']);
                     eventoExiste.setExtendedProp('aluno_id', resposta['aluno_id']);
                     eventoExiste.setExtendedProp('professor_id', resposta['professor_id']);
-                    eventoExiste.setExtendedProp('valorTotal', resposta['valorTotal']);
-                    eventoExiste.setStart(resposta['start']);
-                    eventoExiste.setEnd(resposta['end']);
                 }
 
                 removerMsg();
