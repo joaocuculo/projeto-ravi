@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     //Receber o seletor "msgViewEvento"
     const msgViewEvento = document.getElementById("msgViewEvento");
 
-    function obterValorParametroUrl(nomeParametro) {
+    function obterValorParametroUrl(getIdProf) {
         var urlSearchParams = new URLSearchParams(window.location.search);
-        return urlSearchParams.get(nomeParametro);
+        return urlSearchParams.get(getIdProf);
     }
     
     // Obtém o ID do professor da URL
@@ -149,9 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         //Aguarda o usuario clicar no botao cadastrar
         formCadEvento.addEventListener("submit", async (e) => {
-
-            //Nao permitir a atualização da pagina
-            e.preventDefault();
 
             //Apresentar no botão o texto salvando
             btnCadEvento.value = "Salvando...";
