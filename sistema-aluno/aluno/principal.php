@@ -4,12 +4,11 @@
     
     require_once('../../conexao.php');
 
-    $sql = "SELECT * FROM events WHERE 1 = 1 AND aluno_id = " . $_SESSION['id'];
+    $sql = "SELECT events.*, professor.nome
+              FROM events
+        INNER JOIN professor ON events.professor_id = professor.id
+             WHERE aluno_id = " . $_SESSION['id'];
     $resultado = mysqli_query($conexao, $sql);
-
-    $consulta_prof = "SELECT nome FROM events INNER JOIN professor ON events.professor_id = professor.id";
-    $resultado_prof_nome = mysqli_query($conexao, $consulta_prof);
-    $linha_prof_nome = mysqli_fetch_array($resultado_prof_nome);
 
 ?>
 <!DOCTYPE html>
@@ -74,7 +73,8 @@
                 <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
                     <article>
                         <h3><?= $linha['title'] ?></h3>
-                        <h4>Professor <?= $linha_prof_nome['nome'] ?></h4>
+                        <h4>Professor(a) <?= $linha['nome'] ?></h4>
+                        <h4><?= $linha['start'] ?> - <?= $linha['end'] ?></h4>
                     </article>
                 <?php } ?>    
             </div>
