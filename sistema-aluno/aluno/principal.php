@@ -69,7 +69,7 @@
                 <h2>Aulas Agendadas</h2>
             </div>
 
-            <div>
+            <div class="card-agen">
                 <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
                     <article>
                         <h3><?= $linha['title'] ?></h3>
