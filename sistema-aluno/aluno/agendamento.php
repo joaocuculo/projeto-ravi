@@ -274,10 +274,10 @@
                             <div class="col-sm-10">
                                 <select name="cad_color" class="form-control" id="cad_color">
                                     <option value="">Selecione</option>
-                                    <option style="color:#40bf00;" value="#40bf00">Verde</option>
-                                    <option style="color:#bf0000;" value="#bf0000">Vermelho</option>
-                                    <option style="color:#0003bf;" value="#0003bf">Azul</option>
-                                    <option style="color:#fad902;" value="#fad902">Amarelo</option>
+                                    <option style="color:#0d6935;" value="#0d6935">Verde</option>
+                                    <option style="color:#961414;" value="#961414">Vermelho</option>
+                                    <option style="color:#143896;" value="#143896">Azul</option>
+                                    <option style="color:#D18D08;" value="#D18D08">Amarelo</option>
                                 </select>
                             </div>
                         </div>

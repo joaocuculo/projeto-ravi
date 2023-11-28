@@ -64,17 +64,22 @@
             </div>
         </section>
 
-        <section>
-            <div>
+        <section style="margin-top: -6rem;">
+            <div class="bem-vindo">
                 <h2>Aulas Agendadas</h2>
             </div>
 
-            <div class="card-agen">
+            <div class="card-agend">
                 <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
-                    <article>
+                    <?php
+                        $inicio = new DateTime($linha['start']);
+                        $fim = new DateTime($linha['end']);
+                    ?>
+                    <article style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
                         <h3><?= $linha['title'] ?></h3>
                         <h4>Professor(a) <?= $linha['nome'] ?></h4>
-                        <h4><?= $linha['start'] ?> - <?= $linha['end'] ?></h4>
+                        <h4>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h4>
+                        <h4>Fim: <?= $fim->format('d/m/Y H:i:s') ?></h4>
                     </article>
                 <?php } ?>    
             </div>

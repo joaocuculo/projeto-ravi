@@ -160,25 +160,6 @@ body {
     font-size: 1.2rem;
 }
 
-.card-agen {
-    display: flex;
-    justify-content: ;
-    flex-wrap: wrap;
-}
-
-.card-agen article {
-    background-image: linear-gradient(to bottom, #0d6935 0, #0d6935 50%, #D9D7CA 50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 32rem;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    color: var(--color-black);
-}
-
 .vire-prof {
     display: flex;
     justify-content: center;
@@ -232,6 +213,29 @@ body {
     margin: 3rem auto;
     padding: 1.5rem 1rem;
     background-color: #D9D7CA;
+}
+
+.card-agend {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-agend article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 26rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: var(--color-black);
+}   
+
+.card-agend article h3 {
+    margin-bottom: .3rem;
 }
 
 @media screen and (max-width: 1225px) {
