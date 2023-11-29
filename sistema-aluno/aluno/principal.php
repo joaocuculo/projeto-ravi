@@ -75,12 +75,12 @@
                         $inicio = new DateTime($linha['start']);
                         $fim = new DateTime($linha['end']);
                     ?>
-                    <article style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
+                    <a href="../aluno/agendamento.php?id=<?= $linha['professor_id'] ?>" style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
                         <h3><?= $linha['title'] ?></h3>
                         <h5>Professor(a) <?= $linha['nome'] ?></h5>
                         <h5>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h5>
                         <h5>Fim: <?= $fim->format('d/m/Y H:i:s') ?></h5>
-                    </article>
+                    </a>
                 <?php } ?>    
             </div>
         </section>

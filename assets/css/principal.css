@@ -221,7 +221,7 @@ body {
     flex-wrap: wrap;
 }
 
-.card-agend article {
+.card-agend a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -234,7 +234,13 @@ body {
     color: var(--color-black);
 }   
 
-.card-agend article h3 {
+.card-agend a:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.507);
+    transition: transform .3s;
+}
+
+.card-agend a h3 {
     margin-bottom: .3rem;
 }
 
