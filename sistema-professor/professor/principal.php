@@ -28,43 +28,20 @@
 
     <main class="container">
         <div class="bem-vindo">
-            <h2>Seja bem vindo, Professor(a) <?= $_SESSION['nome']; ?>. Confira as matérias</h2>
+            <h2>Seja bem-vindo, Professor(a) <?= $_SESSION['nome']; ?></h2>
         </div>
 
-        <section class="cursos">
-            <div class="card-cursos">
-                <article class="card">
-                    <a href="">
-                        <img src="../../assets/img/pi-icon.png">
-                        <strong>Matemática</strong>
-                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="" id="port">
-                        <img src="../../assets/img/abc-icon.png">
-                        <strong>Português</strong>
-                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="" id="fis">
-                        <img src="../../assets/img/atom-icon.png">
-                        <strong>Física</strong>
-                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="" id="hist">
-                        <img src="../../assets/img/ruins-icon.png">
-                        <strong>História</strong>
-                        <i class="fa-sharp fa-solid fa-circle-arrow-right" style="color: #000000;"></i>
-                    </a>    
-                </article>
+        <section class="prof-agend">
+            <div>
+                <img src="../../assets/img/undraw_events_re_98ue.svg">        
+            </div>
+            <div class="confira-agend">
+                <p>Confira seu calendário com agendamentos</p>
+                <a href="agendamento.php?id=<?= $_SESSION['id'] ?>" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
 
-        <section style="margin-top: -6rem;">
+        <section>
             <div class="bem-vindo">
                 <h2>Aulas Agendadas</h2>
             </div>
