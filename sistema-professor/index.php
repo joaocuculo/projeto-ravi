@@ -28,7 +28,7 @@
             <aside>
                 <form action="autenticacao.php" method="post">
                     <div class="form-title">
-                        <h2>Login</h2>
+                        <h2>Login - Professor</h2>
                     </div>
 
                     <?php if (isset($_GET['mensagem'])) { ?>

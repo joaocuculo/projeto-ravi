@@ -28,7 +28,7 @@
 
     <main class="container">
         <div class="bem-vindo">
-            <h2>Seja bem vindo, <?= $_SESSION['nome']; ?>. Confira as matérias</h2>
+            <h2>Seja bem vindo, Professor(a) <?= $_SESSION['nome']; ?>. Confira as matérias</h2>
         </div>
 
         <section class="cursos">
@@ -75,12 +75,12 @@
                         $inicio = new DateTime($linha['start']);
                         $fim = new DateTime($linha['end']);
                     ?>
-                    <article style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
+                    <a style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
                         <h3><?= $linha['title'] ?></h3>
                         <h5>Aluno(a) <?= $linha['nome'] ?></h5>
                         <h5>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h5>
                         <h5>Fim: <?= $fim->format('d/m/Y H:i:s') ?></h5>
-                    </article>
+                    </a>
                 <?php } ?>    
             </div>
         </section>
