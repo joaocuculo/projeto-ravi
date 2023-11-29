@@ -28,7 +28,7 @@
 
     <main class="container">
         <div class="bem-vindo">
-            <h2>Seja bem vindo, <?= $_SESSION['nome']; ?></h2>
+            <h2>Seja bem-vindo, <?= $_SESSION['nome']; ?>. Confira as matérias</h2>
         </div>
 
         <section class="cursos">
@@ -77,9 +77,9 @@
                     ?>
                     <article style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
                         <h3><?= $linha['title'] ?></h3>
-                        <h4>Professor(a) <?= $linha['nome'] ?></h4>
-                        <h4>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h4>
-                        <h4>Fim: <?= $fim->format('d/m/Y H:i:s') ?></h4>
+                        <h5>Professor(a) <?= $linha['nome'] ?></h5>
+                        <h5>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h5>
+                        <h5>Fim: <?= $fim->format('d/m/Y H:i:s') ?></h5>
                     </article>
                 <?php } ?>    
             </div>

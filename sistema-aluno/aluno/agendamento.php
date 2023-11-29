@@ -278,6 +278,9 @@
                                     <option style="color:#961414;" value="#961414">Vermelho</option>
                                     <option style="color:#143896;" value="#143896">Azul</option>
                                     <option style="color:#D18D08;" value="#D18D08">Amarelo</option>
+                                    <option style="color:#400d69;" value="#400d69">Roxo</option>
+                                    <option style="color:#96144f;" value="#96144f">Rosa</option>
+                                    <option style="color:#c75716;" value="#c75716">Laranja</option>
                                 </select>
                             </div>
                         </div>
