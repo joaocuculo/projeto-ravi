@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Nov-2023 às 02:13
+-- Tempo de geração: 29-Nov-2023 às 04:27
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -53,7 +53,7 @@ CREATE TABLE `aluno` (
 
 INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `dataCad`, `status`) VALUES
 (1, 'Otavio', 'otavio@gmail.com', 'umdoistres', '1995-06-30', 'Rua das floral', '87013-123', 'RN', 'Antônio Martins', '(41) 9 9827-3441', '071.983.274-52', '23456789876543', 'outro', '0000-00-00 00:00:00', ''),
-(2, 'Maurí­cio', 'mauricio@gmail.com', 'estamosjuntos', '1997-09-08', 'Avenida vou ali e já volto', '40234-709', 'MA', 'Anajatuba', '(80) 9 8292-9292', '841.048.104-19', '48203740370137', 'outro', '2023-09-17 17:16:26', '1');
+(2, 'Mauri­cio', 'mauricio@gmail.com', 'estamosjuntos', '1997-09-08', 'Avenida vou ali e já volto', '40234-709', 'MA', 'Anajatuba', '(80) 9 8292-9292', '841.048.104-19', '48203740370137', 'outro', '2023-09-17 17:16:26', '1');
 
 -- --------------------------------------------------------
 
@@ -101,11 +101,15 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`, `valorTotal`) VALUES
-(22, 'Aula de FunÃ§Ã£o', '#40bf00', '2023-11-01 10:00:00', '2023-11-01 16:00:00', 'FunÃ§Ã£o de primeiro, segundo e terceiro grau', 'Pix', 1, 10, 900),
-(23, 'Aula de Guerras', '#bf0000', '2023-11-03 04:00:00', '2023-11-03 06:00:00', 'Primeira e segunda guerra mundial, embarcaÃ§Ãµes', 'Cartao', 1, 12, 140),
-(24, 'Aula de Logaritmo', '#0003bf', '2023-11-23 02:00:00', '2023-11-23 05:00:00', 'Soma, subtraÃ§Ã£o, adiÃ§Ã£o e divisÃ£o de logaritmos.', 'Cartao', 1, 10, 450),
-(25, 'Aula de FraÃ§Ã£o', '#fad902', '2023-11-25 10:00:00', '2023-11-25 20:00:00', 'MultiplicaÃ§Ã£o e divisÃ£o de fraÃ§Ã£o', 'Pix', 1, 10, 0),
-(26, 'Aula de Trigonometria', '#40bf00', '2023-11-26 11:00:00', '2023-11-26 15:00:00', 'CÃ­rculos, quadrilÃ¡teros, pirÃ¢mides e mais.', 'Pix', 1, 10, 600);
+(22, 'Aula de FunÃ§Ã£o', '#961414', '2023-11-01 10:00:00', '2023-11-01 16:00:00', 'FunÃ§Ã£o de primeiro, segundo e terceiro grau', 'Pix', 1, 10, 900),
+(23, 'Aula de Guerras', '#961414', '2023-11-03 04:00:00', '2023-11-03 06:00:00', 'Primeira e segunda guerra mundial, embarcaÃ§Ãµes', 'Cartao', 1, 12, 140),
+(26, 'Aula de Trigonometria', '#0d6935', '2023-11-26 11:00:00', '2023-11-26 15:00:00', 'CÃ­rculos, quadrilÃ¡teros, pirÃ¢mides e mais.', 'Pix', 1, 10, 600),
+(27, 'Aula de FraÃ§Ã£o', '#0d6935', '2023-11-25 08:00:00', '2023-11-25 12:00:00', 'MultiplicaÃ§Ã£o e divisÃ£o de fraÃ§Ã£o', 'Pix', 1, 10, 600),
+(28, 'Aula de EmbarcaÃ§Ãµes', '#961414', '2023-11-26 06:00:00', '2023-11-26 10:00:00', 'Imperialismo e embarcaÃ§Ãµes europeias', 'Cartao', 1, 12, 280),
+(30, 'Aula de FÃ­sica BÃ¡sica', '#143896', '2023-11-29 01:00:00', '2023-11-29 04:00:00', 'FÃ­sica bÃ¡sica em geral', 'Cartao', 1, 3, 300),
+(31, 'Aula de MRU', '#143896', '2023-11-30 10:00:00', '2023-11-30 12:00:00', 'Movimento retilÃ­neo uniforme', 'Pix', 2, 1, 600),
+(32, 'Aula de OraÃ§Ã£o Subordinada', '#D18D08', '2023-11-30 05:00:00', '2023-11-30 10:00:00', 'OraÃ§Ãµes subordinadas', 'Pix', 1, 8, 450),
+(33, 'Aula de HistÃ³ria ClÃ¡ssica', '#400d69', '2023-11-30 05:00:00', '2023-11-30 07:00:00', 'GrÃ©cia e Roma antiga', 'Cartao', 1, 9, 260);
 
 -- --------------------------------------------------------
 
@@ -230,7 +234,7 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
