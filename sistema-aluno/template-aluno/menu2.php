@@ -8,7 +8,6 @@
             <ul>
                 <li><a href="principal.php">Início</a></li>
                 <li><a href="sobre.php">Sobre</a></li>
-                <li><a href="#">Matérias</a></li>
                 <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
             </ul>
         </div>
@@ -22,7 +21,6 @@
         <ul>
             <li><a href="principal.php">Início</a></li>
             <li><a href="sobre.php">Sobre</a></li>
-            <li><a href="#">Matérias</a></li>
             <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
         </ul>
     </div>
