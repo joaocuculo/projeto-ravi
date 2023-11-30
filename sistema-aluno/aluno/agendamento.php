@@ -55,6 +55,8 @@
                     <div class="formacao-item">
                         <div>
                             <h2>Formação</h2>
+                            <p><?= $linha_prof['areaFormacao'] ?></p>
+                            <h5>Conteúdo</h5>
                             <p><?= $linha_prof['conteudo'] ?></p>
                         </div>
                         <div>
@@ -62,7 +64,7 @@
                             <p>R$<?= $linha_prof['valorHora'] ?></p>
                         </div>
                     </div>
-                    <a href="<?= $linha_prof['curriculo'] ?>" download>Ver currículo</a> <!-- dar uma olhada aqui -->
+                    <a href="<?= $linha_prof['curriculo'] ?>" target="_blank">Ver currículo</a>
                 </div>
             </div>
         </section>
@@ -247,28 +249,28 @@
                         <div class="row mb-3">
                             <label for="cad_title" class="col-sm-2 col-form-label">Título</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="cad_title" name="cad_title" placeholder="Título da Aula">
+                            <input type="text" class="form-control" id="cad_title" name="cad_title" placeholder="Título da Aula" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="cad_conteudo" class="col-sm-2 col-form-label">Conteúdo</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="cad_conteudo" name="cad_conteudo" placeholder="Conteúdo da Aula">
+                            <input type="text" class="form-control" id="cad_conteudo" name="cad_conteudo" placeholder="Conteúdo da Aula" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="cad_start" class="col-sm-2 col-form-label">Início</label>
                             <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="cad_start" name="cad_start">
+                            <input type="datetime-local" class="form-control" id="cad_start" name="cad_start" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="cad_end" class="col-sm-2 col-form-label">Fim</label>
                             <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="cad_end" name="cad_end" oninput="calcularValorTotal()">
+                            <input type="datetime-local" class="form-control" id="cad_end" name="cad_end" oninput="calcularValorTotal()" required>
                             </div>
                         </div>
 
