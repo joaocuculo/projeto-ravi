@@ -99,6 +99,15 @@ aside {
     margin-right: 1rem;
 }
 
+.nao-possui-conta {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.nao-possui-conta:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 1024px) {
     .comece-estudos {
         font-size: 1.5rem;

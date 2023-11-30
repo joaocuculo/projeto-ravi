@@ -36,29 +36,8 @@
                 <img src="../../assets/img/undraw_events_re_98ue.svg">        
             </div>
             <div class="confira-agend">
-                <p>Confira seu calendário com agendamentos</p>
-                <a href="agendamento.php?id=<?= $_SESSION['id'] ?>" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-        </section>
-
-        <section>
-            <div class="bem-vindo">
-                <h2>Aulas Agendadas</h2>
-            </div>
-
-            <div class="card-agend">
-                <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
-                    <?php
-                        $inicio = new DateTime($linha['start']);
-                        $fim = new DateTime($linha['end']);
-                    ?>
-                    <a href="agendamento.php?id=<?= $_SESSION['id'] ?>" style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
-                        <h3><?= $linha['title'] ?></h3>
-                        <h5>Aluno(a) <?= $linha['nome'] ?></h5>
-                        <h5>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h5>
-                        <h5>Fim: <?= $fim->format('d/m/Y H:i:s') ?></h5>
-                    </a>
-                <?php } ?>    
+                <p>Faça o cadastro de administrador</p>
+                <a href="cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
     </main>

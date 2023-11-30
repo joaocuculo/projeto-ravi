@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="nao-possui-conta">
-                            <a href="../sistema-usuario/usuario/cadastro.php">Sou administrador</a>
+                            <a href="../cadastrar.php">Não possui uma conta?</a>
                         </div>
                     </div>
 
