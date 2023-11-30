@@ -82,16 +82,11 @@
                             <dd class="col-sm-9" id="visualizar-start"></dd>
                             <dt class="col-sm-3">Fim: </dt>
                             <dd class="col-sm-9" id="visualizar-end"></dd>
-                            <dt class="col-sm-3">Valor Total (R$): </dt>
+                            <dt class="col-sm-3">Total (R$): </dt>
                             <dd class="col-sm-9" id="visualizar-valorTotal"></dd>
                             <dt class="col-sm-3">Pagamento: </dt>
                             <dd class="col-sm-9" id="visualizar-formaPag"></dd>
                         </dl>
-                        
-                        <div class="modal-footer">
-                            <button type="button" id="btnViewEditEvento" class="btn btn-warning">Editar</button>
-                            <button type="button" id="btnApagarEvento" class="btn btn-danger">Excluir</button>
-                        </div>
                     </div>
                 </div>
                 </div>

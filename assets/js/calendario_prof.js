@@ -54,10 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizarEvento").style.display = "block";
         document.getElementById("visualizarModalLabel").style.display = "block";
 
-        //Ocultar formulario para editar
-        document.getElementById("editarEvento").style.display = "none";
-        document.getElementById("editarModalLabel").style.display = "none";
-
         //Enviar para a janela modal os dados do evento
         document.getElementById("visualizar-id").innerText = info.event.id;
         document.getElementById("visualizar-title").innerText = info.event.title;
@@ -68,18 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("visualizar-valorTotal").innerText = info.event.extendedProps.valorTotal;
         document.getElementById("visualizar-start").innerText = info.event.start.toLocaleString();
         document.getElementById("visualizar-end").innerText = info.event.end !== null ? info.event.end.toLocaleString() : info.event.start.toLocaleString();
-
-        //Enviar os dados do evento para o formulario ediar
-        document.getElementById("edit_id").value = info.event.id;
-        document.getElementById("edit_title").value = info.event.title;
-        document.getElementById("edit_conteudo").value = info.event.extendedProps.conteudo;
-        document.getElementById("edit_formaPag").value = info.event.extendedProps.formaPag;
-        document.getElementById("edit_aluno_id").value = info.event.extendedProps.aluno_id;
-        document.getElementById("edit_professor_id").value = info.event.extendedProps.professor_id;
-        document.getElementById("edit_valorTotal").value = info.event.extendedProps.valorTotal;
-        document.getElementById("edit_start").value = converterData(info.event.start);
-        document.getElementById("edit_end").value = info.event.end !== null ? converterData(info.event.end) : converterData(info.event.start);
-        document.getElementById("edit_color").value = info.event.backgroundColor;
 
         //Abrir janela modal
         visualizarModal.show();
