@@ -7,7 +7,6 @@
         <ul class="footer-list">
             <li><a href="principal.php">Início</a></li>
             <li><a href="sobre.php">Sobre</a></li>
-            <li><a href="#">Matérias</a></li>
             <li><a href="https://www.instagram.com/ravi.sitee/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
             <li><a href="https://twitter.com/RaviSiteTCC" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
         </ul>

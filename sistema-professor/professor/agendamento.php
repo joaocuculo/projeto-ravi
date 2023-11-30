@@ -45,7 +45,7 @@
                             <p>R$<?= $linha_prof['valorHora'] ?></p>
                         </div>
                     </div>
-                    <a href="<?= $linha_prof['curriculo'] ?>" download>Ver currículo</a> <!-- dar uma olhada aqui -->
+                    <a href="<?= $linha_prof['curriculo'] ?>">Ver currículo</a>
                 </div>
             </div>
         </section>
