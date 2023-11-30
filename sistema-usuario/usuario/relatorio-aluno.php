@@ -4,10 +4,7 @@
     
     require_once('../../conexao.php');
     
-    $sql = "SELECT events.*, aluno.nome
-              FROM events
-        INNER JOIN aluno ON events.aluno_id = aluno.id
-             WHERE professor_id = " . $_SESSION['id'];
+    $sql = "SELECT * FROM aluno";
     $resultado = mysqli_query($conexao, $sql);
 
 ?>
@@ -29,7 +26,40 @@
 
     <main class="container">
         <section class="relatorio-box">
-            <input type="text">
+            <h2>Relatório de Alunos</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Data de Nascimento</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Telefone</th>
+                        <th>CPF</th>
+                        <th>Data Cadastro</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
+                    <tr>
+                        <td><?= $linha['id'] ?></td>
+                        <td><?= $linha['nome'] ?></td>
+                        <td><?= $linha['email'] ?></td>
+                        <td><?= $linha['dn'] ?></td>
+                        <td><?= $linha['cidade'] ?></td>
+                        <td><?= $linha['estado'] ?></td>
+                        <td><?= $linha['telefone'] ?></td>
+                        <td><?= $linha['cpf'] ?></td>
+                        <td><?= $linha['dataCad'] ?></td>
+                        <td><?= $linha['status'] ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </section>        
     </main>
 
