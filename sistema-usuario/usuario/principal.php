@@ -48,9 +48,24 @@
             </div>
         </section>
 
-        <section>
-            <div class="bem-vindo">
-                <h2>Relatórios</h2>
+        <div class="bem-vindo">
+            <h2>Relatórios</h2>
+        </div>
+
+        <section class="adm-agend" style="margin-bottom: 8rem;">
+            <div>
+                <img src="../../assets/img/undraw_book_lover_re_rwjy.svg">        
+            </div>
+            <div class="confira-agend">
+                <p>Relatório de Alunos</p>
+                <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+            <div>
+                <img src="../../assets/img/undraw_educator_re_ju47.svg">        
+            </div>
+            <div class="confira-agend">
+                <p>Relatório de Professores</p>
+                <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
     </main>
