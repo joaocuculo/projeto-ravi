@@ -11,7 +11,7 @@
     <title>Ravi - Login</title>
 </head>
 <body>
-    <?php require_once("template-prof/menu-index-login.php"); ?>
+    <?php require_once("template-usuario/menu-index-login.php"); ?>
 
     <main>
         <div class="container">
@@ -28,7 +28,7 @@
             <aside>
                 <form action="autenticacao.php" method="post">
                     <div class="form-title">
-                        <h2>Login - Professor</h2>
+                        <h2>Login - Administrador</h2>
                     </div>
 
                     <?php if (isset($_GET['mensagem'])) { ?>
@@ -47,10 +47,6 @@
                             <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
                             <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
                         </div>
-
-                        <div class="nao-possui-conta">
-                            <a href="../sistema-usuario/usuario/cadastro.php">Sou administrador</a>
-                        </div>
                     </div>
 
                     <div class="entrar-form-btn">
@@ -61,7 +57,7 @@
         </div>
     </main>
 
-    <?php require_once("template-prof/rodape-index-login.php"); ?>
+    <?php require_once("template-usuario/rodape-index-login.php"); ?>
 
     <script src="../assets/js/menu-show.js"></script>
     <script src="../assets/js/mostrar-senha.js"></script>
