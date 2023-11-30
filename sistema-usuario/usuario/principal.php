@@ -28,16 +28,29 @@
 
     <main class="container">
         <div class="bem-vindo">
-            <h2>Seja bem-vindo, Administrador(a) <?= $_SESSION['nome']; ?></h2>
+            <h2>Seja bem-vindo, Administrador(a) <?= $_SESSION['nome']; ?>. Confira os cadastros</h2>
         </div>
 
-        <section class="prof-agend">
+        <section class="adm-agend">
             <div>
-                <img src="../../assets/img/undraw_events_re_98ue.svg">        
+                <img src="../../assets/img/undraw_two_factor_authentication_namy.svg">        
             </div>
             <div class="confira-agend">
                 <p>Faça o cadastro de administrador</p>
                 <a href="cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+            <div>
+                <img src="../../assets/img/undraw_sign_up_n6im.svg">        
+            </div>
+            <div class="confira-agend">
+                <p>Faça o cadastro de matérias</p>
+                <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section>
+            <div class="bem-vindo">
+                <h2>Relatórios</h2>
             </div>
         </section>
     </main>
