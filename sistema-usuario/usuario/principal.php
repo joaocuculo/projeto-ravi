@@ -33,17 +33,14 @@
 
         <section class="adm-agend">
             <div>
-                <img src="../../assets/img/undraw_two_factor_authentication_namy.svg">        
-            </div>
-            <div class="confira-agend">
-                <p>Faça o cadastro de administrador</p>
-                <a href="cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-            <div>
                 <img src="../../assets/img/undraw_sign_up_n6im.svg">        
             </div>
             <div class="confira-agend">
-                <p>Faça o cadastro de matérias</p>
+                <p>Cadastro de administrador</p>
+                <a href="cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+            <div class="confira-agend">
+                <p>Cadastro de matérias</p>
                 <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
@@ -54,18 +51,15 @@
 
         <section class="adm-agend" style="margin-bottom: 8rem;">
             <div>
-                <img src="../../assets/img/undraw_book_lover_re_rwjy.svg">        
-            </div>
-            <div class="confira-agend">
-                <p>Relatório de Alunos</p>
-                <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-            <div>
                 <img src="../../assets/img/undraw_educator_re_ju47.svg">        
             </div>
             <div class="confira-agend">
+                <p>Relatório de Alunos</p>
+                <a href="relatorio-aluno.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+            <div class="confira-agend">
                 <p>Relatório de Professores</p>
-                <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+                <a href="relatorio-prof.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
     </main>

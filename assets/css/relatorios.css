@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.relatorio-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    background-color: #D9D7CA;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+}
