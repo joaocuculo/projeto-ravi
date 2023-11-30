@@ -274,8 +274,8 @@
                         <input type="textarea" name="valor-hora" id="valor-hora" placeholder="Digite o valor de suas aulas por horas ministradas" required>
                     </div>
                     <div class="input-box">
-                        <label for="curriculo">Currículo</label>
-                        <input type="file" class="input-curriculo" name="curriculo" id="curriculo" required>
+                        <label for="curriculo">Currículo (Lattes)</label>
+                        <input type="url" name="curriculo" id="curriculo" placeholder="Insira o link do seu currículo no Lattes" required>
                     </div>
                     
                     <div class="inputs-sexo">

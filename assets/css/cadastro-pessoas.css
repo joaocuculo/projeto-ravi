@@ -143,24 +143,6 @@ input[type="radio"]{
 }
 
 /*Cadastro do Professor*/
-.input-curriculo {
-    color: rgba(0, 0, 0, 0.4);
-    background-color: var(--color-white);
-}
-
-.input-curriculo::-webkit-file-upload-button {
-    border: none;
-    border-radius: 7px;
-    padding: 0.8rem 1rem;
-    background-color: rgb(210, 210, 210);
-    transition: 0.3s all;
-    cursor: pointer;
-}
-
-.input-curriculo::-webkit-file-upload-button:hover {
-    background-color: rgb(172, 172, 172);
-}
-
 .cad-btn {
     width: 100%;
     padding: 0.8rem 1.2rem;
