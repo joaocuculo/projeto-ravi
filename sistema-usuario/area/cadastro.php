@@ -28,7 +28,7 @@
     <title>Ravi - Cadastro</title>
 </head>
 <body>
-    <?php require_once("../template-usuario/menu1.php") ?>
+    <?php require_once("../template-usuario/menu-cad.php") ?>
 
     <main>
         <div class="container">
@@ -56,10 +56,7 @@
         </div>
     </main>
 
-    <?php require_once("../template-usuario/rodape2.php") ?>
-
     <script src="../../assets/js/menu-show.js"></script>
     <script src="../../assets/js/mostrar-senha.js"></script>
-    <script src="../../assets/js/mascaras.js"></script>
 </body>
 </html>

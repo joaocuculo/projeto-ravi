@@ -35,11 +35,11 @@
             <div>
                 <img src="../../assets/img/undraw_sign_up_n6im.svg">        
             </div>
-            <div class="confira-agend">
+            <div class="confira-agend card-border">
                 <p>Cadastro de administrador</p>
                 <a href="cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
-            <div class="confira-agend">
+            <div class="confira-agend card-border">
                 <p>Cadastro de matérias</p>
                 <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
@@ -53,13 +53,17 @@
             <div>
                 <img src="../../assets/img/undraw_educator_re_ju47.svg">        
             </div>
-            <div class="confira-agend">
+            <div class="confira-agend card-border">
                 <p>Relatório de Alunos</p>
                 <a href="relatorio-aluno.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
-            <div class="confira-agend">
+            <div class="confira-agend card-border">
                 <p>Relatório de Professores</p>
                 <a href="relatorio-prof.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+            <div class="confira-agend card-border">
+                <p>Relatório de Administradores</p>
+                <a href="relatorio-adm.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
     </main>
