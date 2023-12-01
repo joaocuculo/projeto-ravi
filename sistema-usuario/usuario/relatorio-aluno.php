@@ -30,7 +30,7 @@
 
             <table>
                 <thead>
-                    <tr>
+                    <tr id="cabecalho-relatorio">
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
@@ -44,18 +44,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
+                    <?php while ($linha = mysqli_fetch_array($resultado)) { 
+                        $dn = new DateTime($linha['dn']);
+                        $dataCad = new DateTime($linha['dataCad']);
+                        if ($linha['status'] == 1) {
+                            $status = "Ativo";
+                        } else {
+                            $status = "Inativo";
+                        }
+                    ?>
                     <tr>
-                        <td><?= $linha['id'] ?></td>
-                        <td><?= $linha['nome'] ?></td>
-                        <td><?= $linha['email'] ?></td>
-                        <td><?= $linha['dn'] ?></td>
-                        <td><?= $linha['cidade'] ?></td>
-                        <td><?= $linha['estado'] ?></td>
-                        <td><?= $linha['telefone'] ?></td>
-                        <td><?= $linha['cpf'] ?></td>
-                        <td><?= $linha['dataCad'] ?></td>
-                        <td><?= $linha['status'] ?></td>
+                        <td class="td-espaco"><?= $linha['id'] ?></td>
+                        <td class="td-espaco"><?= $linha['nome'] ?></td>
+                        <td class="td-espaco"><?= $linha['email'] ?></td>
+                        <td class="td-espaco"><?= $dn->format('d/m/Y') ?></td>
+                        <td class="td-espaco"><?= $linha['cidade'] ?></td>
+                        <td class="td-espaco"><?= $linha['estado'] ?></td>
+                        <td class="td-espaco"><?= $linha['telefone'] ?></td>
+                        <td class="td-espaco"><?= $linha['cpf'] ?></td>
+                        <td class="td-espaco"><?= $dataCad->format('d/m/Y H:i:s') ?></td>
+                        <td class="td-espaco"><?= $status ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>

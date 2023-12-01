@@ -32,7 +32,7 @@
 
             <table>
                 <thead>
-                    <tr>
+                    <tr id="cabecalho-relatorio">
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
@@ -51,12 +51,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
+                    <?php while ($linha = mysqli_fetch_array($resultado)) { 
+                        $dn = new DateTime($linha['dn']);
+                        $dataCad = new DateTime($linha['dataCad']);
+                        if ($linha['status'] == 1) {
+                            $status = "Ativo";
+                        } else {
+                            $status = "Inativo";
+                        }
+                    ?>    
                     <tr>
                         <td><?= $linha['id'] ?></td>
                         <td><?= $linha['nome_professor'] ?></td>
                         <td><?= $linha['email'] ?></td>
-                        <td><?= $linha['dn'] ?></td>
+                        <td><?= $dn->format('d/m/Y') ?></td>
                         <td><?= $linha['cidade'] ?></td>
                         <td><?= $linha['estado'] ?></td>
                         <td><?= $linha['telefone'] ?></td>
@@ -66,8 +74,8 @@
                         <td><a href="<?= $linha['curriculo'] ?>"><?= $linha['curriculo'] ?></a></td>
                         <td><?= $linha['nome_area'] ?></td>
                         <td>R$<?= $linha['valorHora'] ?></td>
-                        <td><?= $linha['dataCad'] ?></td>
-                        <td><?= $linha['status'] ?></td>
+                        <td><?= $dataCad->format('d/m/Y H:i:s') ?></td>
+                        <td><?= $status ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>

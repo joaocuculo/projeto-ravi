@@ -27,7 +27,31 @@
     width: fit-content;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
 td {
     text-align: center;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    padding: 3px;
+}
+
+.td-espaco {
+    padding: 10px;
+}
+
+tr:nth-child(2n-2),
+#cabecalho-relatorio {
+    background-color: #b6b4a9;
+}
+
+@media screen and (max-width: 1360px) {
+    .relatorio-box-big {
+        overflow-x: scroll;
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }

@@ -30,32 +30,26 @@
 
             <table>
                 <thead>
-                    <tr>
+                    <tr id="cabecalho-relatorio">
                         <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
-                        <th>Data de Nascimento</th>
-                        <th>Cidade</th>
-                        <th>Estado</th>
-                        <th>Telefone</th>
-                        <th>CPF</th>
-                        <th>Data Cadastro</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
+                    <?php while ($linha = mysqli_fetch_array($resultado)) { 
+                        if ($linha['status'] == 1) {
+                            $status = "Ativo";
+                        } else {
+                            $status = "Inativo";
+                        }
+                    ?>
                     <tr>
-                        <td><?= $linha['id'] ?></td>
-                        <td><?= $linha['nome'] ?></td>
-                        <td><?= $linha['email'] ?></td>
-                        <td><?= $linha['dn'] ?></td>
-                        <td><?= $linha['cidade'] ?></td>
-                        <td><?= $linha['estado'] ?></td>
-                        <td><?= $linha['telefone'] ?></td>
-                        <td><?= $linha['cpf'] ?></td>
-                        <td><?= $linha['dataCad'] ?></td>
-                        <td><?= $linha['status'] ?></td>
+                        <td class="td-espaco"><?= $linha['id'] ?></td>
+                        <td class="td-espaco"><?= $linha['nome'] ?></td>
+                        <td class="td-espaco"><?= $linha['email'] ?></td>
+                        <td class="td-espaco"><?= $status ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>
