@@ -32,6 +32,16 @@ table {
     width: 100%;
 }
 
+.table-roll-y {
+    max-height: 1000px;
+    overflow-y: auto;
+}
+
+.table-roll-x {
+    overflow-x: auto;
+    width: 100%;
+}
+
 td {
     text-align: center;
     border-top: 1px solid black;
@@ -48,10 +58,10 @@ tr:nth-child(2n-2),
 }
 
 @media screen and (max-width: 1360px) {
-    .relatorio-box-big {
-        overflow-x: scroll;
+    .relatorio-box-big,
+    .relatorio-box {
         width: 100%;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

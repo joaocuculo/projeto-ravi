@@ -30,56 +30,58 @@
         <section class="relatorio-box-big">
             <h2>Relatório de Professores</h2>
 
-            <table>
-                <thead>
-                    <tr id="cabecalho-relatorio">
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Data de Nascimento</th>
-                        <th>Cidade</th>
-                        <th>Estado</th>
-                        <th>Telefone</th>
-                        <th>CPF</th>
-                        <th>Formação</th>
-                        <th>Conteúdo</th>
-                        <th>Currículo</th>
-                        <th>Matéria</th>
-                        <th>Valor/Hora</th>
-                        <th>Data Cadastro</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($linha = mysqli_fetch_array($resultado)) { 
-                        $dn = new DateTime($linha['dn']);
-                        $dataCad = new DateTime($linha['dataCad']);
-                        if ($linha['status'] == 1) {
-                            $status = "Ativo";
-                        } else {
-                            $status = "Inativo";
-                        }
-                    ?>    
-                    <tr>
-                        <td><?= $linha['id'] ?></td>
-                        <td><?= $linha['nome_professor'] ?></td>
-                        <td><?= $linha['email'] ?></td>
-                        <td><?= $dn->format('d/m/Y') ?></td>
-                        <td><?= $linha['cidade'] ?></td>
-                        <td><?= $linha['estado'] ?></td>
-                        <td><?= $linha['telefone'] ?></td>
-                        <td><?= $linha['cpf'] ?></td>
-                        <td><?= $linha['areaFormacao'] ?></td>
-                        <td><?= $linha['conteudo'] ?></td>
-                        <td><a href="<?= $linha['curriculo'] ?>"><?= $linha['curriculo'] ?></a></td>
-                        <td><?= $linha['nome_area'] ?></td>
-                        <td>R$<?= $linha['valorHora'] ?></td>
-                        <td><?= $dataCad->format('d/m/Y H:i:s') ?></td>
-                        <td><?= $status ?></td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <div class="table-roll-y table-roll-x">
+                <table>
+                    <thead>
+                        <tr id="cabecalho-relatorio">
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Data de Nascimento</th>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                            <th>Telefone</th>
+                            <th>CPF</th>
+                            <th>Formação</th>
+                            <th>Conteúdo</th>
+                            <th>Currículo</th>
+                            <th>Matéria</th>
+                            <th>Valor/Hora</th>
+                            <th>Data Cadastro</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($linha = mysqli_fetch_array($resultado)) { 
+                            $dn = new DateTime($linha['dn']);
+                            $dataCad = new DateTime($linha['dataCad']);
+                            if ($linha['status'] == 1) {
+                                $status = "Ativo";
+                            } else {
+                                $status = "Inativo";
+                            }
+                            ?>    
+                        <tr>
+                            <td><?= $linha['id'] ?></td>
+                            <td><?= $linha['nome_professor'] ?></td>
+                            <td><?= $linha['email'] ?></td>
+                            <td><?= $dn->format('d/m/Y') ?></td>
+                            <td><?= $linha['cidade'] ?></td>
+                            <td><?= $linha['estado'] ?></td>
+                            <td><?= $linha['telefone'] ?></td>
+                            <td><?= $linha['cpf'] ?></td>
+                            <td><?= $linha['areaFormacao'] ?></td>
+                            <td><?= $linha['conteudo'] ?></td>
+                            <td><a href="<?= $linha['curriculo'] ?>"><?= $linha['curriculo'] ?></a></td>
+                            <td><?= $linha['nome_area'] ?></td>
+                            <td>R$<?= $linha['valorHora'] ?></td>
+                            <td><?= $dataCad->format('d/m/Y H:i:s') ?></td>
+                            <td><?= $status ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </section>        
     </main>
 

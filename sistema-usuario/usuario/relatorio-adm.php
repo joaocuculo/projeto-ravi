@@ -28,23 +28,24 @@
         <section class="relatorio-box">
             <h2>Relatório de Alunos</h2>
 
-            <table>
-                <thead>
-                    <tr id="cabecalho-relatorio">
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($linha = mysqli_fetch_array($resultado)) { 
-                        if ($linha['status'] == 1) {
-                            $status = "Ativo";
-                        } else {
-                            $status = "Inativo";
-                        }
-                    ?>
+            <div class="table-roll-y">
+                <table>
+                    <thead>
+                        <tr id="cabecalho-relatorio">
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($linha = mysqli_fetch_array($resultado)) { 
+                            if ($linha['status'] == 1) {
+                                $status = "Ativo";
+                            } else {
+                                $status = "Inativo";
+                            }
+                            ?>
                     <tr>
                         <td class="td-espaco"><?= $linha['id'] ?></td>
                         <td class="td-espaco"><?= $linha['nome'] ?></td>
@@ -52,8 +53,9 @@
                         <td class="td-espaco"><?= $status ?></td>
                     </tr>
                     <?php } ?>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </section>        
     </main>
 
