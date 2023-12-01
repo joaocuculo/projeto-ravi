@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/11/2023 às 14:58
+-- Tempo de geração: 01/12/2023 às 15:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -173,8 +173,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `status`) VALUES
-(1, 'João Victor', 'jv.cuculo@gmail.com', 'somostodosverdao', ''),
-(2, 'Cesar', 'cesar@gmail.com', 'estoumaluco', '');
+(1, 'João Victor', 'jv.cuculo@gmail.com', 'somostodosverdao', '1'),
+(2, 'Cesar', 'cesar@gmail.com', 'estoumaluco', '1');
 
 --
 -- Índices para tabelas despejadas
