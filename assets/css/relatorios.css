@@ -1,13 +1,30 @@
 @charset "UTF-8";
 
-.relatorio-box {
+.container-relatorio {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.relatorio-box,
+.relatorio-box-big {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 1200px;
     background-color: #D9D7CA;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     padding: 3rem;
+    margin: 3rem 0 8rem;
 }
+
+.relatorio-box {
+    width: 1200px;
+}
+
+.relatorio-box-big {
+    width: fit-content;
+}
+
+
