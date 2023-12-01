@@ -6,9 +6,9 @@
 
         <div class="menu">
             <ul>
-                <li><a href="../aluno/principal.php">Início</a></li>
-                <li><a href="../aluno/sobre.php">Sobre</a></li>
-                <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
+                <li><a href="../../index.php">Início</a></li>
+                <li><a href="../../sobre.php">Sobre</a></li>
+                <li class="conta-btn"><a href="../../logar.php">Entrar</a></li>
             </ul>
         </div>
 
@@ -19,9 +19,9 @@
 
     <div class="menu-responsivo">
         <ul>
-            <li><a href="../aluno/principal.php">Início</a></li>
-            <li><a href="../aluno/sobre.php">Sobre</a></li>
-            <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
+            <li><a href="../../index.php">Início</a></li>
+            <li><a href="../../sobre.php">Sobre</a></li>
+            <li class="conta-btn"><a href="../../logar.php">Entrar</a></li>
         </ul>
     </div>
 </header>

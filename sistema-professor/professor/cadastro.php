@@ -71,11 +71,6 @@
 
             if (validaCPF($CPF)) {
                 
-                $nomeCurriculo = "";
-                if (move_uploaded_file($_FILES['curriculo']['tmp_name'], $curriculoDestino)) {
-                    $nomeCurriculo = $_FILES['curriculo']['name'];
-                }
-                
                 if (calcularIdade($_POST['DN']) > 130) {
                     $mensagem = "Há algo de errado com sua idade.";
                 } elseif (calcularIdade($_POST['DN']) >= 18) {
@@ -275,7 +270,7 @@
                     </div>
                     <div class="input-box">
                         <label for="curriculo">Currículo (Lattes)</label>
-                        <input type="url" name="curriculo" id="curriculo" placeholder="Insira o link do seu currículo no Lattes" required>
+                        <input type="url" class="input-curriculo" name="curriculo" id="curriculo" placeholder="Informe o link do seu currículo no Lattes" required>
                     </div>
                     
                     <div class="inputs-sexo">

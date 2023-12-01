@@ -2,11 +2,15 @@
 
     include_once './conexao-agenda.php';
 
+    session_start();
+
+    $professor_id = (int)$_SESSION['id'];
+
     //query para recuperar os eventos
     $query_events = "SELECT events.*, aluno.nome
                        FROM events 
                  INNER JOIN aluno ON events.aluno_id = aluno.id
-                      WHERE professor_id = {$_SESSION['id']}";
+                      WHERE professor_id = $professor_id";
 
     //prepara a query
     $result_events = $conn->prepare($query_events);

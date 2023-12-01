@@ -1,15 +1,14 @@
-<header id="historia">
+<header>
     <nav>
         <div class="logo">
             <img src="../../assets/img/logo-ravi-complete.svg" alt="Ravi">
         </div>
 
-        <div class="menu" id="menu-materias">
+        <div class="menu">
             <ul>
                 <li><a href="../aluno/principal.php">Início</a></li>
                 <li><a href="../aluno/sobre.php">Sobre</a></li>
-                <li><a href="#">Matérias</a></li>
-                <li class="entrar-btn" id="btn-materias"><a href="../sair.php">Sair</a></li>
+                <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
             </ul>
         </div>
 
@@ -18,12 +17,11 @@
         </div>
     </nav>
 
-    <div class="menu-responsivo" id="menu-materias">
+    <div class="menu-responsivo">
         <ul>
             <li><a href="../aluno/principal.php">Início</a></li>
             <li><a href="../aluno/sobre.php">Sobre</a></li>
-            <li><a href="#">Matérias</a></li>
-            <li class="entrar-btn" id="btn-materias"><a href="../sair.php">Sair</a></li>
+            <li class="entrar-btn"><a href="../sair.php">Sair</a></li>
         </ul>
     </div>
 </header>

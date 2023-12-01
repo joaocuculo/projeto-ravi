@@ -32,14 +32,17 @@
                     </div>
 
                     <div class="btns-box">
-                            <a href="sistema-aluno" class="cad-btn">
-                                <i class="fa-solid fa-user-graduate"></i>
-                                Aluno
-                            </a>
-                            <a href="sistema-professor" class="cad-btn">
-                                <i class="fa-solid fa-chalkboard-user"></i>
-                                Professor
-                            </a>
+                        <a href="sistema-aluno" class="cad-btn">
+                            <i class="fa-solid fa-user-graduate"></i>
+                            Aluno
+                        </a>
+                        <a href="sistema-professor" class="cad-btn">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                            Professor
+                        </a>
+                        <div>
+                            <a href="sistema-usuario" class="nao-possui-conta">Sou administrador</a>
+                        </div>
                     </div>
                 </div>
             </aside>

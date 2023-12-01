@@ -28,7 +28,7 @@
             <aside>
                 <form action="autenticacao.php" method="post">
                     <div class="form-title">
-                        <h2>Login</h2>
+                        <h2>Login - Aluno</h2>
                     </div>
 
                     <?php if (isset($_GET['mensagem'])) { ?>
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="nao-possui-conta">
-                            <a href="cadastro.php">Não possui uma conta?</a>
+                            <a href="../cadastrar.php">Não possui uma conta?</a>
                         </div>
                     </div>
 

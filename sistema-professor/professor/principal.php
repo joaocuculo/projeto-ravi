@@ -35,7 +35,7 @@
             <div>
                 <img src="../../assets/img/undraw_events_re_98ue.svg">        
             </div>
-            <div class="confira-agend">
+            <div class="confira-agend card-border" style="width: 230px; text-align: center;">
                 <p>Confira seu calendário com agendamentos</p>
                 <a href="agendamento.php?id=<?= $_SESSION['id'] ?>" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
@@ -52,7 +52,7 @@
                         $inicio = new DateTime($linha['start']);
                         $fim = new DateTime($linha['end']);
                     ?>
-                    <a style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
+                    <a href="agendamento.php?id=<?= $_SESSION['id'] ?>" style="background-image: linear-gradient(to left, #D9D7CA 0, #D9D7CA 95%, <?= $linha['color'] ?> 5%);">
                         <h3><?= $linha['title'] ?></h3>
                         <h5>Aluno(a) <?= $linha['nome'] ?></h5>
                         <h5>Início: <?= $inicio->format('d/m/Y H:i:s') ?></h5>
