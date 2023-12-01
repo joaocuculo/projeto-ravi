@@ -28,51 +28,53 @@
         <section class="relatorio-box">
             <h2>Relatório de Alunos</h2>
 
-            <table>
-                <thead>
-                    <tr id="cabecalho-relatorio">
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Data de Nascimento</th>
-                        <th>Cidade</th>
-                        <th>Estado</th>
-                        <th>Telefone</th>
-                        <th>CPF</th>
-                        <th>Data Cadastro</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($linha = mysqli_fetch_array($resultado)) { 
-                        $dn = new DateTime($linha['dn']);
-                        $dataCad = new DateTime($linha['dataCad']);
-                        if ($linha['status'] == 1) {
-                            $status = "Ativo";
-                        } else {
-                            $status = "Inativo";
-                        }
-                    ?>
-                    <tr>
-                        <td class="td-espaco"><?= $linha['id'] ?></td>
-                        <td class="td-espaco"><?= $linha['nome'] ?></td>
-                        <td class="td-espaco"><?= $linha['email'] ?></td>
-                        <td class="td-espaco"><?= $dn->format('d/m/Y') ?></td>
-                        <td class="td-espaco"><?= $linha['cidade'] ?></td>
-                        <td class="td-espaco"><?= $linha['estado'] ?></td>
-                        <td class="td-espaco"><?= $linha['telefone'] ?></td>
-                        <td class="td-espaco"><?= $linha['cpf'] ?></td>
-                        <td class="td-espaco"><?= $dataCad->format('d/m/Y H:i:s') ?></td>
-                        <td class="td-espaco"><?= $status ?></td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <div class="table-roll-y table-roll-x">
+                <table>
+                    <thead>
+                        <tr id="cabecalho-relatorio">
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Data de Nascimento</th>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                            <th>Telefone</th>
+                            <th>CPF</th>
+                            <th>Data Cadastro</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($linha = mysqli_fetch_array($resultado)) { 
+                            $dn = new DateTime($linha['dn']);
+                            $dataCad = new DateTime($linha['dataCad']);
+                            if ($linha['status'] == 1) {
+                                $status = "Ativo";
+                            } else {
+                                $status = "Inativo";
+                            }
+                            ?>
+                        <tr>
+                            <td class="td-espaco"><?= $linha['id'] ?></td>
+                            <td class="td-espaco"><?= $linha['nome'] ?></td>
+                            <td class="td-espaco"><?= $linha['email'] ?></td>
+                            <td class="td-espaco"><?= $dn->format('d/m/Y') ?></td>
+                            <td class="td-espaco"><?= $linha['cidade'] ?></td>
+                            <td class="td-espaco"><?= $linha['estado'] ?></td>
+                            <td class="td-espaco"><?= $linha['telefone'] ?></td>
+                            <td class="td-espaco"><?= $linha['cpf'] ?></td>
+                            <td class="td-espaco"><?= $dataCad->format('d/m/Y H:i:s') ?></td>
+                            <td class="td-espaco"><?= $status ?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </section>        
     </main>
-
+    
     <?php require_once("../template-usuario/rodape1.php") ?>
-
+    
     <script src="../../assets/js/menu-show.js"></script>
 </body>
 </html>

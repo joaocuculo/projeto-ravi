@@ -4,7 +4,7 @@
     
     require_once('../../conexao.php');
     
-    $sql = "SELECT * FROM usuario";
+    $sql = "SELECT * FROM area";
     $resultado = mysqli_query($conexao, $sql);
 
 ?>
@@ -26,7 +26,7 @@
 
     <main class="container">
         <section class="relatorio-box">
-            <h2>Relatório de Administradores</h2>
+            <h2>Relatório de Matérias</h2>
 
             <div class="table-roll-y table-roll-x">
                 <table>
@@ -34,7 +34,6 @@
                         <tr id="cabecalho-relatorio">
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>E-mail</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -49,7 +48,6 @@
                     <tr>
                         <td class="td-espaco"><?= $linha['id'] ?></td>
                         <td class="td-espaco"><?= $linha['nome'] ?></td>
-                        <td class="td-espaco"><?= $linha['email'] ?></td>
                         <td class="td-espaco"><?= $status ?></td>
                     </tr>
                     <?php } ?>

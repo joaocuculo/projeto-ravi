@@ -43,6 +43,9 @@
                 <p>Cadastro de matérias</p>
                 <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
+            <div>
+                <img src="../../assets/img/undraw_educator_re_ju47.svg">        
+            </div>
         </section>
 
         <div class="bem-vindo">
@@ -50,9 +53,6 @@
         </div>
 
         <section class="adm-agend" style="margin-bottom: 8rem;">
-            <div>
-                <img src="../../assets/img/undraw_educator_re_ju47.svg">        
-            </div>
             <div class="confira-agend card-border">
                 <p>Relatório de Alunos</p>
                 <a href="relatorio-aluno.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
@@ -64,6 +64,10 @@
             <div class="confira-agend card-border">
                 <p>Relatório de Administradores</p>
                 <a href="relatorio-adm.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
+            <div class="confira-agend card-border">
+                <p>Relatório de Matérias</p>
+                <a href="relatorio-materia.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
     </main>
