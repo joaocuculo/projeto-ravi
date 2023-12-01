@@ -39,6 +39,10 @@
                 <p>Confira seu calendário com agendamentos</p>
                 <a href="agendamento.php?id=<?= $_SESSION['id'] ?>" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
+            <div class="confira-agend card-border" style="width: 230px; text-align: center;">
+                <p>Relatório de pagamentos recebidos</p>
+                <a href="relatorio-pagamento.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
+            </div>
         </section>
 
         <section>

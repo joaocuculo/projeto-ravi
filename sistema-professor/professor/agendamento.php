@@ -39,6 +39,8 @@
                         <div>
                             <h2>Formação</h2>
                             <p><?= $linha_prof['conteudo'] ?></p>
+                            <h5>Conteúdo</h5>
+                            <p><?= $linha_prof['conteudo'] ?></p>
                         </div>
                         <div>
                             <h2>Valor/Hora</h2>
