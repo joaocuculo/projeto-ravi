@@ -73,6 +73,19 @@ body {
     font-weight: bold;
 }
 
+.agend-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.agend-btns a:first-child {
+    width: 80%;
+}
+
+.agend-btns a:last-child {
+    width: 20%;
+}
+
 .calendario {
     max-width: 1200px;
     margin: 0 auto;

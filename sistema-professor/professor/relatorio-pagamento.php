@@ -39,7 +39,7 @@
                             <th>Título</th>
                             <th>Início</th>
                             <th>Fim</th>
-                            <th>Valor Total</th>
+                            <th>Valor</th>
                             <th>Forma de Pagamento</th>
                         </tr>
                     </thead>

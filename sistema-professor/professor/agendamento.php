@@ -38,7 +38,7 @@
                     <div class="formacao-item">
                         <div>
                             <h2>Formação</h2>
-                            <p><?= $linha_prof['conteudo'] ?></p>
+                            <p><?= $linha_prof['areaFormacao'] ?></p>
                             <h5>Conteúdo</h5>
                             <p><?= $linha_prof['conteudo'] ?></p>
                         </div>
@@ -47,7 +47,10 @@
                             <p>R$<?= $linha_prof['valorHora'] ?></p>
                         </div>
                     </div>
-                    <a href="<?= $linha_prof['curriculo'] ?>" target="_blank">Ver currículo</a>
+                    <div class="agend-btns">
+                        <a href="<?= $linha_prof['curriculo'] ?>" target="_blank">Ver currículo</a>
+                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
