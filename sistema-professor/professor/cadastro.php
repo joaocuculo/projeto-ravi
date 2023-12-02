@@ -17,8 +17,7 @@
         $cidade = $_POST['cidade'];
         $endereco = $_POST['endereco'];
         $areaForma = $_POST['area-forma'];
-        $diretorio = "uploads/";
-        $curriculoDestino = $diretorio . $_FILES['curriculo']['name'];
+        $curriculo = $_POST['curriculo'];
         $sexo = $_POST['sexo'];
         $conteudo = $_POST['conteudo'];
         $valorHora = $_POST['valor-hora'];
@@ -74,7 +73,7 @@
                 if (calcularIdade($_POST['DN']) > 130) {
                     $mensagem = "Há algo de errado com sua idade.";
                 } elseif (calcularIdade($_POST['DN']) >= 18) {
-                    $sql = "insert into professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) values ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$nomeCurriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
+                    $sql = "INSERT INTO professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) VALUES ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$curriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
                     
                     mysqli_query($conexao, $sql);
                     
@@ -266,7 +265,7 @@
                     </div>
                     <div class="input-box">
                         <label for="valor-hora">Valor Hora/Aula</label>
-                        <input type="textarea" name="valor-hora" id="valor-hora" placeholder="Digite o valor de suas aulas por horas ministradas" required>
+                        <input type="number" name="valor-hora" id="valor-hora" placeholder="Digite o valor de suas aulas por horas ministradas" required>
                     </div>
                     <div class="input-box">
                         <label for="curriculo">Currículo (Lattes)</label>

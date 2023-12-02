@@ -49,7 +49,7 @@
                     </div>
                     <div class="agend-btns">
                         <a href="<?= $linha_prof['curriculo'] ?>" target="_blank">Ver currículo</a>
-                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="editar.php?id=<?= $_SESSION['id'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                 </div>
             </div>

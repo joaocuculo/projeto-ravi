@@ -6,7 +6,7 @@
 
         <div class="menu">
             <ul>
-                <li class="conta-btn"><a onclick="history.back()"><i class="fa-sharp fa-solid fa-circle-arrow-left" style="padding-right: 1rem;"></i>Voltar</a></li>
+                <li class="conta-btn"><a href="agendamento.php?id=<?= $_GET['id'] ?>"><i class="fa-sharp fa-solid fa-circle-arrow-left" style="padding-right: 1rem;"></i>Voltar</a></li>
             </ul>
         </div>
 
@@ -17,7 +17,7 @@
 
     <div class="menu-responsivo">
         <ul>
-            <li class="conta-btn"><a onclick="history.back()">Voltar</a></li>
+            <li class="conta-btn"><a href="agendamento.php?id=<?= $_GET['id'] ?>">Voltar</a></li>
         </ul>
     </div>
 </header>
