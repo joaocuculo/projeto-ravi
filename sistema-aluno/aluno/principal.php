@@ -24,7 +24,7 @@
     <title>Ravi</title>
 </head>
 <body>
-    <?php require_once("../template-aluno/menu2.php") ?>
+    <?php require_once("../template-aluno/menu4.php") ?>
 
     <main class="container">
         <div class="bem-vindo">

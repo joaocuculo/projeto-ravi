@@ -2,8 +2,9 @@
 
     require_once('../../conexao.php');
 
-    if (isset($_POST['cadastrar'])) {
+    if (isset($_POST['salvar'])) {
 
+        $id = $_POST['id'];
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -68,11 +69,25 @@
                 if (calcularIdade($_POST['DN']) > 130) {
                     $mensagem = "Há algo de errado com sua idade.";
                 } else {
-                    $sql = "INSERT INTO aluno (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, status) VALUES ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$status')";
+                    $sql = "UPDATE aluno
+                               SET nome = '$nome',
+                                   email = '$email',
+                                   senha = '$senha',
+                                   dn = '$DN',
+                                   endereco = '$endereco',
+                                   cep = '$CEP',
+                                   estado = '$estado',
+                                   cidade = '$cidade',
+                                   telefone = '$tel',
+                                   cpf = '$CPF',
+                                   rg = '$RG',
+                                   sexo = '$sexo',
+                                   status = '$status'
+                             WHERE id = $id";
                     
                     mysqli_query($conexao, $sql);
                     
-                    $mensagem = "Cadastrado com sucesso!";
+                    $mensagem = "Editado com sucesso!";
                 }
             } else {
                 $mensagem = "O CPF informado não é válido";
@@ -121,6 +136,10 @@
     }
     }
 
+    $sql = "SELECT * FROM aluno WHERE id = " . $_GET['id'];
+    $resultado = mysqli_query($conexao, $sql);
+    $linha = mysqli_fetch_array($resultado);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -132,17 +151,17 @@
     <link rel="stylesheet" href="../../assets/css/header-footer.css">
     <link rel="stylesheet" href="../../assets/css/cadastro-pessoas.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
-    <title>Ravi - Cadastro</title>
+    <title>Ravi - Editar</title>
 </head>
 <body>
     
-    <?php require_once("../template-aluno/menu1.php"); ?>
+    <?php require_once("../template-aluno/menu-cad.php"); ?>
 
     <main>
         <div class="container">
             <form method="post">
                 <div class="form-title">
-                    <h1>Cadastro do Aluno</h1>
+                    <h1>Editar Aluno</h1>
                 </div>
 
                 <?php if (isset($mensagem)) { ?>
@@ -152,44 +171,45 @@
                 <?php } ?>
 
                 <div class="input-group">
+                    <input type="hidden" name="id" value="<?= $linha['id'] ?>">
                     <div class="input-box">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required>
+                        <input type="text" name="nome" id="nome" value="<?= $linha['nome'] ?>" required>
                     </div>
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                        <input type="email" name="email" id="email" value="<?= $linha['email'] ?>" required>
                     </div>
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha (mínimo 8 caracteres)" minlength="8" required>
+                        <input type="password" name="senha" id="senha" value="<?= $linha['senha'] ?>" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha" onclick="mostrarSenha()"></i>
                     </div>
                     <div class="input-box">
                         <label for="senha-conf">Confirme sua senha</label>
-                        <input type="password" name="senha-conf" id="senha-conf" placeholder="Confirme sua senha" minlength="8" required>
+                        <input type="password" name="senha-conf" id="senha-conf" value="<?= $linha['senha'] ?>" minlength="8" required>
                         <i class="fa-solid fa-eye" id="btn-senha-conf" onclick="mostrarSenhaConf()"></i>
                     </div>
                     <div class="input-box">
                         <label for="DN">Data de nascimento</label>
-                        <input type="date" name="DN" id="DN" required>
+                        <input type="date" name="DN" id="DN" value="<?= $linha['dn'] ?>" required>
                     </div>
                     <div class="input-meio-group">
                         <div class="input-box input-meio">
                             <label for="telefone">Telefone</label>
-                            <input type="tel" name="telefone" id="telefone" placeholder="(xx) x xxxx-xxxx" minlength="15" maxlength="16" required>
+                            <input type="tel" name="telefone" id="telefone" value="<?= $linha['telefone'] ?>" minlength="15" maxlength="16" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="CPF">CPF</label>
-                            <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" autocomplete="off" minlength="14" maxlength="14" required>
+                            <input type="text" name="CPF" id="CPF" value="<?= $linha['cpf'] ?>" autocomplete="off" minlength="14" maxlength="14" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="RG">RG</label>
-                            <input type="text" name="RG" id="RG" placeholder="Digite seu RG" maxlength="14" required>
+                            <input type="text" name="RG" id="RG" value="<?= $linha['rg'] ?>" maxlength="14" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="CEP">CEP</label>
-                            <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" minlength="9" maxlength="9" required>
+                            <input type="text" name="CEP" id="CEP" value="<?= $linha['cep'] ?>" minlength="9" maxlength="9" required>
                         </div>
                         <div class="input-box input-meio">
                             <label for="estado">Estado</label>
@@ -232,7 +252,7 @@
                     </div>
                     <div class="input-box">
                         <label for="endereco">Endereço</label>
-                        <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço" required>
+                        <input type="text" name="endereco" id="endereco" value="<?= $linha['endereco'] ?>" required>
                     </div>
                     
                     <div class="inputs-sexo">
@@ -261,7 +281,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="cad-btn" name="cadastrar">Cadastrar</button>
+                <button type="submit" class="cad-btn" name="salvar">Salvar</button>
 
             </form>
         </div>

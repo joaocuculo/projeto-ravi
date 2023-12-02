@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="../../assets/css/calendario.css">
     <script src="https://kit.fontawesome.com/9b546460e1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <title>Ravi</title>
+    <title>Ravi - Agendamento</title>
 </head>
 <body>
     <?php require_once("../template-aluno/menu2.php") ?>
