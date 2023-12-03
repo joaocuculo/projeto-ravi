@@ -43,7 +43,7 @@
         <div class="container">
             <form method="post">
                 <div class="form-title">
-                    <h1>Cadastro do Usuário</h1>
+                    <h1>Cadastro do Administrador</h1>
                 </div>
 
                 <?php if (isset($mensagem)) { ?>
