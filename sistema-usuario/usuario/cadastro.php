@@ -55,7 +55,7 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Digite o nome de usuário" required>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o nome do administrador" required>
                     </div>
                     <div class="input-box">
                         <label for="email">E-mail</label>
