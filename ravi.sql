@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/12/2023 às 13:43
+-- Tempo de geração: 04/12/2023 às 16:04
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -53,7 +53,9 @@ CREATE TABLE `aluno` (
 
 INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `dataCad`, `status`) VALUES
 (2, 'Mauri­cio', 'mauricio@gmail.com', 'estamosjuntos', '1997-09-08', 'Rua Nina Rodrigues', '65490-000', 'MA', 'Anajatuba', '(80) 9 8292-9292', '819.670.860-28', '34.416.421-4', 'outro', '2023-09-17 17:16:26', '1'),
-(3, 'Ana Laura Dias de Cabral', 'analauracabral603@gmail.com', '12345678', '2005-03-10', 'Rua Rio Grande do Norte 996', '87565-000', 'PR', 'Cafezal do Sul', '(44) 9 8453-5352', '140.812.259-66', '156970986', 'feminino', '2023-12-04 12:25:35', '1');
+(3, 'Ana Laura Dias de Cabral', 'analauracabral603@gmail.com', '12345678', '2005-03-10', 'Rua Rio Grande do Norte 996', '87565-000', 'PR', 'Cafezal do Sul', '(44) 9 8453-5352', '140.812.259-66', '156970986', 'feminino', '2023-12-04 12:25:35', '1'),
+(4, 'Lívia Maria dos Santos', 'livsntss@gmail.com', 'livia123', '2005-05-10', 'Rua Prudentópolis n°266', '87400-000', 'PR', 'Cruzeiro do Oeste', '(44) 9 9710-7375', '104.200.879-58', '136114417', 'feminino', '2023-12-04 13:23:46', '1'),
+(5, 'Murilo Augusto ', 'muriloaugusto282004@gmail.com', 'eusoumurilo', '2005-04-28', 'Rua do Harmonia', '87504-500', 'PR', 'Umuarama', '(44) 9 9710-7375', '024.684.900-29', '43.351.434-6', 'masculino', '2023-12-04 14:57:34', '1');
 
 -- --------------------------------------------------------
 
@@ -75,8 +77,7 @@ INSERT INTO `area` (`id`, `nome`, `status`) VALUES
 (1, 'Matemática', '1'),
 (2, 'Português', '1'),
 (3, 'Fí­sica', '1'),
-(4, 'História', '1'),
-(5, 'Biologia', '1');
+(4, 'História', '1');
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,13 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`, `valorTotal`) VALUES
 (36, 'aula de trigonometria', '#400d69', '2023-12-06 15:30:00', '2023-12-06 17:00:00', 'trigonometria', 'Pix', 3, 10, 300),
-(37, 'citologia', '#961414', '2023-12-06 13:00:00', '2023-12-06 14:00:00', 'animais invertebrados', 'Cartao', 3, 14, 300);
+(37, 'citologia', '#961414', '2023-12-06 13:00:00', '2023-12-06 14:00:00', 'animais invertebrados', 'Cartao', 3, 14, 300),
+(38, 'Fração', '#96144f', '2023-12-05 18:00:00', '2023-12-05 19:00:00', 'Frações', 'Pix', 4, 7, 80),
+(39, 'Aula de Fração', '#143896', '2023-12-15 10:00:00', '2023-12-15 13:00:00', 'Multiplicação, divisão, adição e subtração de fração', 'Pix', 2, 13, 165),
+(40, 'Aula Clássica', '#0d6935', '2023-12-21 18:00:00', '2023-12-21 20:00:00', 'Período clássico, Grécia Antiga e Roma Antiga', 'Cartao', 2, 12, 140),
+(41, 'Aula de Pronome', '#c75716', '2023-12-20 14:00:00', '2023-12-20 16:00:00', 'Pronomes indicativos, demonstrativos e pessoais', 'Cartao', 2, 8, 180),
+(42, 'Aula de Função', '#96144f', '2023-12-21 11:00:00', '2023-12-21 13:00:00', 'Função do primeiro grau', 'Pix', 5, 10, 300),
+(43, 'Aula de Célula', '#961414', '2023-12-22 10:00:00', '2023-12-22 14:00:00', 'Organelas, mitcôndrias, ribossomos', 'Cartao', 5, 14, 1200);
 
 -- --------------------------------------------------------
 
@@ -145,7 +152,8 @@ INSERT INTO `professor` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`
 (10, 'Paola Carosella', 'paola@gmail.com', 'paola123456', '1986-05-04', 'Rua Aranha', '35460-000', 'MG', 'Brumadinho', '(83) 9 7827-1827', '722.806.920-07', '12.772.271-3', 'feminino', 'Formada em matemática', 'https://www.lattes.cnpq.br/', 'Função de Primeiro e Segundo grau, Logaritmo, Raiz Quadrada, Fração Trigonométrica', '150', 1, '2023-09-10 17:46:11', '1'),
 (12, 'Bianca', 'bianca@gmail.com', 'oieusoubianca', '2000-05-04', 'Rua João Antunes', '28455-000', 'RJ', 'São José de Ubá', '(55) 9 3849-8234', '799.767.660-09', '23.717.745-6', 'feminino', 'Formada em História', 'https://www.lattes.cnpq.br/', 'Embarcações, Imperialismo, Primeira Guerra Mundial, Segunda Guerra Mundial, Guerra Fria, Ditadura Militar no Brasil.', '70', 4, '2023-09-17 17:45:38', '1'),
 (13, 'Laís Caçarola', 'lais@gmail.com', 'oieusoulais', '2000-02-22', 'Rua Osvaldo Hulse', '88811-590', 'SC', 'Criciúma', '(45) 6 7989-7507', '992.655.750-34', '44.488.042-2', 'feminino', 'Sou formada em matemática', 'https://www.lattes.cnpq.br/', 'Análise combinatória', '55', 1, '2023-10-06 14:28:16', '1'),
-(14, 'Maria Joana Silva', 'maria.joana@gmail.com', '12345678', '1989-03-10', 'Avenida Pilantra', '87565-000', 'PR', 'Barracão', '(44) 9 8453-5352', '140.812.259-66', '123456777', 'feminino', 'Bióloga', 'https://www.lattes.cnpq.br/', 'Zoologia voltada ao ensino médio\r\n', '300', 3, '2023-12-04 12:33:04', '1');
+(14, 'Maria Joana Silva', 'maria.joana@gmail.com', '12345678', '1989-03-10', 'Avenida Pilantra', '87565-000', 'PR', 'Barracão', '(44) 9 8453-5352', '140.812.259-66', '123456777', 'feminino', 'Bióloga', 'https://www.lattes.cnpq.br/', 'Zoologia voltada ao ensino médio\r\n', '300', 3, '2023-12-04 12:33:04', '1'),
+(15, 'Lívia Maria dos Santos', 'livsntss@gmail.com', '12345678', '2005-05-10', 'Rua Prudentópolis n°266', '87400-000', 'PR', 'Abatiá', '(44) 9 9710-7375', '104.200.879-58', '136114417', 'feminino', 'História', 'https://www.lattes.cnpq.br/', 'Brasil Império', '40', 4, '2023-12-04 13:27:41', '1');
 
 -- --------------------------------------------------------
 
@@ -217,7 +225,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `area`
@@ -229,13 +237,13 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
