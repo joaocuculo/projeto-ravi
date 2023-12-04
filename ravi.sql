@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/12/2023 às 15:18
+-- Tempo de geração: 04/12/2023 às 13:43
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -52,8 +52,8 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `dataCad`, `status`) VALUES
-(1, 'Otavio', 'otavio@gmail.com', 'umdoistres', '1995-06-30', 'Rua das floral', '87013-123', 'RN', 'Antônio Martins', '(41) 9 9827-3441', '071.983.274-52', '23456789876543', 'outro', '0000-00-00 00:00:00', ''),
-(2, 'Mauri­cio', 'mauricio@gmail.com', 'estamosjuntos', '1997-09-08', 'Avenida vou ali e já volto', '40234-709', 'MA', 'Anajatuba', '(80) 9 8292-9292', '841.048.104-19', '48203740370137', 'outro', '2023-09-17 17:16:26', '1');
+(2, 'Mauri­cio', 'mauricio@gmail.com', 'estamosjuntos', '1997-09-08', 'Rua Nina Rodrigues', '65490-000', 'MA', 'Anajatuba', '(80) 9 8292-9292', '819.670.860-28', '34.416.421-4', 'outro', '2023-09-17 17:16:26', '1'),
+(3, 'Ana Laura Dias de Cabral', 'analauracabral603@gmail.com', '12345678', '2005-03-10', 'Rua Rio Grande do Norte 996', '87565-000', 'PR', 'Cafezal do Sul', '(44) 9 8453-5352', '140.812.259-66', '156970986', 'feminino', '2023-12-04 12:25:35', '1');
 
 -- --------------------------------------------------------
 
@@ -72,10 +72,11 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `nome`, `status`) VALUES
-(1, 'Matemática', ''),
-(2, 'Português', ''),
-(3, 'Fí­sica', ''),
-(4, 'História', '');
+(1, 'Matemática', '1'),
+(2, 'Português', '1'),
+(3, 'Fí­sica', '1'),
+(4, 'História', '1'),
+(5, 'Biologia', '1');
 
 -- --------------------------------------------------------
 
@@ -101,15 +102,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`, `conteudo`, `formaPag`, `aluno_id`, `professor_id`, `valorTotal`) VALUES
-(22, 'Aula de Função', '#961414', '2023-11-01 10:00:00', '2023-11-01 16:00:00', 'Função de primeiro, segundo e terceiro grau', 'Pix', 1, 10, 900),
-(23, 'Aula de Guerras', '#961414', '2023-11-03 04:00:00', '2023-11-03 06:00:00', 'Primeira e segunda guerra mundial, embarcações', 'Cartao', 1, 12, 140),
-(26, 'Aula de Trigonometria', '#0d6935', '2023-11-26 11:00:00', '2023-11-26 15:00:00', 'Círculos, quadriláteros, pirâmides e mais.', 'Pix', 1, 10, 600),
-(27, 'Aula de Fração', '#0d6935', '2023-11-25 08:00:00', '2023-11-25 12:00:00', 'Multiplicação e divisão de fração', 'Pix', 1, 10, 600),
-(28, 'Aula de Embarcações', '#961414', '2023-11-26 06:00:00', '2023-11-26 10:00:00', 'Imperialismo e embarcações europeias', 'Cartao', 1, 12, 280),
-(30, 'Aula de Fí­sica Básica', '#143896', '2023-11-29 01:00:00', '2023-11-29 04:00:00', 'Fí­sica básica em geral', 'Cartao', 1, 3, 300),
-(31, 'Aula de MRU', '#143896', '2023-11-30 10:00:00', '2023-11-30 12:00:00', 'Movimento retilíneo uniforme', 'Pix', 2, 1, 600),
-(32, 'Aula de Oração Subordinada', '#D18D08', '2023-11-30 05:00:00', '2023-11-30 10:00:00', 'Orações subordinadas', 'Pix', 1, 8, 450),
-(33, 'Aula de História Clássica', '#400d69', '2023-11-30 05:00:00', '2023-11-30 07:00:00', 'Grécia e Roma antiga', 'Cartao', 1, 9, 260);
+(36, 'aula de trigonometria', '#400d69', '2023-12-06 15:30:00', '2023-12-06 17:00:00', 'trigonometria', 'Pix', 3, 10, 300),
+(37, 'citologia', '#961414', '2023-12-06 13:00:00', '2023-12-06 14:00:00', 'animais invertebrados', 'Cartao', 3, 14, 300);
 
 -- --------------------------------------------------------
 
@@ -145,14 +139,13 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`id`, `nome`, `email`, `senha`, `dn`, `endereco`, `cep`, `estado`, `cidade`, `telefone`, `cpf`, `rg`, `sexo`, `areaFormacao`, `curriculo`, `conteudo`, `valorHora`, `area_id`, `dataCad`, `status`) VALUES
-(1, 'João Victor', 'jv.cuculo@gmail.com', 'somostodosverdao', '2000-10-28', 'Rua das Garças, 5164', '12345-678', 'MT', 'Acorizal', '(44) 9 9876-5433', '123.456.789-98', '12345678987654', 'on', 'Sou formado em ciancias da computação, veterinario, psicologia, medicina, direito e educação fis', 'https://www.lattes.cnpq.br/', 'Liguagem de programação, futsal\r\nbiologia de sacas', '300', 3, '0000-00-00 00:00:00', ''),
-(3, 'Pedro', 'pedro@gmail.com', 'senhaforte', '1988-02-04', 'Avenida tamo junto', '87432-342', 'PB', 'Areial', '(55) 9 4234-2342', '128.323.123-12', '52636245133545', 'masculino', 'Sou formado em biologia avançada', 'https://www.lattes.cnpq.br/', 'Genética\r\nSistema Digestório\r\nCélula', '100', 3, '0000-00-00 00:00:00', ''),
-(7, 'Ramiro', 'ramiro@gmail.com', '1122334455', '1990-08-24', 'Rua Tamo Junto', '87329-420', 'RJ', 'Parati', '(21) 9 9878-6342', '162.783.479-13', '31231231231212', 'masculino', 'Formado em Academia', 'https://www.lattes.cnpq.br/', 'Bí­ceps e Trí­ceps, Peito e Costas', '80', 2, '2023-08-26 17:14:11', ''),
-(8, 'Ed Gama', 'ed@gmail.com', 'palmeiras', '1988-04-23', 'Rua é nois tamo junto', '87654-323', 'PR', 'Formosa do Oeste', '(11) 9 9867-2367', '131.212.435-54', '87875686457474', 'masculino', 'Formado em Automobilismo', 'https://www.lattes.cnpq.br/', 'Carros diversos, pneus, carcaça automotiva, pintura, sistema elétrico.', '90', 2, '2023-09-02 14:53:40', ''),
-(9, 'Maria Cristina', 'mc@gmail.com', 'qwertyuiop', '1976-03-28', 'Avenida é Nois Denovo', '87342-234', 'RJ', 'Cabo Frio', '(21) 9 9807-8653', '123.456.789-74', '23489876543456', 'feminino', 'Formada em História, Psicologia e Letras', 'https://www.lattes.cnpq.br/', 'História do Brasil, Idade Média, Psicanálise, Literatura Brasileira', '130', 4, '2023-09-09 19:35:31', ''),
-(10, 'Paola Carosella', 'paola@gmail.com', 'asdfghjkl', '1986-05-04', 'Rua Vamos Juntos', '87242-934', 'RN', 'Pedra Grande', '(83) 9 7827-1827', '234.234.234-87', '82439247298349', 'feminino', 'Formada em matemática', 'https://www.lattes.cnpq.br/', 'Função de Primeiro e Segundo grau, Logaritmo, Raiz Quadrada, Fração Trigonométrica', '150', 1, '2023-09-10 17:46:11', ''),
-(12, 'Bianca', 'bianca@gmail.com', 'oieusoubianca', '2000-05-04', 'Rua Bruxa do 71', '93859-384', 'RJ', 'São José de Ubá', '(55) 9 3849-8234', '983.498.384-10', '85485723480349', 'feminino', 'Formada em História', 'https://www.lattes.cnpq.br/', 'Embarcações, Imperialismo, Primeira Guerra Mundial, Segunda Guerra Mundial, Guerra Fria, Ditadura Militar no Brasil.', '70', 4, '2023-09-17 17:45:38', '1'),
-(13, 'Laís Caçarola', 'lais@gmail.com', 'oieusoulais', '2000-02-22', 'Avenida è nois', '08508-508', 'PA', 'Abaetetuba', '(45) 6 7989-7507', '750.850.850-85', '85085085085085', 'feminino', 'Sou formada em matemática', 'https://www.lattes.cnpq.br/', 'Análise combinatória', '10', 1, '2023-10-06 14:28:16', '1');
+(7, 'Ramiro Alves', 'ramiro@gmail.com', '1122334455', '1990-08-24', 'Rua dos Biguás', '28928-604', 'RJ', 'Parati', '(21) 9 9878-6342', '834.698.920-24', '11.736.567-1', 'masculino', 'Formado em Letras', 'https://www.lattes.cnpq.br/', 'Todo conteúdo de gramática desde o ensino fundamental até o ensino médio. Literatura Brasileira.', '80', 2, '2023-08-26 17:14:11', '1'),
+(8, 'Eduardo Alencar', 'edu@gmail.com', 'palmeiras', '1988-04-23', 'Rua Belém', '85830-000', 'PR', 'Formosa do Oeste', '(11) 9 9867-2367', '182.841.560-08', '21.547.202-0', 'masculino', 'Formado em Letras e em Sociologia', 'https://www.lattes.cnpq.br/', 'Toda Literatura Brasileira e do Brasil Colonial, estudo da sociedade.', '90', 2, '2023-09-02 14:53:40', '1'),
+(9, 'Maria Cristina Albuquerque', 'mc@gmail.com', 'qwertyuiop', '1976-03-28', 'Rua Ministro Waldemar Falcão', '22641-170', 'RJ', 'Rio de Janeiro', '(21) 9 9807-8653', '416.484.370-52', '10.468.151-2', 'feminino', 'Formada em História, Psicologia e Letras', 'https://www.lattes.cnpq.br/', 'História do Brasil, Idade Média, Psicanálise, Literatura Brasileira', '130', 4, '2023-09-09 19:35:31', '1'),
+(10, 'Paola Carosella', 'paola@gmail.com', 'paola123456', '1986-05-04', 'Rua Aranha', '35460-000', 'MG', 'Brumadinho', '(83) 9 7827-1827', '722.806.920-07', '12.772.271-3', 'feminino', 'Formada em matemática', 'https://www.lattes.cnpq.br/', 'Função de Primeiro e Segundo grau, Logaritmo, Raiz Quadrada, Fração Trigonométrica', '150', 1, '2023-09-10 17:46:11', '1'),
+(12, 'Bianca', 'bianca@gmail.com', 'oieusoubianca', '2000-05-04', 'Rua João Antunes', '28455-000', 'RJ', 'São José de Ubá', '(55) 9 3849-8234', '799.767.660-09', '23.717.745-6', 'feminino', 'Formada em História', 'https://www.lattes.cnpq.br/', 'Embarcações, Imperialismo, Primeira Guerra Mundial, Segunda Guerra Mundial, Guerra Fria, Ditadura Militar no Brasil.', '70', 4, '2023-09-17 17:45:38', '1'),
+(13, 'Laís Caçarola', 'lais@gmail.com', 'oieusoulais', '2000-02-22', 'Rua Osvaldo Hulse', '88811-590', 'SC', 'Criciúma', '(45) 6 7989-7507', '992.655.750-34', '44.488.042-2', 'feminino', 'Sou formada em matemática', 'https://www.lattes.cnpq.br/', 'Análise combinatória', '55', 1, '2023-10-06 14:28:16', '1'),
+(14, 'Maria Joana Silva', 'maria.joana@gmail.com', '12345678', '1989-03-10', 'Avenida Pilantra', '87565-000', 'PR', 'Barracão', '(44) 9 8453-5352', '140.812.259-66', '123456777', 'feminino', 'Bióloga', 'https://www.lattes.cnpq.br/', 'Zoologia voltada ao ensino médio\r\n', '300', 3, '2023-12-04 12:33:04', '1');
 
 -- --------------------------------------------------------
 
@@ -174,7 +167,10 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `status`) VALUES
 (1, 'João Victor', 'jv.cuculo@gmail.com', 'somostodosverdao', '1'),
-(2, 'Cesar', 'cesar@gmail.com', 'estoumaluco', '1');
+(2, 'Cesar', 'cesar@gmail.com', 'estoumaluco', '1'),
+(4, 'Eric', 'eric.oyama12@gmail.com', 'eusouoyama', '1'),
+(5, 'Gabriel Bortoloto', 'gabrielbortoloto0@gmail.com', 'alexsandromoriah', '1'),
+(6, 'Ana Laura Dias de Cabral', 'analauracabral603@gmail.com', '12345678', '1');
 
 --
 -- Índices para tabelas despejadas
@@ -221,31 +217,31 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
 --
 ALTER TABLE `professor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para tabelas despejadas
