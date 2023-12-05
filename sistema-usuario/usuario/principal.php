@@ -28,7 +28,7 @@
 
     <main class="container">
         <div class="bem-vindo">
-            <h2>Seja bem-vindo, Administrador(a) <?= $_SESSION['nome']; ?>. Confira os cadastros</h2>
+            <h2>Seja bem-vindo, Administrador(a) <?= $_SESSION['nome']; ?>.</h2>
         </div>
 
         <section class="adm-agend">
@@ -38,10 +38,6 @@
             <div class="confira-agend card-border">
                 <p>Cadastro de administrador</p>
                 <a href="cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-            <div class="confira-agend card-border">
-                <p>Cadastro de matérias</p>
-                <a href="../area/cadastro.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
             <div>
                 <img src="../../assets/img/undraw_educator_re_ju47.svg">        
@@ -64,10 +60,6 @@
             <div class="confira-agend card-border">
                 <p>Relatório de Administradores</p>
                 <a href="relatorio-adm.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
-            </div>
-            <div class="confira-agend card-border">
-                <p>Relatório de Matérias</p>
-                <a href="relatorio-materia.php" class="agend-btn"><i class="fa-sharp fa-solid fa-circle-arrow-right"></i></a>
             </div>
         </section>
     </main>

@@ -3,10 +3,17 @@
     require_once('../verifica-autenticacao.php');
     
     require_once('../../conexao.php');
+
+    //Geração de SQL dinamica para relatorio
+    $V_WHERE = "";
+    if (isset($_POST['pesquisar'])) {
+        $V_WHERE = " AND professor.nome LIKE '%" . $_POST['nome'] . "%'";
+    }
     
     $sql = "SELECT professor.*, professor.nome AS nome_professor, area.nome AS nome_area, area.nome
               FROM professor
-        INNER JOIN area ON professor.area_id = area.id";
+        INNER JOIN area ON professor.area_id = area.id
+             WHERE 1 = 1 " . $V_WHERE;
     $resultado = mysqli_query($conexao, $sql);
 
 ?>
@@ -29,6 +36,15 @@
     <main class="container-relatorio">
         <section class="relatorio-box-big">
             <h2>Relatório de Professores</h2>
+
+            <div class="input-group">
+                <form method="post"class="input-box-search">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: .3rem; width: 50%;">
+                        <input type="search" name="nome" placeholder="Pesquise o nome do professor" style="width: 80%;">
+                        <button type="submit" name="pesquisar" class="conta-btn" style="border: none; border-radius: 10px; width: 20%;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+            </div>
 
             <div class="table-roll-y table-roll-x">
                 <table>

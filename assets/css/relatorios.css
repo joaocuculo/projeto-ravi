@@ -52,6 +52,50 @@ td {
     padding: 10px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-box-search {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    position: relative;
+}
+
+.input-box-search label {
+    font-size: 1.1rem;
+}
+
+.input-box-search input {
+    font-size: 1rem;
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-box-search input:focus-visible {
+    background-color: #e6e6e6;
+    outline: none;
+}
+
+.input-box-search input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
 tr:nth-child(2n-2),
 #cabecalho-relatorio {
     background-color: #b6b4a9;

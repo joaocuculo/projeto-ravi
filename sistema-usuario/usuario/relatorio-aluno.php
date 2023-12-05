@@ -3,8 +3,13 @@
     require_once('../verifica-autenticacao.php');
     
     require_once('../../conexao.php');
+
+    $V_WHERE = "";
+    if (isset($_POST['pesquisar'])) {
+        $V_WHERE = " AND nome LIKE '%" . $_POST['nome'] . "%'";
+    }
     
-    $sql = "SELECT * FROM aluno";
+    $sql = "SELECT * FROM aluno WHERE 1 = 1 " . $V_WHERE;
     $resultado = mysqli_query($conexao, $sql);
 
 ?>
@@ -27,6 +32,15 @@
     <main class="container">
         <section class="relatorio-box">
             <h2>Relatório de Alunos</h2>
+
+            <div class="input-group">
+                <form method="post"class="input-box-search">
+                    <div style="display: flex; justify-content: center; align-items: center; gap: .3rem; width: 50%;">
+                        <input type="search" name="nome" placeholder="Pesquise o nome do professor" style="width: 80%;">
+                        <button type="submit" name="pesquisar" class="conta-btn" style="border: none; border-radius: 10px; width: 20%;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+            </div>
 
             <div class="table-roll-y table-roll-x">
                 <table>
