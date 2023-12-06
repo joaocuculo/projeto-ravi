@@ -69,17 +69,26 @@
             }
 
             if (validaCPF($CPF)) {
+                global $conexao;
+
+                $consultaCPF = "SELECT cpf FROM professor WHERE cpf = '$CPF'";
+                $resultadoCPF = $conexao->query($consultaCPF);
+                $linhaCPF = mysqli_fetch_array($resultadoCPF);
                 
-                if (calcularIdade($_POST['DN']) > 130) {
-                    $mensagem = "Há algo de errado com sua idade.";
-                } elseif (calcularIdade($_POST['DN']) >= 18) {
-                    $sql = "INSERT INTO professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) VALUES ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$curriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
-                    
-                    mysqli_query($conexao, $sql);
-                    
-                    $mensagem = "Cadastrado com sucesso!";
+                if ($linhaCPF == 0) {
+                    if (calcularIdade($_POST['DN']) > 130) {
+                        $mensagem = "Há algo de errado com sua idade.";
+                    } elseif (calcularIdade($_POST['DN']) >= 18) {
+                        $sql = "INSERT INTO professor (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, areaFormacao, curriculo, conteudo, valorHora, area_id, status) VALUES ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$areaForma', '$curriculo', '$conteudo', '$valorHora', '$area_id', '$status')";
+                        
+                        mysqli_query($conexao, $sql);
+                        
+                        $mensagem = "Cadastrado com sucesso!";
+                    } else {
+                        $mensagem = "É necessário ser maior de idade para se tornar nosso professor.";
+                    }
                 } else {
-                    $mensagem = "É necessário ser maior de idade para se tornar nosso professor.";
+                    $mensagem = "O CPF informado já está cadastrado.";
                 }
             } else {
                 $mensagem = "O CPF informado não é válido";
