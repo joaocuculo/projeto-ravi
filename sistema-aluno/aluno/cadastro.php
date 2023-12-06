@@ -64,15 +64,25 @@
             }
 
             if(validaCPF($CPF)) {
+                global $conexao;
 
-                if (calcularIdade($_POST['DN']) > 130) {
-                    $mensagem = "Há algo de errado com sua idade.";
+                $consultaCPF = "SELECT cpf FROM aluno WHERE cpf = '$CPF'";
+                $resultadoCPF = $conexao->query($consultaCPF);
+                $linhaCPF = mysqli_fetch_array($resultadoCPF);
+
+                if ($linhaCPF == 0) {
+                    
+                    if (calcularIdade($_POST['DN']) > 130) {
+                        $mensagem = "Há algo de errado com sua idade.";
+                    } else {
+                        $sql = "INSERT INTO aluno (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, status) VALUES ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$status')";
+                        
+                        mysqli_query($conexao, $sql);
+                        
+                        $mensagem = "Cadastrado com sucesso!";
+                    }
                 } else {
-                    $sql = "INSERT INTO aluno (nome, email, senha, dn, endereco, cep, estado, cidade, telefone, cpf, rg, sexo, status) VALUES ('$nome', '$email', '$senha', '$DN', '$endereco', '$CEP', '$estado', '$cidade', '$tel', '$CPF', '$RG', '$sexo', '$status')";
-                    
-                    mysqli_query($conexao, $sql);
-                    
-                    $mensagem = "Cadastrado com sucesso!";
+                    $mensagem = "O CPF informado já está cadastrado.";
                 }
             } else {
                 $mensagem = "O CPF informado não é válido";
