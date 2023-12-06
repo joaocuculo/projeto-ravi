@@ -203,7 +203,7 @@
                         </div>
                         <div class="input-box input-meio">
                             <label for="estado">Estado</label>
-                            <select name="estado" id="estado" required onchange="buscaCidades(this.value)">
+                            <select name="estado" id="estado" required>
                                 <option value="">Selecione o Estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -236,8 +236,7 @@
                         </div>
                         <div class="input-box input-meio">
                             <label for="cidade">Cidade</label>
-                            <select name="cidade" id="cidade" required>
-                            </select>
+                            <input type="text" name="cidade" id="cidade">
                         </div>
                     </div>
                     <div class="input-box">
@@ -279,6 +278,7 @@
 
     <?php require_once("../template-aluno/rodape2.php") ?>
 
+    <script src="../../assets/js/cep.js"></script>
     <script src="../../assets/js/menu-show.js"></script>
     <script src="../../assets/js/mostrar-senha.js"></script>
     <script src="../../assets/js/mascaras.js"></script>
