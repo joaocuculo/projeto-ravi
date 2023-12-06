@@ -11,19 +11,6 @@
     $sql_aluno = "SELECT * FROM aluno WHERE id = " . $_SESSION['id'];
     $resultado_aluno = mysqli_query($conexao, $sql_aluno);
     $linha_aluno = mysqli_fetch_array($resultado_aluno);
-
-    // $database = new DateTime("2023-11-20 22:20:00");
-    // $datadehoje = new DateTime();
-    // $diferenca = date_diff($database, $datadehoje);
-    // echo "Diferença: " . $diferenca->format('%R%a dias, %h horas e %i minutos');
-
-    // $consulta_prof = "SELECT nome FROM events INNER JOIN professor ON events.professor_id = professor.id";
-    // $resultado_prof_nome = mysqli_query($conexao, $consulta_prof);
-    // $linha_prof_nome = mysqli_fetch_array($resultado_prof_nome);
-
-    // $consulta_aluno = "SELECT nome FROM events INNER JOIN aluno ON events.aluno_id = aluno.id";
-    // $resultado_aluno_nome = mysqli_query($conexao, $consulta_aluno);
-    // $linha_aluno_nome = mysqli_fetch_array($resultado_aluno_nome);
     
 ?>
 <!DOCTYPE html>
