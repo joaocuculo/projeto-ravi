@@ -1,31 +1,41 @@
-function buscaCep() {
-    let cepComHifen = document.getElementById('CEP').value;
-    let cep = cepComHifen.replace("-", "");
+const cep = document.querySelector('#CEP');
+const estado = document.querySelector('#estado');
+const cidade = document.querySelector('#cidade');
+const endereco = document.querySelector('#endereco');
+const mensagemCep = document.querySelector('#mensagemCep');
 
-    if (cep !== "") {
-        let url = "https://brasilapi.com.br/api/cep/v1/" + cep;
+cep.addEventListener('focusout', async () => {
+    
+    try {
+        const apenasNum = /^[0-9]+$/;
+        const cepValido = /^[0-9]{8}$/;
+        
+        // Remove os hífens do CEP
+        const cepSemHifen = cep.value.replace("-", "");
 
-        let req = new XMLHttpRequest();
-        req.open("GET", url);
-        req.send();
-
-        req.onload = function() {
-            if (req.status === 200) {
-                let endereco = JSON.parse(req.response);
-                document.getElementById('endereco').value = endereco.street;
-                document.getElementById('estado').value = endereco.state;
-                document.getElementById('cidade').value = endereco.city;
-                document.getElementById('endereco').value = endereco.street + ", " + endereco.neighborhood;
-            } else if (req.status === 404) {
-                alert("CEP inválido.")
-            } else {
-                alert("Erro ao fazer a requisição.")
-            }
+        if (!apenasNum.test(cepSemHifen) || !cepValido.test(cepSemHifen)) {
+            throw { cep_error: 'CEP inválido' };
         }
-    }
-}
 
-window.onload = function() {
-    let txtCep = document.getElementById('CEP');
-    txtCep = addEventListener("input", buscaCep);
-}
+        const resposta = await fetch(`https://viacep.com.br/ws/${cepSemHifen}/json/`)
+        
+        if (!resposta.ok) {
+            throw await resposta.json();
+        }
+
+        const respostaCep = await resposta.json();
+
+        estado.value = respostaCep.uf;
+        cidade.value = respostaCep.localidade;
+        endereco.value = respostaCep.logradouro + ", " + respostaCep.bairro;
+
+    } catch (error) {
+        if (error?.cep_error) {
+            mensagemCep.textContent = error.cep_error;
+            setTimeout(() => {
+                mensagemCep.textContent = '';
+            }, 3000);
+        }
+        console.error(error);
+    }
+});

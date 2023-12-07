@@ -203,6 +203,7 @@
                         </div>
                         <div class="input-box input-meio">
                             <label for="CEP">CEP</label>
+                            <span id="mensagemCep"></span>
                             <input type="text" name="CEP" id="CEP" placeholder="Digite seu CEP" minlength="9" maxlength="9" required>
                         </div>
                         <div class="input-box input-meio">
