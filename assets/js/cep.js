@@ -29,6 +29,10 @@ cep.addEventListener('focusout', async () => {
         cidade.value = respostaCep.localidade;
         endereco.value = respostaCep.logradouro + ", " + respostaCep.bairro;
 
+        if (respostaCep.logradouro.length === 0 || respostaCep.bairro.length === 0) {
+            endereco.value = respostaCep.logradouro + "" + respostaCep.bairro;
+        }        
+
     } catch (error) {
         if (error?.cep_error) {
             mensagemCep.textContent = error.cep_error;
